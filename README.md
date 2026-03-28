@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents four client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents five client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods
+## ✨ Mods v1.1.0
 
 ### 🗺️ Map Preview `[F9]`
 
@@ -23,6 +23,16 @@ See a preview image of the current map right in the lobby before a single spell 
 The art of war begins before the first creature is summoned.
 
 For **6-player lobby creators**: instantly assigns balanced teams for **3v3**, **2v2v2** or **2v4** with a single click. Appears automatically when you open a 6-player lobby. Law and Chaos, brought into balance, at least for the setup. Toggle with **F10**.
+
+---
+
+### 🎨 Wizard Skins `[F4]`
+
+Let your aura speak for itself.
+
+Lets you set the displayed skin for any wizard in the game, independently for each one. The skin is only visible on your own screen; other players see your and their own skins as usual. Use **F4** to toggle the overlay, **↑/↓** to select a wizard, **←/→** to cycle through skins (Apprentice → Forgemaster → Wizard Lord → Wizard King → Demigod → God).
+
+A `*` next to a wizard's name indicates the displayed skin differs from their actual skin.
 
 ---
 
@@ -57,7 +67,7 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
 1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** and extract it into your Chaos Reborn folder (the folder where Steam or another manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`):
    - **Windows:** use `win_x64` (the zip under Assets)
    - **Mac:** use `macos_x64` — should work but untested
-2. Download **`CRMods_v1.0.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMods_v1.1.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
 
@@ -71,6 +81,7 @@ ChaosReborn\
             CRMod.ChatCommand.dll
             CRMod.MapSetup.dll
             CRMod.MapPreview.dll
+            CRMod.Skin.dll
             CRMod.AsyncLobbyFix.dll
         config\
             maps\
@@ -104,7 +115,7 @@ To remove all mods, just remove the `BepInEx` folder and `winhttp.dll` from your
 
 ## 💡 Got a mod idea?
 
-Rule of thumb: Mods can **read and display** most of what the game sends to your client, and **automate** most of what you can click yourself — lobby setup, chat commands, UI interactions. What's out of reach is anything the **server decides**: cast results, combat outcomes, balance, new cards.
+Rule of thumb: Mods can **read and display** most of what the game sends to your client, and **automate** most of what you can click yourself: lobby setup, chat commands, UI interactions. What's out of reach is anything the **server decides**: cast results, combat outcomes, balance, new cards.
 
 Ideas and suggestions are welcome. Open an issue or drop a message on Discord.
 
