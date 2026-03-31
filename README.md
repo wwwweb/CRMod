@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents five client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents seven client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.1.0
+## ✨ Mods v1.2.0
 
 ### 🗺️ Map Preview `[F9]`
 
@@ -47,9 +47,36 @@ Every great battle deserves a chronicle. Adds commands for reporting to in-game 
 
 ---
 
+### 📜 Async Creator
+
+Ever wanted to start with a solely disbelieve deck in async?
+
+In live lobbies, Reward and Taboo controls are available directly in the UI. In **async lobbies**, these controls are missing entirely. This mod fills that gap via lobby chat commands.
+
+As server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it.
+
+| Command | Effect |
+|---|---|
+| `/reward none\|gold\|crystals` | Set the reward for all active slots |
+| `/taboo <slot> <taboo...>` | Set taboos for a slot (additive) |
+| `/status` | Show reward + taboos for all slots |
+| `/help` | List available commands |
+
+> ⚠️ Taboos apply to deck cards only. The wizard's Mega Spell (staff ability) cannot be restricted.
+
+---
+
+### 🔀 Equip Sort
+
+A tidy spellbook is a powerful spellbook.
+
+Sorts your equipment configurations alphabetically — no more hunting through an unsorted list. Click the **Name**, **Staff**, or **Bodygear** column headers on the equipping screen to sort by that column (click again to reverse). The selected configuration stays highlighted after sorting. Also keeps the equipment dropdown in lobbies sorted alphabetically at all times. No configuration needed.
+
+---
+
 ### 🔧 Async Lobby Fix
 
-Fixes a bug in the base game where joining your own async custom lobby causes many UI elements (including wizard names) to be invisible. No configuration needed, just drop it in and forget about it. (Only briefly tested.)
+Fixes a bug in the base game where joining your own async custom lobby causes many UI elements (including wizard names) to be invisible. No configuration needed, just drop it in and forget about it.
 
 ---
 
@@ -67,9 +94,10 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
 1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** and extract it into your Chaos Reborn folder (the folder where Steam or another manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`):
    - **Windows:** use `win_x64` (the zip under Assets)
    - **Mac:** use `macos_x64` — should work but untested
-2. Download **`CRMods_v1.1.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
-3. Launch the game once, then close it. BepInEx will finalize its setup
-4. Launch the game again. Now the mods are active
+2. Download **`CRMods_v1.2.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+   - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
+4. Launch the game once, then close it. BepInEx will finalize its setup
+5. Launch the game again. Now the mods are active
 
 Your folder structure should look like this afterwards:
 ```
@@ -78,16 +106,18 @@ ChaosReborn\
     winhttp.dll                        ← added by BepInEx
     BepInEx\
         plugins\
-            CRMod.ChatCommand.dll
-            CRMod.MapSetup.dll
-            CRMod.MapPreview.dll
-            CRMod.Skin.dll
+            CRMod.AsyncCreator.dll
             CRMod.AsyncLobbyFix.dll
+            CRMod.ChatCommand.dll
+            CRMod.EquipSort.dll
+            CRMod.MapPreview.dll
+            CRMod.MapSetup.dll
+            CRMod.Skin.dll
         config\
             maps\
-                2_Twin_Lake.jpg
-                4_Equilibrarium.jpg
+                2_Backbone.jpg
                 ... (all map images)
+                6_Triple_Double.jpg                
 ```
 
 > Not sure if BepInEx loaded? Check `BepInEx\logs\LogOutput.log`. The mod names should appear there.
