@@ -8,7 +8,7 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 ---
 
-## ✨ Mods v1.2.0
+## ✨ Mods v1.3.0
 
 ### 🗺️ Map Preview `[F9]`
 
@@ -42,8 +42,10 @@ Every great battle deserves a chronicle. Adds commands for reporting to in-game 
 
 | Command | Effect |
 |---|---|
-| `/report` | Summons a full kill log and final standings at match end, copied to clipboard for manual paste, e.g. at Discord |
-| `/reportdiscord` | Same, but dispatches the scroll directly to a Discord webhook of your choice |
+| `/report [format]` | Outputs a match report at battle end. Visible only to you, or to all players |
+| `/reportdiscord [format]` | Same, but also sends the report to Discord (needs setup) |
+
+Reports are fully customizable: define multiple named formats in the config file, each with its own template, webhook URL, and visibility setting (`local` or `all`). Set a format to `local` to keep reports off the shared chat entirely — useful when you just want a personal log or a Discord post without spamming other players. See [Setting up own report formats and Discord connection](#️-setting-up-own-report-formats-and-discord-connection-optional) below.
 
 ---
 
@@ -73,6 +75,14 @@ A tidy spellbook is a powerful spellbook.
 Sorts your equipment configurations alphabetically — no more hunting through an unsorted list. Click the **Name**, **Staff**, or **Bodygear** column headers on the equipping screen to sort by that column (click again to reverse). The selected configuration stays highlighted after sorting. Also keeps the equipment dropdown in lobbies sorted alphabetically at all times. No configuration needed.
 
 ---
+ 
+### 🏔️ Height Map `[F3]`
+ 
+Because knowing the terrain is half the battle.
+ 
+Displays the total height of every tile as an overlay label during battle. Useful for evaluating attack and movement options at a glance. Toggle with **F3**.
+
+---
 
 ### 🔧 Async Lobby Fix
 
@@ -94,10 +104,10 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
 1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** and extract it into your Chaos Reborn folder (the folder where Steam or another manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`):
    - **Windows:** use `win_x64` (the zip under Assets)
    - **Mac:** use `macos_x64` — should work but untested
-2. Download **`CRMods-v1.2.1.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMods-v1.3.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
-4. Launch the game once, then close it. BepInEx will finalize its setup
-5. Launch the game again. Now the mods are active
+3. Launch the game once, then close it. BepInEx will finalize its setup
+4. Launch the game again. Now the mods are active
 
 Your folder structure should look like this afterwards:
 ```
@@ -110,6 +120,7 @@ ChaosReborn\
             CRMod.AsyncLobbyFix.dll
             CRMod.ChatCommand.dll
             CRMod.EquipSort.dll
+            CRMod.HeightMap.dll
             CRMod.MapPreview.dll
             CRMod.MapSetup.dll
             CRMod.Skin.dll
@@ -124,16 +135,18 @@ ChaosReborn\
 
 ---
 
-## ⚙️ Setting up `/reportdiscord` (optional)
+## ⚙️ Setting up own report formats and Discord connection (optional)
 
-1. In your Discord server: **Server Settings → Integrations → Webhooks → New Webhook**
-2. Pick a channel and copy the Webhook URL
-3. Launch the game once with `CRMod.ChatCommand.dll` in place, then close it; this creates the config file
-4. Open `BepInEx\config\CRMod.ChatCommand.cfg` in any text editor and paste your URL:
+The chat command mod supports multiple configurable report formats. Reports can optionally be sent to Discord.
+ 
+1. Launch the game once with `CRMod.ChatCommand.dll` in place, then close it; this creates the config file `BepInEx\config\CRMod.ChatCommand.cfg` in your Chaos Reborn folder
+2. Open `BepInEx\config\CRMod.ChatCommand.cfg` in any text editor. It provides two pre-defined report formats and a help to add your own format
+3. If you waant to connect to discord, in your Discord server: **Server Settings → Integrations → Webhooks → New Webhook**
+4. Copy the Webhook URL and set it in the config file
    ```ini
-   DiscordWebhookUrl = https://discord.com/api/webhooks/...
+   WebhookUrl=https://discord.com/api/webhooks/...
    ```
-5. Save the file and restart the game
+5. Save the file and restart the game (or type /reloadconfig in in-game chat)
 
 ---
 
