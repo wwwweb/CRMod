@@ -8,7 +8,7 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 ---
 
-## ✨ Mods v1.3.0
+## ✨ Mods v1.3.1
 
 ### 🗺️ Map Preview `[F9]`
 
