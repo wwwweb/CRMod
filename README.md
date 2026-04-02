@@ -57,11 +57,12 @@ In live lobbies, Reward and Taboo controls are available directly in the UI. In 
 
 As server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it.
 
-| Command | Effect |
+| Command (Lobby Chat) | Effect |
 |---|---|
-| `/reward none\|gold\|crystals` | Set the reward for all active slots |
-| `/taboo <slot> <taboo...>` | Set taboos for a slot (additive) |
-| `/status` | Show reward + taboos for all slots |
+| `/reward none\|gold\|crystals` | Set the reward for the winner |
+| `/taboo <slot(s)> <taboo(s)>` | Sets taboos for one or more slots (additive) |
+| `/status` | Show reward + taboos for all slots locally |
+| `/share` | Show reward + taboos for all in lobby chat |
 | `/help` | List available commands |
 
 > ⚠️ Taboos apply to deck cards only. The wizard's Mega Spell (staff ability) cannot be restricted.
@@ -104,10 +105,12 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
 1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** and extract it into your Chaos Reborn folder (the folder where Steam or another manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`):
    - **Windows:** use `win_x64` (the zip under Assets)
    - **Mac:** use `macos_x64` — should work but untested
-2. Download **`CRMods-v1.3.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMods-v1.3.1.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
+
+If you are updating from a previous version of CRMod, steps 1 and 3 can be omitted.
 
 Your folder structure should look like this afterwards:
 ```
