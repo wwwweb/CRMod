@@ -93,6 +93,8 @@ Right-click any tile during battle to place a ping marker visible to your team. 
 
 > ⚠️ Only players that have the Team Ping mod installed can see the pings. The ping is transmitted via in-game chat. For other mod users, this is invisible. For players without the mod, a short `CRMod.Ping` message appears in chat.
 
+> ⚠️ Team Ping is hard to test for a single wizard, so it is declared experimental and needs testing.
+
 ---
 
 ### 🏔️ Height Map `[F3]`
