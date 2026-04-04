@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents seven client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents ten client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.3.1
+## ✨ Mods v1.4.0
 
 ### 🗺️ Map Preview `[F9]`
 
@@ -55,7 +55,7 @@ Ever wanted to start with a solely disbelieve deck in async?
 
 In live lobbies, Reward and Taboo controls are available directly in the UI. In **async lobbies**, these controls are missing entirely. This mod fills that gap via lobby chat commands.
 
-As server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it.
+As the server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it.
 
 | Command (Lobby Chat) | Effect |
 |---|---|
@@ -69,6 +69,14 @@ As server does not store the configuration, all settings are reconstructed from 
 
 ---
 
+### 🔖 Taboo Display
+
+Know thy enemy's constraints.
+
+When you select an opponent's wizard during battle, their active taboos are shown in the top-left panel at the same spot your own taboos normally appear. Deselecting restores your own taboo display. No configuration needed. Kind of a companion mod to Async Creator taboos, but can also be used for live games.
+
+---
+
 ### 🔀 Equip Sort
 
 A tidy spellbook is a powerful spellbook.
@@ -76,11 +84,21 @@ A tidy spellbook is a powerful spellbook.
 Sorts your equipment configurations alphabetically — no more hunting through an unsorted list. Click the **Name**, **Staff**, or **Bodygear** column headers on the equipping screen to sort by that column (click again to reverse). The selected configuration stays highlighted after sorting. Also keeps the equipment dropdown in lobbies sorted alphabetically at all times. No configuration needed.
 
 ---
- 
+
+### 📍 Team Ping `[Ctrl+P]`
+
+Point your allies at the right target.
+
+Right-click any tile during battle to place a ping marker visible to your team. Cycle through modes with **Ctrl+P**: in team games **Off → Team → All**, in FFA **Off → All → Private**. One marker per player, automatically expires after one round. Right-click an existing marker in Off mode to dismiss it locally.
+
+> ⚠️ Only players that have the Team Ping mod installed can see the pings. The ping is transmitted via in-game chat. For other mod users, this is invisible. For players without the mod, a short `CRMod.Ping` message appears in chat.
+
+---
+
 ### 🏔️ Height Map `[F3]`
- 
+
 Because knowing the terrain is half the battle.
- 
+
 Displays the total height of every tile as an overlay label during battle. Useful for evaluating attack and movement options at a glance. Toggle with **F3**.
 
 ---
@@ -93,7 +111,7 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
 
 ## ⚙️ Requirements
 
-- **Chaos Reborn** via Steam
+- **Chaos Reborn** (both 32/64 bit versions are supported)
 - **BepInEx 5.4.x** — download link below
 
 > ⚠️ BepInEx **5.4.x only** — version 6 is not compatible.
@@ -103,9 +121,12 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
 ## ⚙️ Installation
 
 1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** and extract it into your Chaos Reborn folder (the folder where Steam or another manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`):
-   - **Windows:** use `win_x64` (the zip under Assets)
-   - **Mac:** use `macos_x64` — should work but untested
-2. Download **`CRMods-v1.3.1.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+   - **Windows (Steam, 64 bit):** use `win_x64` (the zip under Assets)
+   - **Windows (GOG, 32 bit):** use `win_x86`
+   - **Mac:** use `macos_universal` — should work but untested
+
+   > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
+2. Download **`CRMods-v1.4.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
@@ -127,6 +148,8 @@ ChaosReborn\
             CRMod.MapPreview.dll
             CRMod.MapSetup.dll
             CRMod.Skin.dll
+            CRMod.TabooDisplay.dll
+            CRMod.TeamPing.dll
         config\
             maps\
                 2_Backbone.jpg
@@ -134,22 +157,22 @@ ChaosReborn\
                 6_Triple_Double.jpg                
 ```
 
-> Not sure if BepInEx loaded? Check `BepInEx\logs\LogOutput.log`. The mod names should appear there.
+> Not sure if BepInEx loaded? Check `BepInEx\LogOutput.log`. The mod names should appear there.
 
 ---
 
 ## ⚙️ Setting up own report formats and Discord connection (optional)
 
 The chat command mod supports multiple configurable report formats. Reports can optionally be sent to Discord.
- 
+
 1. Launch the game once with `CRMod.ChatCommand.dll` in place, then close it; this creates the config file `BepInEx\config\CRMod.ChatCommand.cfg` in your Chaos Reborn folder
 2. Open `BepInEx\config\CRMod.ChatCommand.cfg` in any text editor. It provides two pre-defined report formats and a help to add your own format
-3. If you waant to connect to discord, in your Discord server: **Server Settings → Integrations → Webhooks → New Webhook**
+3. If you want to connect to Discord, in your Discord server: **Server Settings → Integrations → Webhooks → New Webhook**
 4. Copy the Webhook URL and set it in the config file
    ```ini
    WebhookUrl=https://discord.com/api/webhooks/...
    ```
-5. Save the file and restart the game (or type /reloadconfig in in-game chat)
+5. Save the file and restart the game (or type `/reloadconfig` in in-game chat)
 
 ---
 
@@ -171,7 +194,7 @@ Ideas and suggestions are welcome. Open an issue or drop a message on Discord.
 
 This is private fan work. No guarantee that it works, no warranty that it doesn't break something. See the License for details.
 
-Tested under Windows 11 with the Steam version of Chaos Reborn.
+Tested under Windows 11 with the Steam version (64 bit) and GOG version (32 bit) of Chaos Reborn.
 
 ---
 
