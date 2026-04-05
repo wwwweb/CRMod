@@ -87,7 +87,7 @@ Sorts your equipment configurations alphabetically — no more hunting through a
 
 ### 📍 Team Ping `[Ctrl+P]`
 
-Point your allies at the right target.
+Point your allies where the magic happens.
 
 Right-click any tile during battle to place a ping marker visible to your team. Cycle through modes with **Ctrl+P**: in team games **Off → Team → All**, in FFA **Off → All → Private**. One marker per player, automatically expires after one round. Right-click an existing marker in Off mode to dismiss it locally.
 
@@ -128,7 +128,7 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
    - **Mac:** use `macos_universal` — should work but untested
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMods-v1.4.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMods-v1.4.1.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
