@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents ten client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents twelve client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.4.0
+## ✨ Mods v1.5.0
 
 ### 🗺️ Map Preview `[F9]`
 
@@ -84,6 +84,14 @@ A tidy spellbook is a powerful spellbook.
 Sorts your equipment configurations alphabetically — no more hunting through an unsorted list. Click the **Name**, **Staff**, or **Bodygear** column headers on the equipping screen to sort by that column (click again to reverse). The selected configuration stays highlighted after sorting. Also keeps the equipment dropdown in lobbies sorted alphabetically at all times. No configuration needed.
 
 ---
+ 
+### 🎲 Random Equip
+ 
+Fortune favors the bold — and the unprepared.
+ 
+Adds a **Random Equip** button to the equipping screen. It rolls a random Staff, Gear, and all Talismans from your inventory. **Roll again** re-rolls everything; **Cancel** restores your configuration from before the first roll. No configuration needed.
+
+---
 
 ### 📍 Team Ping `[Ctrl+P]`
 
@@ -102,6 +110,22 @@ Right-click any tile during battle to place a ping marker visible to your team. 
 Because knowing the terrain is half the battle.
 
 Displays the total height of every tile as an overlay label during battle. Useful for evaluating attack and movement options at a glance. Toggle with **F3**.
+
+---
+ 
+### 🎬 Replay
+ 
+Every great duel deserves to be remembered.
+ 
+Export any finished battle to a `.chaos` file with `/export [name]` in the battle chat. Replays are listed on the login screen and can be launched with a single click.
+ 
+| Command (Battle Chat) | Effect |
+|---|---|
+| `/export [name]` | Saves the finished battle as a `.chaos` file |
+ 
+Replay files are stored in `BepInEx/config/replays/`. No configuration needed. Replay files are small (about 10 KBytes per file) and can be manually shared amongst wizards.
+ 
+> ⚠️ The `/export` command is only available after the battle has ended.
 
 ---
 
@@ -128,7 +152,7 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
    - **Mac:** use `macos_universal` — should work but untested
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMods-v1.4.1.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMods-v1.5.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
@@ -149,6 +173,8 @@ ChaosReborn\
             CRMod.HeightMap.dll
             CRMod.MapPreview.dll
             CRMod.MapSetup.dll
+            CRMod.RandomEquip.dll
+            CRMod.Replay.dll
             CRMod.Skin.dll
             CRMod.TabooDisplay.dll
             CRMod.TeamPing.dll
