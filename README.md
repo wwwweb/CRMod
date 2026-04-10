@@ -2,52 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents twelve client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents sixteen client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.5.0
-
-### 🗺️ Map Preview `[F9]`
-
-A wise wizard never steps onto a battlefield they haven't scouted.
-
-See a preview image of the current map right in the lobby before a single spell is committed. Toggle with **F9**, resize with **S/M/L** buttons.
-
----
-
-### ⚔️ Map Setup `[F10]`
-
-The art of war begins before the first creature is summoned.
-
-For **6-player lobby creators**: instantly assigns balanced teams for **3v3**, **2v2v2** or **2v4** with a single click. Appears automatically when you open a 6-player lobby. Law and Chaos, brought into balance, at least for the setup. Toggle with **F10**.
-
----
-
-### 🎨 Wizard Skins `[F4]`
-
-Let your aura speak for itself.
-
-Lets you set the displayed skin for any wizard in the game, independently for each one. The skin is only visible on your own screen; other players see your and their own skins as usual. Use **F4** to toggle the overlay, **↑/↓** to select a wizard, **←/→** to cycle through skins (Apprentice → Forgemaster → Wizard Lord → Wizard King → Demigod → God).
-
-A `*` next to a wizard's name indicates the displayed skin differs from their actual skin.
-
----
-
-### 💬 Chat Commands
-
-Every great battle deserves a chronicle. Adds commands for reporting to in-game chat.
-
-| Command | Effect |
-|---|---|
-| `/report [format]` | Outputs a match report at battle end. Visible only to you, or to all players |
-| `/reportdiscord [format]` | Same, but also sends the report to Discord (needs setup) |
-
-Reports are fully customizable: define multiple named formats in the config file, each with its own template, webhook URL, and visibility setting (`local` or `all`). Set a format to `local` to keep reports off the shared chat entirely — useful when you just want a personal log or a Discord post without spamming other players. See [Setting up own report formats and Discord connection](#️-setting-up-own-report-formats-and-discord-connection-optional) below.
-
----
+## ✨ Mods v1.6.0
 
 ### 📜 Async Creator
 
@@ -67,13 +28,46 @@ As the server does not store the configuration, all settings are reconstructed f
 
 > ⚠️ Taboos apply to deck cards only. The wizard's Mega Spell (staff ability) cannot be restricted.
 
+> `/status`, `/share`, `/help` and their sub-commands are available to all lobby participants. Write commands (`/reward`, `/taboo`) are creator only; unauthorized attempts show a local error message.
+
 ---
 
-### 🔖 Taboo Display
+### ⏳ Async Ready Status `[F5]`
+ 
+Keep track of who's had their turn.
+ 
+On the custom games screen, this mod enhances the game list by changing three columns. The lobby name is shown instead of a raw battle ID. Press **F5** to trigger a scan of each slot for fully booked lobbies. Your own ready status is shown with ✓ or ✗ in the turn column. No configuration needed.
 
-Know thy enemy's constraints.
+> ⚠️ Note: F5 works by automatically entering and exiting each lobby to gather ready information, which generates more server requests than a wizard would normally make. Please don't spam it.
 
-When you select an opponent's wizard during battle, their active taboos are shown in the top-left panel at the same spot your own taboos normally appear. Deselecting restores your own taboo display. No configuration needed. Kind of a companion mod to Async Creator taboos, but can also be used for live games.
+---
+
+### 🔧 Async Lobby Fix
+
+Fixes a bug in the base game where joining your own async custom lobby causes many UI elements (including wizard names) to be invisible. No configuration needed, just drop it in and forget about it.
+
+---
+ 
+### 🗂️ Chaos Manager
+ 
+One panel to rule them all.
+ 
+A mod manager button on the login screen opens a list of all installed CRMod mods. Enable or disable individual mods with a checkbox; the header checkbox toggles all at once. Disabled mods are moved out of `BepInEx/plugins/` on the next game launch and re-enabled when you check them again. No configuration needed.
+
+> ⚠️ `CRMod.ChaosManager.dll` must be placed in **both** `BepInEx/plugins/` and `BepInEx/patchers/` to work correctly. The zip from the Releases page handles this automatically.
+
+---
+
+### 💬 Chat Commands
+
+Every great battle deserves a chronicle. Adds commands for reporting to in-game chat.
+
+| Command | Effect |
+|---|---|
+| `/report [format]` | Outputs a match report at battle end. Visible only to you, or to all players |
+| `/reportdiscord [format]` | Same, but also sends the report to Discord (needs setup) |
+
+Reports are fully customizable: define multiple named formats in the config file, each with its own template, webhook URL, and visibility setting (`local` or `all`). Set a format to `local` to keep reports off the shared chat entirely — useful when you just want a personal log or a Discord post without spamming other players. See [Setting up own report formats and Discord connection](#️-setting-up-own-report-formats-and-discord-connection-optional) below.
 
 ---
 
@@ -84,32 +78,56 @@ A tidy spellbook is a powerful spellbook.
 Sorts your equipment configurations alphabetically — no more hunting through an unsorted list. Click the **Name**, **Staff**, or **Bodygear** column headers on the equipping screen to sort by that column (click again to reverse). The selected configuration stays highlighted after sorting. Also keeps the equipment dropdown in lobbies sorted alphabetically at all times. No configuration needed.
 
 ---
- 
-### 🎲 Random Equip
- 
-Fortune favors the bold — and the unprepared.
- 
-Adds a **Random Equip** button to the equipping screen. It rolls a random Staff, Gear, and all Talismans from your inventory. **Roll again** re-rolls everything; **Cancel** restores your configuration from before the first roll. No configuration needed.
-
----
-
-### 📍 Team Ping `[Ctrl+P]`
-
-Point your allies where the magic happens.
-
-Right-click any tile during battle to place a ping marker visible to your team. Cycle through modes with **Ctrl+P**: in team games **Off → Team → All**, in FFA **Off → All → Private**. One marker per player, automatically expires after one round. Right-click an existing marker in Off mode to dismiss it locally.
-
-> ⚠️ Only players that have the Team Ping mod installed can see the pings. The ping is transmitted via in-game chat. For other mod users, this is invisible. For players without the mod, a short `CRMod.Ping` message appears in chat.
-
-> ⚠️ Team Ping is hard to test for a single wizard, so it is declared experimental and needs testing.
-
----
 
 ### 🏔️ Height Map `[F3]`
 
 Because knowing the terrain is half the battle.
 
 Displays the total height of every tile as an overlay label during battle. Useful for evaluating attack and movement options at a glance. Toggle with **F3**.
+
+---
+ 
+### 👗 Infinite Wardrobe
+ 
+Your equipment, unlimited.
+ 
+The game limits how many equipment configurations you can store on the server. Infinite Wardrobe lifts that ceiling by saving additional configurations locally. Local configs appear in **yellow** in the configuration list; configs with missing items appear in **red**.
+ 
+A **+** button on the equipping screen lets you save the current configuration locally at any time. Click a local config to load it back to the server, delete it, or rename it. When you want to promote a local config to the server, the mod handles the upload automatically. If the server is full, it offers to move an existing server config locally to free up a slot.
+ 
+No configuration needed. Local configs are stored in `BepInEx/config/CRMod.InfiniteWardrobe.json`.
+
+---
+ 
+### 🔭 Map Cam `[Ctrl+Scroll]`
+ 
+See the bigger picture — or zoom in for the kill.
+ 
+Extends the camera zoom range beyond the game's defaults: hold **Ctrl** and scroll to zoom further in or out. Release Ctrl in the normal zoom range to snap back to standard limits; release it while zoomed beyond the normal range to stay at the current level. No configuration needed.
+
+---
+
+### 🗺️ Map Preview `[F9]`
+
+A wise wizard never steps onto a battlefield they haven't scouted.
+
+See a preview image of the current map right in the lobby before a single spell is committed. Toggle with **F9**, resize with **S/M/L** buttons.
+
+---
+
+### ⚔️ Map Setup `[F10]`
+
+The art of war begins before the first creature is summoned.
+
+For **6-player lobby creators**: instantly assigns balanced teams for **3v3**, **2v2v2** or **2v4** with a single click. Appears automatically when you open a 6-player lobby. Law and Chaos, brought into balance, at least for the setup. Toggle with **F10**.
+
+---
+ 
+### 🎲 Random Equip
+ 
+Fortune favors the bold — and the unprepared.
+ 
+Adds a **Random Equip** button to the equipping screen. It rolls a random Staff, Gear, and all Talismans from your inventory. **Roll again** re-rolls everything; **Cancel** restores your configuration from before the first roll. No configuration needed.
 
 ---
  
@@ -129,9 +147,36 @@ Replay files are stored in `BepInEx/config/replays/`. No configuration needed. R
 
 ---
 
-### 🔧 Async Lobby Fix
+### 🔖 Taboo Display
 
-Fixes a bug in the base game where joining your own async custom lobby causes many UI elements (including wizard names) to be invisible. No configuration needed, just drop it in and forget about it.
+Know thy enemy's constraints.
+
+When you select an opponent's wizard during battle, their active taboos are shown in the top-left panel at the same spot your own taboos normally appear. Deselecting restores your own taboo display. No configuration needed. Kind of a companion mod to Async Creator taboos, but can also be used for live games.
+
+---
+
+### 📍 Team Ping `[Ctrl+P]`
+
+Point your allies where the magic happens.
+
+Right-click any tile during battle to place a ping marker visible to your team. Cycle through modes with **Ctrl+P**: in team games **Off → Team → All**, in FFA **Off → All → Private**. One marker per player, automatically expires after one round. Right-click an existing marker in Off mode to dismiss it locally.
+
+> ⚠️ Only players that have the Team Ping mod installed can see the pings. The ping is transmitted via in-game chat. For other mod users, this is invisible. For players without the mod, a short `CRMod.Ping` message appears in chat.
+
+> ⚠️ Team Ping is hard to test for a single wizard, so it is declared experimental and needs testing.
+
+---
+
+### 🎨 Wizard Skins `[F4]`
+
+Let your aura speak for itself.
+
+Lets you set the displayed skin for any wizard in the game, independently for each one. The skin is only visible on your own screen; other players see your and their own skins as usual. Use **F4** to toggle the overlay, **↑/↓** to select a wizard, **←/→** to cycle through skins (Apprentice → Forgemaster → Wizard Lord → Wizard King → Demigod → God).
+
+A `*` next to a wizard's name indicates the displayed skin differs from their actual skin.
+
+🎄 Toggle **Winter Mode** with **W** in the F4 overlay to place festive hats on wizards and select creatures.
+> Winter Mode is not yet complete. More seasonal elements may be added in future updates.
 
 ---
 
@@ -152,7 +197,7 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
    - **Mac:** use `macos_universal` — should work but untested
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMods-v1.5.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMods-v1.6.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
@@ -165,12 +210,18 @@ ChaosReborn\
     ChaosRebornWin64.exe
     winhttp.dll                        ← added by BepInEx
     BepInEx\
+        patchers\                      ← from here on added by CRMod
+            CRMod.ChaosManager.dll
         plugins\
             CRMod.AsyncCreator.dll
             CRMod.AsyncLobbyFix.dll
+            CRMod.AsyncReadyStatus.dll
+            CRMod.ChaosManager.dll
             CRMod.ChatCommand.dll
             CRMod.EquipSort.dll
             CRMod.HeightMap.dll
+            CRMod.InfiniteWardrobe.dll
+            CRMod.MapCam.dll
             CRMod.MapPreview.dll
             CRMod.MapSetup.dll
             CRMod.RandomEquip.dll
