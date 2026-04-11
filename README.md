@@ -93,7 +93,7 @@ Your equipment, unlimited.
  
 The game limits how many equipment configurations you can store on the server. Infinite Wardrobe lifts that ceiling by saving additional configurations locally. Local configs appear in **yellow** in the configuration list; configs with missing items appear in **red**.
  
-A **+** button on the equipping screen lets you save the current configuration locally at any time. Click a local config to load it back to the server, delete it, or rename it. When you want to promote a local config to the server, the mod handles the upload automatically. If the server is full, it offers to move an existing server config locally to free up a slot.
+A **+** button on the equipping screen saves a local copy of the current configuration. Click a local config to load it back to the server, delete it, or rename it. When you want to promote a local config to the server, the mod handles the upload automatically. If the server is full, it offers to save an existing server config locally so its slot can be reused for the upload.
  
 No configuration needed. Local configs are stored in `BepInEx/config/CRMod.InfiniteWardrobe.json`.
 
