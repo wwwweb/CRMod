@@ -28,7 +28,13 @@ As the server does not store the configuration, all settings are reconstructed f
 
 > ⚠️ Taboos apply to deck cards only. The wizard's Mega Spell (staff ability) cannot be restricted.
 
-> `/status`, `/share`, `/help` and their sub-commands are available to all lobby participants. Write commands (`/reward`, `/taboo`) are creator only; unauthorized attempts show a local error message.
+> `/status`, `/share`, `/help` are available to all lobby participants. Configuration commands (`/reward`, `/taboo`) are creator only.
+
+---
+
+### 🔧 Async Lobby Fix
+
+Fixes a bug in the base game where joining your own async custom lobby causes many UI elements (including wizard names) to be invisible. No configuration needed, just drop it in and forget about it.
 
 ---
 
@@ -38,13 +44,7 @@ Keep track of who's had their turn.
  
 On the custom games screen, this mod enhances the game list by changing three columns. The lobby name is shown instead of a raw battle ID. Press **F5** to trigger a scan of each slot for fully booked lobbies. Your own ready status is shown with ✓ or ✗ in the turn column. No configuration needed.
 
-> ⚠️ Note: F5 works by automatically entering and exiting each lobby to gather ready information, which generates more server requests than a wizard would normally make. Please don't spam it.
-
----
-
-### 🔧 Async Lobby Fix
-
-Fixes a bug in the base game where joining your own async custom lobby causes many UI elements (including wizard names) to be invisible. No configuration needed, just drop it in and forget about it.
+> ⚠️ Note: F5 works by automatically entering and exiting each lobby to gather ready information. This generates no more server requests than a wizard normally generates by entering each lobby, but in quicker succession. Please don't spam it.
 
 ---
  
@@ -175,7 +175,7 @@ Lets you set the displayed skin for any wizard in the game, independently for ea
 
 A `*` next to a wizard's name indicates the displayed skin differs from their actual skin.
 
-🎄 Toggle **Winter Mode** with **W** in the F4 overlay to place festive hats on wizards and select creatures.
+🎄 Toggle **Winter Mode** with **W** in the F4 overlay to place festive hats on wizards and selected creatures.
 > Winter Mode is not yet complete. More seasonal elements may be added in future updates.
 
 ---
