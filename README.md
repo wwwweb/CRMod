@@ -40,7 +40,7 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
 
 ### ⏳ Async Ready Status `[F5]`
  
-Keep track of who's had their turn.
+See at a glance how many are ready to rumble.
  
 On the custom games screen, this mod enhances the game list by changing three columns. The lobby name is shown instead of a raw battle ID. Press **F5** to trigger a scan of each slot for fully booked lobbies. Your own ready status is shown with ✓ or ✗ in the turn column. No configuration needed.
 
