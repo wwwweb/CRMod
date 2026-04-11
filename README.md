@@ -42,7 +42,7 @@ Fixes a bug in the base game where joining your own async custom lobby causes ma
  
 See at a glance how many are ready to rumble.
  
-On the custom games screen, this mod enhances the game list by changing three columns. The lobby name is shown instead of a raw battle ID. Press **F5** to trigger a scan of each slot for fully booked lobbies. Your own ready status is shown with ✓ or ✗ in the turn column. No configuration needed.
+On the custom games screen, this mod enhances the game list by changing three columns. The lobby name is shown instead of a raw battle ID. Press **F5** to scan all fully booked lobbies for their ready status. Your own ready status is shown with ✓ or ✗ in the turn column. No configuration needed.
 
 > ⚠️ Note: F5 works by automatically entering and exiting each lobby to gather ready information. This generates no more server requests than a wizard normally generates by entering each lobby, but in quicker succession. Please don't spam it.
 
@@ -67,7 +67,7 @@ Every great battle deserves a chronicle. Adds commands for reporting to in-game 
 | `/report [format]` | Outputs a match report at battle end. Visible only to you, or to all players |
 | `/reportdiscord [format]` | Same, but also sends the report to Discord (needs setup) |
 
-Reports are fully customizable: define multiple named formats in the config file, each with its own template, webhook URL, and visibility setting (`local` or `all`). Set a format to `local` to keep reports off the shared chat entirely — useful when you just want a personal log or a Discord post without spamming other players. See [Setting up own report formats and Discord connection](#️-setting-up-own-report-formats-and-discord-connection-optional) below.
+Works out of the box. Optionally, reports are fully customizable: define multiple named formats in the config file, each with its own template, webhook URL, and visibility setting (`local` or `all`). Set a format to `local` to keep reports off the shared chat entirely — useful when you just want a personal log or a Discord post without spamming other players. See [Setting up own report formats and Discord connection](#️-setting-up-own-report-formats-and-discord-connection-optional) below.
 
 ---
 
