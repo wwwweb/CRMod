@@ -178,6 +178,8 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 🎄 Toggle **Winter Mode** with **W** in the F4 overlay to place festive hats on wizards and selected creatures.
 > Winter Mode is not yet complete. More seasonal elements may be added in future updates.
 
+🐉 Toggle **Dragon Skins** with **D** in the F4 overlay to summon Emerald and Ruby Dragons! The secret to their appearance, though, is yours to uncover through arcane studies.
+
 ---
 
 ## ⚙️ Requirements
