@@ -259,7 +259,7 @@ The chat command mod supports multiple configurable report formats. Reports can 
 
 ## 🗑️ Uninstall
 
-To remove all mods, just remove the `BepInEx` folder and `winhttp.dll` from your Chaos Reborn folder. To remove single mods, remove the according dll from `BepInEx/plugins`.
+To enable or disable individual mods without uninstalling, use the Chaos Manager on the login screen. To remove all mods entirely, remove the `BepInEx` folder and `winhttp.dll` from your Chaos Reborn folder. To remove a single mod permanently, delete the according dll from `BepInEx/plugins`.
 
 ---
 
