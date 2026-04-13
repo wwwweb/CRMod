@@ -34,7 +34,7 @@ As the server does not store the configuration, all settings are reconstructed f
 
 ### 🔧 Async Lobby Fix
 
-Fixes a bug in the base game where joining your own async custom lobby causes many UI elements (including wizard names) to be invisible. No configuration needed, just drop it in and forget about it.
+Fixes a bug in the base game where UI elements (including wizard names) can become invisible in async custom lobbies. No configuration needed, just drop it in and forget about it.
 
 ---
 
