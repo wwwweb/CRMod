@@ -42,7 +42,7 @@ Fixes a bug in the base game where UI elements (including wizard names) can beco
  
 See at a glance how many are ready to rumble.
  
-On the custom games screen, this mod enhances the game list by changing three columns. The lobby name is shown instead of a raw battle ID. Press **F5** to scan all fully booked lobbies for their ready status. Your own ready status is shown with ✓ or ✗ in the turn column. No configuration needed.
+On the custom games screen, this mod enhances the game list by changing three columns. The lobby name is shown instead of a raw battle ID. Press **F5** to scan all fully booked lobbies for their ready status. Your own ready status is shown with ✓ or ✗ in the turn column.
 
 > ⚠️ Note: F5 works by automatically entering and exiting each lobby to gather ready information. This generates no more server requests than a wizard normally generates by entering each lobby, but in quicker succession. Please don't spam it.
 
@@ -52,7 +52,7 @@ On the custom games screen, this mod enhances the game list by changing three co
  
 One panel to rule them all.
  
-A mod manager button on the login screen opens a list of all installed CRMod mods. Enable or disable individual mods with a checkbox; the header checkbox toggles all at once. Disabled mods are moved out of `BepInEx/plugins/` on the next game launch and re-enabled when you check them again. No configuration needed.
+A mod manager button on the login screen opens a list of all installed CRMod mods. Enable or disable individual mods with a checkbox; the header checkbox toggles all at once. Disabled mods are moved out of `BepInEx/plugins/` on the next game launch and re-enabled when you check them again.
 
 > ⚠️ `CRMod.ChaosManager.dll` must be placed in **both** `BepInEx/plugins/` and `BepInEx/patchers/` to work correctly. The zip from the Releases page handles this automatically.
 
@@ -75,7 +75,7 @@ Works out of the box. Optionally, reports are fully customizable: define multipl
 
 A tidy spellbook is a powerful spellbook.
 
-Sorts your equipment configurations alphabetically — no more hunting through an unsorted list. Click the **Name**, **Staff**, or **Bodygear** column headers on the equipping screen to sort by that column (click again to reverse). The selected configuration stays highlighted after sorting. Also keeps the equipment dropdown in lobbies sorted alphabetically at all times. No configuration needed.
+Sorts your equipment configurations alphabetically — no more hunting through an unsorted list. Click the **Name**, **Staff**, or **Bodygear** column headers on the equipping screen to sort by that column (click again to reverse). The selected configuration stays highlighted after sorting. Also keeps the equipment dropdown in lobbies sorted alphabetically at all times.
 
 ---
 
@@ -95,7 +95,7 @@ The game limits how many equipment configurations you can store on the server. I
  
 A **+** button on the equipping screen saves a local copy of the current configuration. Click a local config to load it back to the server, delete it, or rename it. When you want to promote a local config to the server, the mod handles the upload automatically. If the server is full, it offers to save an existing server config locally so its slot can be reused for the upload.
  
-No configuration needed. Local configs are stored in `BepInEx/config/CRMod.InfiniteWardrobe.json`.
+Local configs are stored in `BepInEx/config/CRMod.InfiniteWardrobe.json`.
 
 ---
  
@@ -103,7 +103,7 @@ No configuration needed. Local configs are stored in `BepInEx/config/CRMod.Infin
  
 See the bigger picture — or zoom in for the kill.
  
-Extends the camera zoom range beyond the game's defaults: hold **Ctrl** and scroll to zoom further in or out. Release Ctrl in the normal zoom range to snap back to standard limits; release it while zoomed beyond the normal range to stay at the current level. No configuration needed.
+Extends the camera zoom range beyond the game's defaults: hold **Ctrl** and scroll to zoom further in or out. Release Ctrl in the normal zoom range to snap back to standard limits; release it while zoomed beyond the normal range to stay at the current level.
 
 ---
 
@@ -127,7 +127,7 @@ For **6-player lobby creators**: instantly assigns balanced teams for **3v3**, *
  
 Fortune favors the bold — and the unprepared.
  
-Adds a **Random Equip** button to the equipping screen. It rolls a random Staff, Gear, and all Talismans from your inventory. **Roll again** re-rolls everything; **Cancel** restores your configuration from before the first roll. No configuration needed.
+Adds a **Random Equip** button to the equipping screen. It rolls a random Staff, Gear, and all Talismans from your inventory. **Roll again** re-rolls everything; **Cancel** restores your configuration from before the first roll.
 
 ---
  
@@ -141,7 +141,7 @@ Export any finished battle to a `.chaos` file with `/export [name]` in the battl
 |---|---|
 | `/export [name]` | Saves the finished battle as a `.chaos` file |
  
-Replay files are stored in `BepInEx/config/replays/`. No configuration needed. Replay files are small (about 10 KBytes per file) and can be manually shared amongst wizards.
+Replay files are stored in `BepInEx/config/replays/`. Replay files are small (about 10 KBytes per file) and can be manually shared amongst wizards.
  
 > ⚠️ The `/export` command is only available after the battle has ended.
 
@@ -151,7 +151,7 @@ Replay files are stored in `BepInEx/config/replays/`. No configuration needed. R
 
 Know thy enemy's constraints.
 
-When you select an opponent's wizard during battle, their active taboos are shown in the top-left panel at the same spot your own taboos normally appear. Deselecting restores your own taboo display. No configuration needed. Kind of a companion mod to Async Creator taboos, but can also be used for live games.
+When you select an opponent's wizard during battle, their active taboos are shown in the top-left panel at the same spot your own taboos normally appear. Deselecting restores your own taboo display. Kind of a companion mod to Async Creator taboos, but can also be used for live games.
 
 ---
 
