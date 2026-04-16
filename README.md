@@ -196,7 +196,7 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** and extract it into your Chaos Reborn folder (the folder where Steam or another manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`):
    - **Windows (Steam, 64 bit):** use `win_x64` (the zip under Assets)
    - **Windows (GOG, 32 bit):** use `win_x86`
-   - **Mac:** use `macos_universal` — should work but untested
+   - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
 2. Download **`CRMod-v1.6.2.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
@@ -239,6 +239,14 @@ ChaosReborn\
 ```
 
 > Not sure if BepInEx loaded? Check `BepInEx\LogOutput.log`. The mod names should appear there.
+
+### Linux / Mac
+
+Linux and macOS are supported by BepInEx, but for step 1 of the installation instructions above, setup requires a few extra steps depending on how you run the game. See the BepInEx documentation:
+- https://docs.bepinex.dev/articles/advanced/proton_wine.html
+- https://docs.bepinex.dev/articles/advanced/steam_interop.html
+
+Untested on Linux/Mac — feedback welcome.
 
 ---
 
