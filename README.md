@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents sixteen client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents seventeen client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.6.2
+## ✨ Mods v1.7.0
 
 ### 📜 Async Creator
 
@@ -45,6 +45,25 @@ See at a glance how many are ready to rumble.
 On the custom games screen, this mod enhances the game list by changing three columns. The lobby name is shown instead of a raw battle ID. Press **F5** to scan all fully booked lobbies for their ready status. Your own ready status is shown with ✓ or ✗ in the turn column.
 
 > ⚠️ Note: F5 works by automatically entering and exiting each lobby to gather ready information. This generates no more server requests than a wizard normally generates by entering each lobby, but in quicker succession. Please don't spam it.
+
+---
+
+### 🎭 Battle Emotes
+ 
+Say it with pixels.
+ 
+Trigger pixelart animations over the battle field through lobby chat. Type `!gg`, `!wp`, `!glhf`, `!mb` and many more to drop an animated emote; combine several in a single message (`!gg !wp`) to play them together. Use `!help` in battle chat to see the full list of available emotes.
+ 
+| Command (Battle Chat) | Effect |
+|---|---|
+| `!<emote name>` | Play the emote animation |
+| `!moon <text>` | CR moon with a text overlay |
+| `!replay` | Replay this session's emotes locally |
+| `!help` | Show the full list of available emotes |
+ 
+If you join an async battle after opponents have already played emotes since your last turn, they are replayed in sequence once you enter.
+ 
+> ⚠️ Only players with the Battle Emotes mod installed see the animations. For everyone else, the command text (`!gg`) appears in chat as a normal message.
 
 ---
  
@@ -199,7 +218,7 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.6.2.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.7.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
@@ -242,11 +261,9 @@ ChaosReborn\
 
 ### Linux / Mac
 
-Linux and macOS are supported by BepInEx, but for step 1 of the installation instructions above, setup requires a few extra steps depending on how you run the game. See the BepInEx documentation:
-- https://docs.bepinex.dev/articles/advanced/proton_wine.html
-- https://docs.bepinex.dev/articles/advanced/steam_interop.html
+Linux and macOS are supported by BepInEx, but step 1 of the installation above needs some extra steps. Chaos Reborn is usually run as a Windows game through a compatibility layer (Proton/Crossover/...), so the Windows version of BepInEx is used, and the game has to be launched with an additional command line parameter. The exact steps depend on your setup and are easy to find via a web search. I have not tested this myself, so please look up the exact parameter for your platform.
 
-Untested on Linux/Mac — feedback welcome.
+Untested on Linux/Mac - feedback welcome.
 
 ---
 
