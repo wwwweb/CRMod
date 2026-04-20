@@ -14,7 +14,7 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 Ever wanted to start with a solely disbelieve deck in async?
 
-In live lobbies, Reward and Taboo controls are available directly in the UI. In **async lobbies**, these controls are missing entirely. This mod fills that gap. Taboos and rewards can be set and viewed by using an enhanced UI that is enabled by pressing **F8** on the async games lobby screen. Alternatively, chat commands can be used to apply setting without using the enhanced UI.
+In live lobbies, Reward and Taboo controls are available directly in the UI. In **async lobbies**, these controls are missing entirely. This mod fills that gap. Taboos and rewards can be set and viewed by using an enhanced UI that is enabled by pressing **F8** on the async games lobby screen. Alternatively, chat commands can be used for configuration without using the enhanced UI.
 
 As the server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it. If you use the UI for setting taboos, do not forget to post the setting by `/share`, so non-mod users know about them.
 
