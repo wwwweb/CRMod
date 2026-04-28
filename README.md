@@ -215,7 +215,7 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 
 ## ⌨️ Keyboard Reference
 
-A quick overview of all mod key bindings is available as `BepInEx/CRModKeyboardReference.html`. Open it in any browser.
+A quick overview of all mod key bindings is available [here](https://wwwweb.github.io/CRMod/).
 
 ---
 
@@ -255,6 +255,7 @@ ChaosReborn\
             CRMod.AsyncCreator.dll
             CRMod.AsyncLobbyFix.dll
             CRMod.AsyncReadyStatus.dll
+            CRMod.BattleEmotes.dll
             CRMod.ChaosManager.dll
             CRMod.ChatCommand.dll
             CRMod.EquipSort.dll
@@ -265,6 +266,7 @@ ChaosReborn\
             CRMod.MapSetup.dll
             CRMod.RandomEquip.dll
             CRMod.Replay.dll
+            CRMod.SetupWizard.dll
             CRMod.Skin.dll
             CRMod.TabooDisplay.dll
             CRMod.TeamPing.dll
@@ -273,7 +275,6 @@ ChaosReborn\
                 2_Backbone.jpg
                 ... (all map images)
                 6_Triple_Double.jpg
-        CRModKeyboardReference.html            
 ```
 
 > Not sure if BepInEx loaded? Check `BepInEx\LogOutput.log`. The mod names should appear there.
