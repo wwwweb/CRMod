@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LobbySetup Showcase</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Courier New',monospace;font-size:13px;color:#ddd;background:#111;padding:16px}
+.outer{display:flex;gap:16px;align-items:flex-start}
+.col-ui{flex:0 0 610px;display:flex;flex-direction:column;gap:6px}
+.col-file{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.col-title{font-size:10px;color:#555;text-transform:uppercase;letter-spacing:.08em;padding-bottom:3px;border-bottom:1px solid #222}
+.app{display:flex;flex-direction:column;border:1px solid #555;background:#1e1e1e;color:#ddd}
+.app.expanded{height:640px}
+.app.collapsed{height:32px;overflow:hidden}
+.toolbar{display:flex;align-items:center;gap:4px;padding:5px 8px;border-bottom:1px solid #444;background:#2a2a2a;flex-shrink:0;height:32px}
+.tb-label{font-size:11px;color:#666;white-space:nowrap}
+.tb-title{font-size:11px;color:#444;margin-left:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-sep{width:1px;height:14px;background:#444;margin:0 3px;flex-shrink:0}
+.tb-btn{padding:2px 8px;border:1px solid #555;background:#333;color:#ccc;cursor:pointer;font-size:11px;font-family:'Courier New',monospace;white-space:nowrap}
+.tb-btn:hover{background:#3a3a3a;border-color:#777}
+.tb-right{margin-left:auto;display:flex;gap:4px;align-items:center}
+.tb-wm{padding:1px 7px;border:1px solid #555;background:#333;color:#aaa;cursor:pointer;font-size:11px;font-family:'Courier New',monospace}
+.tb-wm:hover{background:#3a3a3a;border-color:#888}
+.filterbar{display:flex;align-items:center;gap:3px;padding:4px 8px;border-bottom:1px solid #444;background:#2a2a2a;flex-shrink:0;flex-wrap:wrap;row-gap:3px}
+.fc{padding:1px 7px;border:1px solid transparent;cursor:pointer;font-size:11px;font-family:'Courier New',monospace;white-space:nowrap;opacity:.3;background:#333;color:#888}
+.fc.on{opacity:1}
+.fc-idle.on{background:#333;color:#bbb;border-color:#888}
+.fc-todo.on{background:#3d2e00;color:#f0a830;border-color:#a06000}
+.fc-waiting.on{background:#1a2e1a;color:#7bc47b;border-color:#3a7a3a}
+.fc-ready.on{background:#003030;color:#40d0d0;border-color:#208080}
+.fc-started.on{background:#222;color:#666;border-color:#444}
+.fc-ignored.on{background:#1e1e1e;color:#555;border-color:#333}
+.fc-archived.on{background:#1e1e1e;color:#555;border-color:#333}
+.fc-mygames{padding:1px 7px;border:1px solid #444;cursor:pointer;font-size:11px;font-family:'Courier New',monospace;white-space:nowrap;background:#1a1a2a;color:#666}
+.fc-mygames.on{background:#1a1a3a;color:#8888dd;border-color:#4444aa}
+.fc-static{padding:1px 7px;border:1px solid transparent;font-size:11px;font-family:'Courier New',monospace;white-space:nowrap;pointer-events:none}
+.fc-errors{background:#3d0000;color:#f07070;border-color:#a03030}
+.fc-conflicts{background:#3d2e00;color:#f0a830;border-color:#a06000}
+.search-input{margin-left:auto;padding:1px 6px;border:1px solid #555;background:#111;color:#ccc;font-size:11px;font-family:'Courier New',monospace;outline:none;width:100px}
+.search-input:focus{border-color:#888}
+.main{display:flex;flex:1;overflow:hidden}
+.list-wrap{display:flex;width:220px;border-right:1px solid #444;flex-shrink:0;overflow:hidden}
+.list-panel{flex:1;overflow-y:auto;background:#1e1e1e}
+.list-panel::-webkit-scrollbar{width:6px;background:#1a1a1a}
+.list-panel::-webkit-scrollbar-thumb{background:#444}
+.sidebar{display:flex;flex-direction:column;align-items:center;gap:3px;padding:5px 3px;border-left:1px solid #444;background:#252525;width:26px;flex-shrink:0}
+.nav-btn{width:22px;height:22px;border:1px solid #555;background:#333;color:#aaa;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:'Courier New',monospace}
+.nav-btn:hover{background:#3a3a3a;border-color:#777}
+.match-item{padding:5px 8px;border-bottom:1px solid #2a2a2a;cursor:pointer;border-left:3px solid transparent}
+.match-item:hover{background:#272727}
+.match-item.selected{background:#2a2a2a;border-left-color:#888}
+.match-item.is-ignored{opacity:.5}
+.match-item.is-archived{opacity:.4}
+.match-row1{display:flex;align-items:center;gap:4px}
+.match-id{font-size:11px;font-weight:700;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#ddd}
+.match-tokens{font-size:10px;color:#666;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.conflict-marker{font-size:10px;color:#f0a830;flex-shrink:0}
+.badge{font-size:10px;padding:1px 5px;font-family:'Courier New',monospace;flex-shrink:0;border:1px solid transparent}
+.badge-idle{background:#333;color:#888;border-color:#555}
+.badge-todo{background:#3d2e00;color:#f0a830;border-color:#a06000}
+.badge-waiting{background:#1a2e1a;color:#7bc47b;border-color:#3a7a3a}
+.badge-ready{background:#003030;color:#40d0d0;border-color:#208080}
+.badge-started{background:#222;color:#555;border-color:#333}
+.badge-ignored{background:#1e1e1e;color:#444;border-color:#2a2a2a}
+.badge-archived{background:#1e1e1e;color:#444;border-color:#2a2a2a}
+.badge-error{background:#3d0000;color:#f07070;border-color:#a03030}
+.detail-panel{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.detail-header{padding:8px 12px;border-bottom:1px solid #444;flex-shrink:0;display:flex;align-items:flex-start;gap:8px;background:#222}
+.detail-header-text{flex:1;min-width:0}
+.detail-title{font-size:13px;font-weight:700;color:#eee}
+.detail-tokens{font-size:11px;color:#999;margin-top:2px}
+.detail-status{font-size:11px;margin-top:3px;color:#666}
+.sync-banner{padding:4px 12px;font-size:11px;background:#2d2200;color:#f0a830;border-bottom:1px solid #6a4400;flex-shrink:0}
+.sync-ok-banner{padding:4px 12px;font-size:11px;background:#0d1f0d;color:#7bc47b;border-bottom:1px solid #2a5a2a;flex-shrink:0}
+.auto-banner{padding:4px 12px;font-size:11px;background:#3d0000;color:#f07070;border-bottom:1px solid #a03030;flex-shrink:0}
+.detail-body{flex:1;padding:10px 12px;overflow-y:auto;font-size:12px;color:#aaa;line-height:1.6;background:#1e1e1e}
+.detail-body::-webkit-scrollbar{width:6px;background:#1a1a1a}
+.detail-body::-webkit-scrollbar-thumb{background:#444}
+.detail-section{margin-bottom:12px}
+.detail-section-title{font-size:10px;color:#666;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;border-bottom:1px solid #333;padding-bottom:2px}
+.slot-table{width:100%;border-collapse:collapse}
+.slot-table th{font-size:10px;color:#666;font-weight:400;text-align:left;padding:0 10px 3px 0}
+.slot-table th:first-child{padding-left:0}
+.slot-table td{padding:2px 10px 2px 0;font-size:11px;vertical-align:middle;border-bottom:1px solid #2a2a2a}
+.slot-table td:first-child{padding-left:0;white-space:nowrap}
+.slot-table tr:last-child td{border-bottom:none}
+.slot-closed{color:#444}
+.slot-open{color:#666}
+.slot-invited{color:#c8a040}
+.slot-accepted{color:#bbb}
+.slot-ready-name{color:#7bc47b}
+.ready-yes{color:#7bc47b;font-weight:700}
+.ready-no{color:#555}
+.team-col{color:#888}
+.warning{color:#f0a830;font-size:11px;margin-top:2px}
+.error-msg{color:#f07070;font-size:11px;margin-top:2px}
+.conflict-msg{color:#f0a830;font-size:11px;margin-top:2px}
+.detail-footer{border-top:1px solid #444;padding:6px 10px;display:flex;gap:5px;flex-shrink:0;align-items:center;background:#222;flex-wrap:wrap}
+.act-btn{padding:3px 10px;border:1px solid #555;background:#333;color:#ccc;cursor:pointer;font-size:11px;font-family:'Courier New',monospace;white-space:nowrap}
+.act-btn:hover{background:#3a3a3a;border-color:#888}
+.act-btn.primary{background:#1a2d3d;border-color:#3a7aaa;color:#7ab8dd}
+.act-btn.primary:hover{background:#1e3548}
+.act-btn.start{background:#003020;border-color:#208060;color:#40d0a0}
+.act-btn.start:hover{background:#004030}
+.act-btn.danger{background:#2d1a1a;border-color:#aa4444;color:#dd7a7a}
+.act-btn.danger:hover{background:#361e1e}
+.act-btn.muted{color:#777;border-color:#444}
+.act-btn:disabled{opacity:.3;cursor:not-allowed;pointer-events:none}
+.footer-right{margin-left:auto}
+.closed-overlay{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;color:#555;font-size:12px;gap:8px;background:#1a1a1a}
+.file-panel{border:1px solid #333;background:#161616;overflow-y:auto;flex:1;min-height:640px}
+.file-panel::-webkit-scrollbar{width:6px;background:#111}
+.file-panel::-webkit-scrollbar-thumb{background:#2a2a2a}
+.file-content{padding:10px 12px;font-size:11px;line-height:1.8;color:#555;white-space:pre-wrap}
+.file-content .cm{color:#2a2a2a}
+.file-content .dk{color:#7ab8dd}
+.file-content .mb{color:#bbb}
+.file-content .s-todo{color:#f0a830}
+.file-content .s-waiting{color:#7bc47b}
+.file-content .s-ready{color:#40d0d0}
+.file-content .s-started{color:#555}
+.file-content .s-ignored{color:#444}
+.file-content .s-archived{color:#444}
+.file-content .s-error{color:#f07070}
+.hl{background:#252515;display:block;margin:0 -12px;padding:0 12px}
+</style>
+</head>
+<body>
+<div class="outer">
+  <div class="col-ui">
+    <div class="col-title">Overlay</div>
+    <div class="app expanded" id="app">
+      <div class="toolbar">
+        <span class="tb-label" title="LobbySetup Mod — press F6 to toggle">LobbySetup</span>
+        <span class="tb-title" title="BepInEx/config/lobbysetup/level_up.lobbysetup">level_up.lobbysetup</span>
+        <div class="tb-sep"></div>
+        <button class="tb-btn" onclick="jumpTo('idle')" title="Jump to next idle match">↓ Idle</button>
+        <button class="tb-btn" onclick="jumpTo('setup')" title="Jump to next todo / waiting / ready match">↓ Setup</button>
+        <div class="tb-right">
+          <button class="tb-btn" onclick="syncAll()" title="Sync ready state for all waiting/ready matches">↻ Sync all</button>
+          <div class="tb-sep"></div>
+          <button class="tb-wm" onclick="toggleCollapse()" id="btn-collapse" title="Collapse window">_</button>
+          <button class="tb-wm" onclick="closeOverlay()" title="Close overlay and return to file selection">X</button>
+        </div>
+      </div>
+      <div id="main-content">
+        <div class="filterbar" id="filterbar"></div>
+        <div class="main">
+          <div class="list-wrap">
+            <div class="list-panel" id="list"></div>
+            <div class="sidebar">
+              <button class="nav-btn" onclick="navigate(-1)" title="Select previous match">▲</button>
+              <button class="nav-btn" onclick="navigate(1)" title="Select next match">▼</button>
+            </div>
+          </div>
+          <div class="detail-panel">
+            <div class="detail-header">
+              <div class="detail-header-text">
+                <div class="detail-title" id="d-title">—</div>
+                <div class="detail-tokens" id="d-tokens"></div>
+                <div class="detail-status" id="d-statusline"></div>
+              </div>
+              <div id="d-badge"></div>
+            </div>
+            <div id="d-banner"></div>
+            <div class="detail-body" id="d-body"></div>
+            <div class="detail-footer" id="d-footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-file">
+    <div class="col-title">level_up.lobbysetup</div>
+    <div class="file-panel">
+      <div class="file-content" id="file-content"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const MY_WIZARD='Blubber';
+const teamRosters={
+  'Day of the Lords':['Clef','Mazy'],
+  'THE ENDLESS':['Aka','Blubber'],
+  'Eric&Nadine':['Incarnadine','Roderic'],
+  'Strange Brew':['Pancetta','Mosty'],
+  'Super Ultra Mega Heroes':['Bos5k','bejebus'],
+  'Thunder Head':['WanderingCloud','Jingo'],
+};
+
+// P1-03: Pancetta vs Aka vs Roderic — Roderic is unknown wizard, slot stays Open
+// P1-05: Blubber vs Bos5k — only 2 tokens for ABC pattern (needs 3) → Error
+// P1-06: ignored example
+// P2-05: archived example
+const matches=[
+  {id:'Lvl-Up-P1-01',tokens:'Aka vs Jingo vs Blubber',ffa:true,
+   status:'started',synced:true,conflict:false,inCF:false,
+   slots:[{status:'Aka',team:'A',ready:true},{status:'Jingo',team:'B',ready:true},{status:'Blubber',team:'C',ready:true}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Random Map'},
+   warnings:[],errors:[]},
+  {id:'Lvl-Up-P1-02',tokens:'Roderic vs Bos5k vs Mosty',ffa:true,
+   status:'ready',synced:true,conflict:false,inCF:false,
+   slots:[{status:'Roderic',team:'A',ready:true},{status:'Bos5k',team:'B',ready:true},{status:'Mosty',team:'C',ready:true}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Random Map'},
+   warnings:[],errors:[]},
+  {id:'Lvl-Up-P1-03',tokens:'Pancetta vs Aka vs Roderic',ffa:true,
+   status:'todo',synced:false,conflict:true,inCF:false,
+   slots:[{status:'Pancetta',team:'A',ready:false},{status:'Aka',team:'B',ready:false},{status:'Open',team:'C',ready:false}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Random Map'},
+   warnings:['Unknown Wizard: Roderic — invite manually'],errors:[]},
+  {id:'Lvl-Up-P1-04',tokens:'Jingo vs Bos5k vs Blubber',ffa:true,
+   status:'todo',synced:false,conflict:false,inCF:false,
+   slots:[{status:'Jingo',team:'A',ready:false},{status:'Open',team:'B',ready:false},{status:'Open',team:'C',ready:false}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Random Map'},
+   warnings:[],errors:[]},
+  {id:'Lvl-Up-P1-05',tokens:'Blubber vs Bos5k',ffa:true,
+   status:'idle',synced:false,conflict:false,inCF:false,
+   slots:[{status:'Closed',team:'A',ready:false},{status:'Closed',team:'B',ready:false}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Random Map'},
+   warnings:[],errors:['Token count (2) does not match pattern ABC (needs 3)']},
+  {id:'Lvl-Up-P1-06',tokens:'Aka vs Mosty vs Jingo',ffa:true,
+   status:'ignored',synced:false,conflict:false,inCF:false,
+   slots:[{status:'Closed',team:'A',ready:false},{status:'Closed',team:'B',ready:false},{status:'Closed',team:'C',ready:false}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Random Map'},
+   warnings:[],errors:[]},
+  {id:'Lvl-Up-P2-01',tokens:'Thunder Head vs Eric&Nadine',ffa:false,teamA:'Thunder Head',
+   status:'started',synced:true,conflict:false,inCF:false,
+   slots:[{status:'WanderingCloud',team:'A',ready:true},{status:'Incarnadine',team:'B',ready:true},{status:'Jingo',team:'A',ready:true},{status:'Roderic',team:'B',ready:true}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Clover Hills, Dust in the Wind, Elfic Pass, Stone Wood and Mud, Walk in the Park, The Cogwheel'},
+   warnings:[],errors:[]},
+  {id:'Lvl-Up-P2-02',tokens:'THE ENDLESS vs Strange Brew',ffa:false,teamA:'THE ENDLESS',
+   status:'ready',synced:true,conflict:false,inCF:false,
+   slots:[{status:'Aka',team:'A',ready:true},{status:'Pancetta',team:'B',ready:true},{status:'Blubber',team:'A',ready:true},{status:'Mosty',team:'B',ready:true}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Clover Hills, Dust in the Wind, Elfic Pass, Stone Wood and Mud, Walk in the Park, The Cogwheel'},
+   warnings:[],errors:[]},
+  {id:'Lvl-Up-P2-03',tokens:'Day of the Lords vs Super Ultra Mega Heroes',ffa:false,teamA:'Day of the Lords',
+   status:'waiting',synced:false,conflict:false,inCF:false,
+   slots:[{status:'Clef',team:'A',ready:false},{status:'Bos5k',team:'B',ready:false},{status:'Mazy invited',team:'A',ready:false},{status:'bejebus',team:'B',ready:false}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Clover Hills, Dust in the Wind, Elfic Pass, Stone Wood and Mud, Walk in the Park, The Cogwheel'},
+   warnings:[],errors:[]},
+  {id:'Lvl-Up-P2-04',tokens:'Strange Brew vs Thunder Head',ffa:false,teamA:'Strange Brew',
+   status:'idle',synced:false,conflict:true,inCF:false,
+   slots:[{status:'Closed',team:'A',ready:false},{status:'Closed',team:'B',ready:false},{status:'Closed',team:'A',ready:false},{status:'Closed',team:'B',ready:false}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Clover Hills, Dust in the Wind, Elfic Pass, Stone Wood and Mud, Walk in the Park, The Cogwheel'},
+   warnings:[],errors:[]},
+  {id:'Lvl-Up-P2-05',tokens:'THE ENDLESS vs Eric&Nadine',ffa:false,teamA:'THE ENDLESS',
+   status:'archived',synced:false,conflict:false,inCF:false,
+   slots:[{status:'Aka',team:'A',ready:true},{status:'Incarnadine',team:'B',ready:true},{status:'Blubber',team:'A',ready:true},{status:'Roderic',team:'B',ready:true}],
+   settings:{mode:'EquippedChaos',victory:'SurvivorsDraw',turntime:'30d',turns:35,private:false,maps:'Clover Hills, Dust in the Wind, Elfic Pass, Stone Wood and Mud, Walk in the Park, The Cogwheel'},
+   warnings:[],errors:[]},
+];
+
+function isHost(m){
+  if(m.ffa)return m.tokens.split(' vs ')[0].trim()===MY_WIZARD;
+  return (teamRosters[m.teamA]||[])[0]===MY_WIZARD;
+}
+
+const STATES=['idle','todo','waiting','ready','started','ignored','archived'];
+const stateLabel={idle:'idle',todo:'todo',waiting:'waiting',ready:'★ ready',started:'started',ignored:'ignored',archived:'archived'};
+const statusDesc={idle:'Not created yet',todo:'Lobby open — action needed',waiting:'Waiting for players',ready:'All players ready',started:'Game started',ignored:'Ignored',archived:'Archived'};
+const badgeClass={idle:'badge-idle',todo:'badge-todo',waiting:'badge-waiting',ready:'badge-ready',started:'badge-started',ignored:'badge-ignored',archived:'badge-archived'};
+const badgeTip={idle:'Not created yet',todo:'Lobby open — action needed',waiting:'Waiting for players to ready up',ready:'All players ready — can be started',started:'Game started',ignored:'Ignored — click Unignore to restore',archived:'Archived — click Unarchive to restore'};
+const pillTip={idle:'Show matches not yet created',todo:'Show matches with open slots — action needed',waiting:'Show matches waiting for players to ready up',ready:'Show matches where all players are ready',started:'Show started matches',ignored:'Show ignored matches',archived:'Show archived matches'};
+const mapLabel=s=>s.toLowerCase()==='random'||s.toLowerCase()==='random map'?'Random Map':s;
+
+const DEFAULT_ON=new Set(['idle','todo','waiting','ready','started']);
+let active=new Set(DEFAULT_ON),searchQ='',selectedId='Lvl-Up-P1-01';
+let myLobbies=false,autoStoppedAt=null,collapsed=false;
+
+function needsSync(m){return ['todo','waiting','ready'].includes(m.status)&&!m.synced;}
+function counts(){
+  const c={};STATES.forEach(s=>c[s]=0);c.error=0;c.conflict=0;
+  matches.forEach(m=>{
+    if(c[m.status]!==undefined)c[m.status]++;
+    if(m.errors.length)c.error++;
+    if(m.conflict&&!m.errors.length)c.conflict++;
+  });
+  return c;
+}
+
+function toggleCollapse(){
+  collapsed=!collapsed;
+  const app=document.getElementById('app'),btn=document.getElementById('btn-collapse'),mc=document.getElementById('main-content');
+  if(collapsed){app.className='app collapsed';btn.textContent='▢';mc.style.display='none';}
+  else{app.className='app expanded';btn.textContent='_';mc.style.display='';}
+}
+function closeOverlay(){
+  if(!confirm('Close overlay? The loaded file will be cleared.'))return;
+  const app=document.getElementById('app');
+  app.className='app expanded';
+  app.innerHTML=`<div class="toolbar"><span class="tb-label">LobbySetup</span><div class="tb-right"><button class="tb-wm" onclick="location.reload()">X</button></div></div><div class="closed-overlay"><div style="color:#555;font-size:20px">[ F6 ]</div><div>Press F6 to open — then select a .lobbysetup file</div></div>`;
+}
+
+function renderFilterbar(){
+  const c=counts();
+  const pills=STATES.map(s=>{const on=active.has(s)?' on':'';return `<span class="fc fc-${s}${on}" onclick="toggleFilter('${s}')" title="${pillTip[s]}">${s}: ${c[s]}</span>`;});
+  if(c.error>0)    pills.push(`<span class="fc-static fc-errors" title="Matches with configuration errors that block setup">errors: ${c.error}</span>`);
+  if(c.conflict>0) pills.push(`<span class="fc-static fc-conflicts" title="Matches with a naming conflict in public matchmaking">conflicts: ${c.conflict}</span>`);
+  const myOn=myLobbies?' on':'';
+  document.getElementById('filterbar').innerHTML=
+    '<span style="font-size:11px;color:#666;margin-right:2px">Show:</span>'+pills.join('')+
+    `<span class="fc fc-mygames${myOn}" onclick="toggleMyLobbies()" title="Show only matches where you (${MY_WIZARD}) are the designated host">my lobbies</span>`+
+    `<input class="search-input" id="search" placeholder="Search…" value="${searchQ}" title="Filter by match ID, player name or team name" oninput="searchQ=this.value;renderAll()">`;
+}
+
+function toggleFilter(s){
+  if(active.has(s)){if(active.size===1){active=new Set(DEFAULT_ON);}else active.delete(s);}else active.add(s);
+  const vis=visible();if(!vis.find(m=>m.id===selectedId)&&vis.length)selectedId=vis[0].id;
+  renderAll();
+}
+function toggleMyLobbies(){
+  myLobbies=!myLobbies;
+  const vis=visible();if(!vis.find(m=>m.id===selectedId)&&vis.length)selectedId=vis[0]?.id;
+  renderAll();
+}
+function visible(){
+  const q=searchQ.toLowerCase();
+  return matches.filter(m=>{
+    if(!active.has(m.status))return false;
+    if(myLobbies&&!isHost(m))return false;
+    if(!q)return true;
+    return m.id.toLowerCase().includes(q)||m.tokens.toLowerCase().includes(q)||m.slots.some(s=>s.status.toLowerCase().includes(q));
+  });
+}
+
+function getBadge(m){
+  if(m.errors.length)return `<span class="badge badge-error" title="Configuration error — see details">ERR</span>`;
+  return `<span class="badge ${badgeClass[m.status]}" title="${badgeTip[m.status]}">${stateLabel[m.status]}</span>`;
+}
+function slotStatusClass(s){
+  if(s.status==='Closed')return 'slot-closed';
+  if(s.status==='Open')return 'slot-open';
+  if(s.status.endsWith(' invited'))return 'slot-invited';
+  if(s.ready)return 'slot-ready-name';
+  return 'slot-accepted';
+}
+
+function renderList(){
+  const items=visible();
+  if(!items.length){document.getElementById('list').innerHTML='<div style="padding:14px 8px;font-size:11px;color:#555;text-align:center">No matches</div>';return;}
+  document.getElementById('list').innerHTML=items.map(m=>`
+    <div class="match-item${m.id===selectedId?' selected':''} ${m.status==='ignored'?'is-ignored':m.status==='archived'?'is-archived':''}" onclick="select('${m.id}')">
+      <div class="match-row1">
+        <span class="match-id">${m.id}</span>
+        ${m.conflict&&!m.errors.length?`<span class="conflict-marker" title="A lobby with this name already exists in public matchmaking">[!]</span>`:''}
+        ${getBadge(m)}
+      </div>
+      <div class="match-tokens">${m.tokens}</div>
+    </div>`).join('');
+  setTimeout(()=>{const el=document.querySelector('.match-item.selected');if(el)el.scrollIntoView({block:'nearest'});},0);
+}
+
+function renderDetail(){
+  const m=matches.find(x=>x.id===selectedId);if(!m)return;
+  document.getElementById('d-title').textContent=m.id;
+  document.getElementById('d-tokens').textContent=m.tokens;
+  document.getElementById('d-badge').innerHTML=getBadge(m);
+  const sl=document.getElementById('d-statusline');
+  if(m.errors.length){sl.textContent='✕ '+m.errors[0];sl.style.color='#f07070';}
+  else{sl.textContent=statusDesc[m.status];sl.style.color='#666';}
+
+  const banner=document.getElementById('d-banner');
+  if(autoStoppedAt===m.id)
+    banner.innerHTML='<div class="auto-banner">✕ Auto stopped here — fix error or conflict, then select next idle and run Auto again</div>';
+  else if(needsSync(m))
+    banner.innerHTML='<div class="sync-banner">⚠ not synced — slot status may be outdated</div>';
+  else if(m.synced&&['todo','waiting','ready'].includes(m.status))
+    banner.innerHTML='<div class="sync-ok-banner">✓ synced</div>';
+  else banner.innerHTML='';
+
+  const slotRows=m.slots.map(s=>`
+    <tr>
+      <td class="${slotStatusClass(s)}">${s.status}</td>
+      <td class="team-col">${s.team}</td>
+      <td class="${s.ready?'ready-yes':'ready-no'}" style="text-align:center">${s.status==='Closed'?'—':s.ready?'✓':'✗'}</td>
+    </tr>`).join('');
+  const st=m.settings;
+  const mapPool=st.maps.split(',').map(x=>mapLabel(x.trim()));
+  const poolLine=mapPool.length>1?`<br><span style="color:#555">Pool: ${mapPool.join(', ')}</span>`:'';
+  const settingsHtml=`${st.private?'Private':'Public'} · ${st.mode} · ${st.victory} · ${st.turntime} · ${st.turns} turns<br>Map: ${mapPool[0]}${poolLine}`;
+  const warningsHtml=m.warnings.map(w=>`<div class="warning">⚠ ${w}</div>`).join('');
+  const errorsHtml=m.errors.map(e=>`<div class="error-msg">✕ ${e}</div>`).join('');
+  const conflictHtml=m.conflict&&!m.errors.length?'<div class="conflict-msg">⚠ Another lobby with this name exists in matchmaking</div>':'';
+
+  document.getElementById('d-body').innerHTML=`
+    <div class="detail-section">
+      <div class="detail-section-title">Slots · Pattern ${m.pattern||'ABC'}</div>
+      <table class="slot-table">
+        <thead><tr><th>Status</th><th>Team</th><th style="text-align:center">Ready</th></tr></thead>
+        <tbody>${slotRows}</tbody>
+      </table>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">Settings</div>
+      <div>${settingsHtml}</div>
+    </div>
+    ${errorsHtml||warningsHtml||conflictHtml?`<div class="detail-section">${errorsHtml}${warningsHtml}${conflictHtml}</div>`:''}`;
+
+  const f=document.getElementById('d-footer');
+  const hasError=m.errors.length>0,isSetup=['todo','waiting','ready'].includes(m.status);
+  const isReady=m.status==='ready',hasConflict=m.conflict&&!hasError;
+
+  if(m.status==='idle'){
+    if(hasConflict){
+      f.innerHTML=
+        `<button class="act-btn primary" onclick="doEnter('${m.id}')" title="Enter the existing lobby with this name">↗ Enter instead</button>`+
+        `<button class="act-btn muted" onclick="doSetup('${m.id}')" title="Create a new lobby with this name anyway">+ Create anyway</button>`+
+        `<button class="act-btn muted" onclick="doIgnore('${m.id}')" title="Hide this match from the list">− Ignore</button>`+
+        `<button class="act-btn muted footer-right" onclick="doAuto()" title="Run setup automatically from this match onwards — stops on error or conflict">▶▶ Auto</button>`;
+    } else {
+      f.innerHTML=
+        `<button class="act-btn primary" ${hasError?'disabled':''} onclick="doSetup('${m.id}')" title="${hasError?'Fix errors first':'Create lobby and run setup flow'}">+ Setup</button>`+
+        `<button class="act-btn muted" onclick="doIgnore('${m.id}')" title="Hide this match from the list">− Ignore</button>`+
+        `<button class="act-btn muted footer-right" onclick="doAuto()" title="Run setup automatically from this match onwards — stops on error or conflict">▶▶ Auto</button>`;
+    }
+  } else if(isSetup){
+    const leftBtn=m.inCF
+      ?`<button class="act-btn muted" onclick="doDone('${m.id}')" title="Exit lobby — lobby remains active in matchmaking">← Done</button>`
+      :`<button class="act-btn primary" onclick="doEnter('${m.id}')" title="Enter lobby and open check-flow">↗ Enter</button>`;
+    f.innerHTML=leftBtn+
+      `<button class="act-btn muted" onclick="doSyncOne('${m.id}')" title="Sync slot and ready status from server">↻ Sync</button>`+
+      `<button class="act-btn start ${isReady?'':'muted'}" ${isReady?'':'disabled'} onclick="doStart('${m.id}')" title="${isReady?'Start the game':'All players must be ready first'}">▶ Start game</button>`+
+      `<button class="act-btn danger footer-right" onclick="doDestroy('${m.id}')" title="Destroy lobby and reset to idle — requires confirmation">! Close lobby</button>`;
+  } else if(m.status==='started'){
+    f.innerHTML=`<button class="act-btn muted" onclick="doArchive('${m.id}')" title="Archive this match — hide from list">− Archive</button>`;
+  } else if(m.status==='ignored'){
+    f.innerHTML=`<button class="act-btn muted" onclick="doUnignore('${m.id}')" title="Restore this match to idle">↺ Unignore</button>`;
+  } else if(m.status==='archived'){
+    f.innerHTML=`<button class="act-btn muted" onclick="doUnarchive('${m.id}')" title="Restore this match to started">↺ Unarchive</button>`;
+  } else {
+    f.innerHTML='<span style="font-size:11px;color:#555">No actions available</span>';
+  }
+}
+
+function renderFile(){
+  const sel=matches.find(x=>x.id===selectedId);
+  const p1=matches.filter(m=>m.id.startsWith('Lvl-Up-P1'));
+  const p2=matches.filter(m=>m.id.startsWith('Lvl-Up-P2'));
+  const maxLen1=Math.max(...p1.map(m=>`match ${m.id}: ${m.tokens.replace(/ vs /g,', ')}`.length));
+  const maxLen2=Math.max(...p2.map(m=>`match ${m.id}: ${m.tokens}`.length));
+  const col1=maxLen1+4,col2=maxLen2+4;
+  function pad(s,n){while(s.length<n)s+=' ';return s;}
+  function suf(m){
+    if(m.status==='idle')return '';
+    if(m.errors.length)return `<span class="s-error">  status:error</span>`;
+    const cls='s-'+m.status;
+    const bid=['todo','waiting','ready','started'].includes(m.status)?' 1392369':'';
+    return `<span class="${cls}">  status:${m.status}${bid}</span>`;
+  }
+  function mline(m,base,col){
+    const hl=sel&&m.id===sel.id;
+    return `${hl?'<span class="hl">':''}<span class="mb">${pad(base,col)}</span>${suf(m)}${hl?'</span>':''}`;
+  }
+  const lines=[
+    `<span class="cm"># =============================================================================</span>`,
+    `<span class="cm"># LEVEL UP! — Tournament Example</span>`,
+    `<span class="cm"># =============================================================================</span>`,
+    ``,
+    `<span class="dk">view</span>: user`,
+    `<span class="dk">mode</span>: EquippedChaos`,
+    `<span class="dk">victory</span>: SurvivorsDraw`,
+    `<span class="dk">turntime</span>: 30d`,
+    `<span class="dk">turns</span>: 35`,
+    `<span class="dk">private</span>: false`,
+    `<span class="dk">chat</span>: /reward all crystals`,
+    ``,
+    `<span class="cm"># PHASE 1 — 3-Player FFA</span>`,
+    ``,
+    `<span class="dk">pattern</span>: ABC`,
+    `<span class="dk">maps</span>: Random Map`,
+    ``,
+    ...p1.map(m=>mline(m,`match ${m.id}: ${m.tokens.replace(/ vs /g,', ')}`,col1)),
+    ``,
+    `<span class="cm"># PHASE 2 — 2v2 Teams</span>`,
+    ``,
+    `<span class="dk">pattern</span>: ABAB`,
+    `<span class="dk">maps</span>: Clover Hills, Dust in the Wind, Elfic Pass,`,
+    `       Stone Wood and Mud, Walk in the Park, The Cogwheel`,
+    ``,
+    `<span class="dk">team</span> Day of the Lords:         Clef, Mazy`,
+    `<span class="dk">team</span> THE ENDLESS:              Aka, Blubber`,
+    `<span class="dk">team</span> Eric&amp;Nadine:              Incarnadine, Roderic`,
+    `<span class="dk">team</span> Strange Brew:             Pancetta, Mosty`,
+    `<span class="dk">team</span> Super Ultra Mega Heroes:  Bos5k, bejebus`,
+    `<span class="dk">team</span> Thunder Head:             WanderingCloud, Jingo`,
+    ``,
+    ...p2.map(m=>mline(m,`match ${m.id}: ${m.tokens}`,col2)),
+  ];
+  document.getElementById('file-content').innerHTML=lines.map(l=>l===''?'\n':l).join('\n');
+}
+
+function renderAll(){renderFilterbar();renderList();renderDetail();renderFile();}
+function select(id){selectedId=id;renderAll();}
+function navigate(dir){const items=visible();const idx=items.findIndex(m=>m.id===selectedId);const next=items[idx+dir];if(next){selectedId=next.id;renderAll();}}
+function jumpTo(type){
+  const m=type==='idle'?matches.find(m=>m.status==='idle'):matches.find(m=>['todo','waiting','ready'].includes(m.status));
+  if(m){selectedId=m.id;active=new Set(DEFAULT_ON);searchQ='';myLobbies=false;renderAll();}
+}
+function doSetup(id){const m=matches.find(x=>x.id===id);m.status='todo';m.synced=false;m.inCF=true;renderAll();}
+function doAuto(){
+  autoStoppedAt=null;
+  const si=matches.findIndex(m=>m.id===selectedId);
+  const q=matches.slice(si).filter(m=>m.status==='idle');
+  for(const m of q){
+    if(m.errors.length||m.conflict){autoStoppedAt=m.id;selectedId=m.id;active=new Set(DEFAULT_ON);renderAll();return;}
+    m.status='waiting';m.synced=false;
+  }
+  renderAll();alert('Auto complete.');
+}
+function doIgnore(id){matches.find(x=>x.id===id).status='ignored';renderAll();}
+function doUnignore(id){matches.find(x=>x.id===id).status='idle';renderAll();}
+function doArchive(id){matches.find(x=>x.id===id).status='archived';renderAll();}
+function doUnarchive(id){matches.find(x=>x.id===id).status='started';renderAll();}
+function doEnter(id){matches.find(x=>x.id===id).inCF=true;renderAll();}
+function doDone(id){matches.find(x=>x.id===id).inCF=false;renderAll();}
+function doSyncOne(id){
+  const m=matches.find(x=>x.id===id);m.synced=true;
+  m.slots.forEach(s=>{if(s.status!=='Closed'&&s.status!=='Open'&&!s.status.endsWith(' invited'))s.ready=Math.random()>0.4;});
+  const allReady=m.slots.every(s=>s.status==='Closed'||s.status==='Open'||s.ready);
+  if(m.status!=='todo')m.status=allReady?'ready':'waiting';
+  renderAll();
+}
+function syncAll(){
+  matches.filter(m=>['waiting','ready'].includes(m.status)).forEach(m=>{
+    m.synced=true;
+    m.slots.forEach(s=>{if(s.status!=='Closed'&&s.status!=='Open'&&!s.status.endsWith(' invited'))s.ready=Math.random()>0.4;});
+    const allReady=m.slots.every(s=>s.status==='Closed'||s.status==='Open'||s.ready);
+    m.status=allReady?'ready':'waiting';
+  });
+  renderAll();
+}
+function doStart(id){if(confirm('Start game for '+id+'?')){const m=matches.find(x=>x.id===id);m.status='started';m.synced=true;m.inCF=false;renderAll();}}
+function doDestroy(id){
+  if(confirm('Close lobby and reset to idle?')){
+    const m=matches.find(x=>x.id===id);m.status='idle';m.synced=false;m.inCF=false;
+    m.slots.forEach(s=>{s.status='Closed';s.ready=false;});delete m.battleId;renderAll();
+  }
+}
+renderAll();
+</script>
+</body>
+</html>
