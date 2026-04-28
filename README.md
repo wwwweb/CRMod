@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents seventeen client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents nineteen client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.7.2
+## ✨ Mods v1.8.0
 
 ### 📜 Async Creator `[F8]`
 
@@ -166,6 +166,18 @@ Replay files are stored in `BepInEx/config/replays/`. Replay files are small (ab
 
 ---
 
+### 🪄 Setup Wizard `[F6]`
+
+Batch lobby setup, tamed.
+
+Press **F6** on the custom games screen to open the Setup Wizard, a file-driven lobby manager. Each `.setupwizard` file in `BepInEx/config/setupwizard/` describes a set of lobbies to create, including slots, teams, rewards, taboos, and AI or player invites. The **+ New template** button generates a ready-to-edit template file with format reference and examples.
+
+Lobbies move through a clear lifecycle: **idle → todo → waiting → ready → started**, with **ignored** and **archived** for housekeeping. The UI shows live status, flags discrepancies between a running lobby and its confuration in file, and lets you sync individual lobbies or all at once. A search field and filter pills keep large game series setups manageable.
+
+Once a lobby is configured and all reward/taboo settings have been applied, the **▶ Start game** button becomes available. Setup Wizard coordinates with Async Creator automatically: rewards and taboos defined in the file are applied via mod API rather than posted as chat text.
+
+---
+
 ### 🔖 Taboo Display
 
 Know thy enemy's constraints.
@@ -201,6 +213,12 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 
 ---
 
+## ⌨️ Keyboard Reference
+
+A quick overview of all mod key bindings is available as `BepInEx/CRModKeyboardReference.html`. Open it in any browser.
+
+---
+
 ## ⚙️ Requirements
 
 - **Chaos Reborn** (both 32/64 bit versions are supported)
@@ -218,7 +236,7 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.7.2.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.8.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
@@ -254,7 +272,8 @@ ChaosReborn\
             maps\
                 2_Backbone.jpg
                 ... (all map images)
-                6_Triple_Double.jpg                
+                6_Triple_Double.jpg
+        CRModKeyboardReference.html            
 ```
 
 > Not sure if BepInEx loaded? Check `BepInEx\LogOutput.log`. The mod names should appear there.
