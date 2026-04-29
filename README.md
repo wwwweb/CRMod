@@ -215,7 +215,7 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 
 ## ⌨️ Keyboard Reference
 
-A quick overview of all mod key bindings is available [here](https://wwwweb.github.io/CRMod/).
+A quick overview of all mod key bindings is available [here](https://wwwweb.github.io/CRMod/CRModKeyboardReference.html).
 
 ---
 
