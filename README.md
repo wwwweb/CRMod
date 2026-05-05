@@ -174,7 +174,7 @@ Press **F6** on the custom games screen to open the Setup Wizard, a file-driven 
 
 Lobbies move through a clear lifecycle: **idle → todo → waiting → ready → started**, with **ignored** and **archived** for housekeeping. The UI shows live status, flags discrepancies between a running lobby and its confuration in file, and lets you sync individual lobbies or all at once. A search field and filter pills keep large game series setups manageable.
 
-Once a lobby is configured and all reward/taboo settings have been applied, the **▶ Start game** button becomes available. Setup Wizard coordinates with Async Creator automatically: rewards and taboos defined in the file are applied via mod API rather than posted as chat text.
+Once a lobby is configured and all reward/taboo settings have been applied, the **▶ Start game** button becomes available. Setup Wizard coordinates with Async Creator automatically: rewards and taboos defined by Async Creator chat commands in the `.setupwizard` file are applied to the lobby.
 
 ---
 
@@ -299,6 +299,7 @@ The chat command mod supports multiple configurable report formats. Reports can 
    WebhookUrl=https://discord.com/api/webhooks/...
    ```
 5. Save the file and restart the game (or type `/reloadconfig` in in-game chat)
+6. Test the webhook by sending a report using `/reportdiscord` (with optional template name from the config file) in in-game chat.
 
 ---
 
