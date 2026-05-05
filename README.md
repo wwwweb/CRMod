@@ -299,7 +299,7 @@ The chat command mod supports multiple configurable report formats. Reports can 
    WebhookUrl=https://discord.com/api/webhooks/...
    ```
 5. Save the file and restart the game (or type `/reloadconfig` in in-game chat)
-6. Test the webhook by sending a report using `/reportdiscord` (with optional template name from the config file) in in-game chat.
+6. Test the connection by sending a report. Type `/reportdiscord` (with optional template name from the config file where you set the Webhook URL) in in-game chat. The report should appear in the Discord channel you used in step 3.
 
 ---
 
