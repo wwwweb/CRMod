@@ -8,7 +8,7 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 ---
 
-## ✨ Mods v1.8.4
+## ✨ Mods v1.8.5
 
 ### 📜 Async Creator `[F8]`
 
@@ -124,6 +124,10 @@ See the bigger picture — or zoom in for the kill.
  
 Extends the camera zoom range beyond the game's defaults: hold **Ctrl** and scroll to zoom further in or out. Release Ctrl in the normal zoom range to snap back to standard limits; release it while zoomed beyond the normal range to stay at the current level.
 
+Hold **Alt** and move the mouse to freely rotate the camera. Release to freeze, hold again to keep adjusting. Double-tap Alt resets to the natural camera orientation.
+
+Press **Ctrl+H** to hide the entire battle UI for clean screenshots. Press again to restore it.
+
 ---
 
 ### 🗺️ Map Preview `[F9]`
@@ -236,7 +240,7 @@ A quick overview of all mod key bindings is available [here](https://wwwweb.gith
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.8.4.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.8.5.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
