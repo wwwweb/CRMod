@@ -219,7 +219,7 @@ A quick overview of all mod key bindings is available [here](https://wwwweb.gith
 
 ---
 
-## ⚙️ Requirements
+## 📋 Requirements
 
 - **Chaos Reborn** (both 32/64 bit versions are supported)
 - **BepInEx 5.4.x** — download link below
@@ -228,7 +228,7 @@ A quick overview of all mod key bindings is available [here](https://wwwweb.gith
 
 ---
 
-## ⚙️ Installation
+## 🔧 Installation
 
 1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** and extract it into your Chaos Reborn folder (the folder where Steam or another manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`):
    - **Windows (Steam, 64 bit):** use `win_x64` (the zip under Assets)
@@ -287,7 +287,7 @@ Untested on Linux/Mac - feedback welcome.
 
 ---
 
-## ⚙️ Setting up own report formats and Discord connection (optional)
+## 📡 Setting up own report formats and Discord connection (optional)
 
 The chat command mod supports multiple configurable report formats. Reports can optionally be sent to Discord.
 
