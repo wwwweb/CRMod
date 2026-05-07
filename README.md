@@ -218,8 +218,12 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 ---
 
 ## ⌨️ Keyboard Reference
+A quick overview of all mod key bindings is available in the [Keyboard Reference](https://wwwweb.github.io/CRMod/CRModKeyboardReference.html).
 
-A quick overview of all mod key bindings is available [here](https://wwwweb.github.io/CRMod/CRModKeyboardReference.html).
+---
+
+## 🃏 Taboo Reference
+A complete overview of all taboos and how they filter spells is available in the [Taboo Reference](https://wwwweb.github.io/CRMod/cr-taboo-reference.html).
 
 ---
 
