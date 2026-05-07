@@ -118,7 +118,7 @@ Local configs are stored in `BepInEx/config/CRMod.InfiniteWardrobe.json`.
 
 ---
  
-### 🔭 Map Cam `[Ctrl+Scroll]`
+### 🔭 Map Cam `[Ctrl+Scroll]` `[Alt+Move]` `[Ctrl+H]`
  
 See the bigger picture — or zoom in for the kill.
  
