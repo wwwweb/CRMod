@@ -299,7 +299,7 @@ Untested on Linux/Mac - feedback welcome.
 
 The chat command mod supports multiple configurable report formats. Reports can optionally be sent to Discord.
 
-1. Launch the game once with `CRMod.ChatCommand.dll` in place, then close it; this creates the config file `BepInEx\config\CRMod.ChatCommand.cfg` in your Chaos Reborn folder
+1. Launch the game once with the Chat Command mod active, then close it; this creates the config file `BepInEx\config\CRMod.ChatCommand.cfg` in your Chaos Reborn folder
 2. Open `BepInEx\config\CRMod.ChatCommand.cfg` in any text editor. It provides two pre-defined report formats and a help to add your own format
 3. If you want to connect to Discord, in your Discord server: **Server Settings → Integrations → Webhooks → New Webhook**
 4. Copy the Webhook URL and set it in the config file
