@@ -176,7 +176,7 @@ Batch lobby setup, tamed.
 
 Press **F6** on the custom games screen to open the Setup Wizard, a file-driven lobby manager. Each `.setupwizard` file in `BepInEx/config/setupwizard/` describes a set of lobbies to create, including slots, teams, rewards, taboos, and AI or player invites. The **+ New template** button generates a ready-to-edit template file with format reference and examples.
 
-Lobbies move through a clear lifecycle: **idle → todo → waiting → ready → started**, with **ignored** and **archived** for housekeeping. The UI shows live status, flags discrepancies between a running lobby and its confuration in file, and lets you sync individual lobbies or all at once. A search field and filter pills keep large game series setups manageable.
+Lobbies move through a clear lifecycle: **idle → todo → waiting → ready → started**, with **ignored** and **archived** for housekeeping. The UI shows live status, flags discrepancies between a running lobby and its configuration in file, and lets you sync individual lobbies or all at once. A search field and filter pills keep large game series setups manageable.
 
 Once a lobby is configured and all reward/taboo settings have been applied, the **▶ Start game** button becomes available. Setup Wizard coordinates with Async Creator automatically: rewards and taboos defined by Async Creator chat commands in the `.setupwizard` file are applied to the lobby.
 
