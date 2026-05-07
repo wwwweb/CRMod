@@ -221,7 +221,6 @@ const SPELLS=[
 {id:22,name:"Subversion",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
 {id:17,name:"Tangle Vine",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Growth","HighCast"]},
 {id:51,name:"Teleport",taboos:["NonLaw","Neutral","NonChaos","NonCreature","HighCast"]},
-{id:58,name:"Turmoil",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","LowCast"]},
 {id:14,name:"Unicorn",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","NonRanged","Mount","Speed","HighCast"]},
 {id:7,name:"Vampire",taboos:["NonLaw","NonNeutral","Chaos","Creature","Air","NonRanged","NonMount","Speed","Undead","LowCast"]},
 {id:24,name:"MA-1 Vengeance (Chaos)",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Attack","HighCast"]},
@@ -303,10 +302,10 @@ function switchTab(id,btn){
 const TABOO_GROUPS={
   alignment:[
     {name:"Law Spells",short:"law",cond:"Blocks all Law-aligned spells.",spells:"Crystal Wall, MA-1 Decree (Law), Dwarf, Elf, Fountain of Life, Guardian Totem, Icarus Tower, Law Shift, Magic Bow, Magic Shield, Magic Sword, Magic Wood, MA-3 Justice (Law), Paladin, Pegasus, Sapphire Dragon, Unicorn"},
-    {name:"Non-Law Spells",short:"nonlaw",cond:"Blocks everything that is not Law-aligned — Neutral and Chaos spells.",spells:"Air Elemental, Bloodlust Totem, Bolt Tower, Chaos Shift, MA-3 Damnation (Chaos), Eagle, Elephant, Giant, Goblin, Gooey Blob, Hellhound, Hydra, Lion, Magic Bolt, Manticore, Meteor Shower, Paralyse, Raise Dead, Rat Pack, Shadow Wood, Skeleton, Spider, Subversion, Tangle Vine, Teleport, Turmoil, MA-1 Vengeance (Chaos), Vampire, Wind Walker, Zombie"},
+    {name:"Non-Law Spells",short:"nonlaw",cond:"Blocks everything that is not Law-aligned — Neutral and Chaos spells.",spells:"Air Elemental, Bloodlust Totem, Bolt Tower, Chaos Shift, MA-3 Damnation (Chaos), Eagle, Elephant, Giant, Goblin, Gooey Blob, Hellhound, Hydra, Lion, Magic Bolt, Manticore, Meteor Shower, Paralyse, Raise Dead, Rat Pack, Shadow Wood, Skeleton, Spider, Subversion, Tangle Vine, Teleport, MA-1 Vengeance (Chaos), Vampire, Wind Walker, Zombie"},
     {name:"Neutral Spells",short:"neutral",cond:"Blocks all Neutral-aligned spells.",spells:"Air Elemental, Bolt Tower, Eagle, Elephant, Giant, Lion, Magic Bolt, Paralyse, Rat Pack, Spider, Subversion, Tangle Vine, Teleport, Wind Walker"},
-    {name:"Non-Neutral Spells",short:"nonneutral",cond:"Blocks everything that is not Neutral-aligned — Law and Chaos spells.",spells:"Bloodlust Totem, Chaos Shift, Crystal Wall, MA-3 Damnation (Chaos), MA-1 Decree (Law), Dwarf, Elf, Fountain of Life, Goblin, Gooey Blob, Guardian Totem, Hellhound, Hydra, Icarus Tower, MA-3 Justice (Law), Law Shift, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Manticore, Meteor Shower, Paladin, Pegasus, Raise Dead, Sapphire Dragon, Shadow Wood, Skeleton, Turmoil, Unicorn, MA-1 Vengeance (Chaos), Vampire, Zombie"},
-    {name:"Chaos Spells",short:"chaos",cond:"Blocks all Chaos-aligned spells.",spells:"Bloodlust Totem, Chaos Shift, MA-3 Damnation (Chaos), Goblin, Gooey Blob, Hellhound, Hydra, Manticore, Meteor Shower, Raise Dead, Shadow Wood, Skeleton, Turmoil, MA-1 Vengeance (Chaos), Vampire, Zombie"},
+    {name:"Non-Neutral Spells",short:"nonneutral",cond:"Blocks everything that is not Neutral-aligned — Law and Chaos spells.",spells:"Bloodlust Totem, Chaos Shift, Crystal Wall, MA-3 Damnation (Chaos), MA-1 Decree (Law), Dwarf, Elf, Fountain of Life, Goblin, Gooey Blob, Guardian Totem, Hellhound, Hydra, Icarus Tower, MA-3 Justice (Law), Law Shift, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Manticore, Meteor Shower, Paladin, Pegasus, Raise Dead, Sapphire Dragon, Shadow Wood, Skeleton, Unicorn, MA-1 Vengeance (Chaos), Vampire, Zombie"},
+    {name:"Chaos Spells",short:"chaos",cond:"Blocks all Chaos-aligned spells.",spells:"Bloodlust Totem, Chaos Shift, MA-3 Damnation (Chaos), Goblin, Gooey Blob, Hellhound, Hydra, Manticore, Meteor Shower, Raise Dead, Shadow Wood, Skeleton, MA-1 Vengeance (Chaos), Vampire, Zombie"},
     {name:"Non-Chaos Spells",short:"nonchaos",cond:"Blocks everything that is not Chaos-aligned — Law and Neutral spells.",spells:"Air Elemental, Bolt Tower, Crystal Wall, MA-1 Decree (Law), Dwarf, Eagle, Elf, Elephant, Fountain of Life, Giant, Guardian Totem, Icarus Tower, MA-3 Justice (Law), Law Shift, Lion, Magic Bolt, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Paladin, Paralyse, Pegasus, Rat Pack, Sapphire Dragon, Spider, Subversion, Tangle Vine, Teleport, Unicorn, Wind Walker"}
   ],
   creature:[
@@ -322,7 +321,7 @@ const TABOO_GROUPS={
   ],
   entity:[
     {name:"Creature Spells",short:"creature",cond:"Blocks all creature summons.",spells:"Air Elemental, Dwarf, Eagle, Elf, Elephant, Giant, Goblin, Hellhound, Hydra, Lion, Manticore, Paladin, Pegasus, Rat Pack, Sapphire Dragon, Skeleton, Spider, Unicorn, Vampire, Zombie"},
-    {name:"Non-Creature Spells",short:"noncreature",cond:"Blocks everything that is not a creature — attacks, weapons, structures, growths, and utility spells.",spells:"Bloodlust Totem, Bolt Tower, Chaos Shift, Crystal Wall, MA-3 Damnation (Chaos), MA-1 Decree (Law), Fountain of Life, Gooey Blob, Guardian Totem, Icarus Tower, MA-3 Justice (Law), Law Shift, Magic Bolt, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Meteor Shower, Paralyse, Raise Dead, Shadow Wood, Subversion, Tangle Vine, Teleport, Turmoil, MA-1 Vengeance (Chaos), Wind Walker"},
+    {name:"Non-Creature Spells",short:"noncreature",cond:"Blocks everything that is not a creature — attacks, weapons, structures, growths, and utility spells.",spells:"Bloodlust Totem, Bolt Tower, Chaos Shift, Crystal Wall, MA-3 Damnation (Chaos), MA-1 Decree (Law), Fountain of Life, Gooey Blob, Guardian Totem, Icarus Tower, MA-3 Justice (Law), Law Shift, Magic Bolt, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Meteor Shower, Paralyse, Raise Dead, Shadow Wood, Subversion, Tangle Vine, Teleport, MA-1 Vengeance (Chaos), Wind Walker"},
     {name:"Structure Spells",short:"structure",cond:"Blocks all static structures that are placed on the board.",spells:"Bloodlust Totem, Bolt Tower, Crystal Wall, Fountain of Life, Guardian Totem, Icarus Tower"},
     {name:"Growth Spells",short:"growth",cond:"Blocks all spreading growth spells.",spells:"Crystal Wall, Gooey Blob, Magic Wood, Shadow Wood, Tangle Vine"}
   ],
@@ -331,7 +330,7 @@ const TABOO_GROUPS={
     {name:"Magic Weapon Spells",short:"armoury",cond:"Blocks spells that equip your wizard with a weapon or mobility buff.",spells:"Magic Bow, Magic Shield, Magic Sword, Wind Walker"}
   ],
   cast:[
-    {name:"Low Casting Chance Spells",short:"lowcast",cond:"Blocks spells with a base casting chance below 60%. These are typically the strongest or rarest spells in the game.",spells:"Elephant, Fountain of Life, Giant, Hellhound, Hydra, Manticore, Paladin, Pegasus, Raise Dead, Sapphire Dragon, Turmoil, Vampire"},
+    {name:"Low Casting Chance Spells",short:"lowcast",cond:"Blocks spells with a base casting chance below 60%. These are typically the strongest or rarest spells in the game.",spells:"Elephant, Fountain of Life, Giant, Hellhound, Hydra, Manticore, Paladin, Pegasus, Raise Dead, Sapphire Dragon, Vampire"},
     {name:"High Casting Chance Spells",short:"highcast",cond:"Blocks spells with a base casting chance of 60% or higher. This covers the majority of the spell pool.",spells:"Air Elemental, Bloodlust Totem, Bolt Tower, Chaos Shift, Crystal Wall, MA-3 Damnation (Chaos), MA-1 Decree (Law), Dwarf, Eagle, Elf, Goblin, Gooey Blob, Guardian Totem, Icarus Tower, MA-3 Justice (Law), Law Shift, Lion, Magic Bolt, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Meteor Shower, Paralyse, Rat Pack, Shadow Wood, Skeleton, Spider, Subversion, Tangle Vine, Teleport, Unicorn, MA-1 Vengeance (Chaos), Wind Walker, Zombie"}
   ]
 };
