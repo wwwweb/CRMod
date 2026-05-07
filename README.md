@@ -86,7 +86,7 @@ Every great battle deserves a chronicle. Adds commands for reporting to in-game 
 | `/report [format]` | Outputs a match report to chat and clipboard. Visible only to you by default, or to all players by configuration. |
 | `/reportdiscord [format]` | Same, but also sends the report to Discord (needs setup). |
 
-Works out of the box. Optionally, reports are fully customizable: define multiple named formats in the config file, each with its own template, webhook URL, and visibility setting (`local` or `all`). Set a format to `local` to keep reports off the shared chat entirely — useful when you just want a personal log or a Discord post without spamming other players. See [Setting up own report formats and Discord connection](#️-setting-up-own-report-formats-and-discord-connection-optional) below.
+Works out of the box. Optionally, reports are fully customizable: define multiple named formats in the config file, each with its own template, webhook URL, and visibility setting (`local` or `all`). Set a format to `local` to keep reports off the shared chat entirely — useful when you just want a personal log or a Discord post without spamming other players. See [Setting up own report formats and Discord connection](#-setting-up-own-report-formats-and-discord-connection-optional) below.
 
 ---
 
