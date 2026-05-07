@@ -42,7 +42,7 @@ Fixes a bug in the base game where UI elements (including wizard names) can beco
  
 See at a glance how many are ready to rumble.
  
-On the custom games screen, this mod enhances the game list by changing the display content of some columns. The lobby name is shown instead of a raw battle ID. Press **F5** to scan all fully booked lobbies for their ready status. Your own ready status is shown with ✓ or ✗ in the turn column.
+On the custom games screen, this mod enhances the game list by changing the display content of some columns. The lobby name is shown instead of a raw battle ID. Press **F5** to scan all fully booked lobbies for their ready status. Your own ready status is shown with ✓ or ✗ in the turn column. Also changes some other columns to more meaningful values, dependent on the match state.
 
 > ⚠️ Note: F5 works by automatically entering and exiting each lobby to gather ready information. This generates no more server requests than a wizard normally generates by entering each lobby, but in quicker succession. Please don't spam it.
 
@@ -79,7 +79,7 @@ A mod manager button on the login screen opens a list of all installed CRMod mod
 
 ### 💬 Chat Commands
 
-Every great battle deserves a chronicle. Adds commands for reporting to in-game chat.
+Every great battle deserves a chronicle. Adds commands for reporting to in-game chat. Reports can posted to chat, clipboard or directly to Discord
 
 | Command | Effect |
 |---|---|
