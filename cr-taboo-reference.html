@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaos Reborn — Taboo Reference</title>
+<style>
+:root {
+  --bg: #f9f8f6;
+  --bg2: #f1efe8;
+  --bg3: #fff;
+  --text: #1a1a18;
+  --text2: #5f5e5a;
+  --text3: #9b9a96;
+  --border: rgba(0,0,0,0.1);
+  --border2: rgba(0,0,0,0.18);
+  --purple: #534AB7;
+  --radius: 10px;
+  --radius-sm: 20px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1a;
+    --bg2: #252523;
+    --bg3: #2c2c2a;
+    --text: #f0ede8;
+    --text2: #a8a5a0;
+    --text3: #6b6a66;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:2rem 1rem 4rem}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
+.subtitle{font-size:14px;color:var(--text2);margin-bottom:2rem;line-height:1.5}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
+.tab{font-size:14px;padding:7px 16px;border:none;background:transparent;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s;font-family:inherit}
+.tab.active{color:var(--purple);border-bottom-color:var(--purple)}
+.tab:hover{color:var(--text)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.search-row{display:flex;gap:8px;margin-bottom:.75rem}
+.search-row input{flex:1;font-size:14px;padding:8px 12px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-family:inherit;outline:none}
+.search-row input:focus{border-color:var(--purple)}
+.search-row input::placeholder{color:var(--text3)}
+.clear-btn{font-size:13px;padding:8px 14px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text2);cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .15s}
+.clear-btn:hover{background:var(--bg2)}
+.mode-row{display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap}
+.mode-label{font-size:13px;color:var(--text3)}
+.mode-btn{font-size:13px;padding:6px 14px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--bg3);color:var(--text2);cursor:pointer;font-family:inherit;transition:all .15s}
+.mode-btn.active-show{background:#085041;border-color:#085041;color:#fff}
+.mode-btn.active-hide{background:#712B13;border-color:#712B13;color:#fff}
+.controls{display:flex;flex-wrap:wrap;gap:6px;margin:.5rem 0 1.25rem}
+.filter-group-label{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;width:100%;margin-top:.6rem;margin-bottom:2px}
+.filter-btn{font-size:12px;padding:5px 10px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--bg3);color:var(--text2);cursor:pointer;line-height:1.3;text-align:left;font-family:inherit;transition:all .15s}
+.filter-btn:hover{background:var(--bg2)}
+.filter-btn .short{font-size:10px;opacity:.65;display:block}
+.filter-btn.active{color:#fff;border-color:transparent}
+.filter-btn.active .short{opacity:.8}
+.fb-align.active{background:#5F5E5A}
+.fb-creature.active{background:#185FA5}
+.fb-property.active{background:#0F6E56}
+.fb-type.active{background:#3B6D11}
+.fb-cast.active{background:#854F0B}
+.count-line{font-size:13px;color:var(--text3);margin-bottom:.75rem}
+.count-line strong{color:var(--text);font-weight:600}
+.spell-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.spell-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;transition:border-color .15s}
+.spell-card:hover{border-color:var(--border2)}
+.spell-card.hidden{display:none}
+.spell-name{font-size:14px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+.tag-row{display:flex;flex-wrap:wrap;gap:4px}
+.no-tags{font-size:11px;color:var(--text3);font-style:italic}
+.tag{font-size:11px;padding:2px 7px;border-radius:7px;border:1px solid var(--border)}
+.tag.t-align{background:#F1EFE820;color:#5F5E5A;border-color:#D3D1C7}
+.tag.t-creature{background:#E6F1FB20;color:#185FA5;border-color:#B5D4F4}
+.tag.t-property{background:#E1F5EE20;color:#085041;border-color:#9FE1CB}
+.tag.t-type{background:#EAF3DE20;color:#3B6D11;border-color:#C0DD97}
+.tag.t-cast{background:#FAEEDA20;color:#854F0B;border-color:#FAC775}
+.tag.hit{outline:2px solid #A32D2D;outline-offset:1px}
+@media (prefers-color-scheme: dark) {
+  .tag.t-align{background:#2C2C2A;color:#B4B2A9;border-color:#444441}
+  .tag.t-creature{background:#042C5320;color:#85B7EB;border-color:#0C447C}
+  .tag.t-property{background:#04342C20;color:#5DCAA5;border-color:#085041}
+  .tag.t-type{background:#17340420;color:#97C459;border-color:#27500A}
+  .tag.t-cast{background:#41240220;color:#EF9F27;border-color:#633806}
+}
+.group-head{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin:2rem 0 .6rem;padding-top:.75rem;border-top:1px solid var(--border)}
+.group-head:first-child{margin-top:0;border-top:none;padding-top:0}
+.group-note{font-size:13px;color:var(--text2);margin-bottom:.75rem;line-height:1.5}
+.taboo-table{width:100%;font-size:13px;border-collapse:collapse;margin-bottom:.5rem}
+.taboo-table th{text-align:left;padding:8px 10px;font-size:12px;font-weight:600;color:var(--text3);border-bottom:1px solid var(--border);white-space:nowrap}
+.taboo-table td{padding:8px 10px;vertical-align:top;border-bottom:1px solid var(--border)}
+.taboo-table tr:last-child td{border-bottom:none}
+.taboo-name{font-weight:600;font-size:13px;white-space:nowrap}
+.taboo-short{font-size:11px;color:var(--text3);font-weight:400;display:block;margin-top:2px}
+.cond{font-size:12px;color:var(--text2);line-height:1.5;min-width:150px}
+.spell-list{font-size:12px;color:var(--text2);line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Chaos Reborn — Taboo Reference</h1>
+  <p class="subtitle">A complete reference for all 23 taboos and how they filter spells from wizard decks.</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('spells',this)">Spells</button>
+    <button class="tab" onclick="switchTab('taboos',this)">Taboo Groups</button>
+  </div>
+
+  <div id="tab-spells" class="tab-content active">
+    <div class="search-row">
+      <input id="spell-search" type="text" placeholder="Search spell name…" oninput="update()">
+      <button class="clear-btn" onclick="clearFilters()">Clear filters</button>
+    </div>
+    <div class="mode-row">
+      <span class="mode-label">Active taboos remove spells —</span>
+      <button id="btn-show" class="mode-btn active-show" onclick="setMode('show')">Show remaining pool</button>
+      <button id="btn-hide" class="mode-btn" onclick="setMode('hide')">Show excluded spells</button>
+    </div>
+    <div class="controls">
+      <span class="filter-group-label">Alignment</span>
+      <button class="filter-btn fb-align" onclick="toggleFilter(this,'Law')">Law Spells<span class="short">law</span></button>
+      <button class="filter-btn fb-align" onclick="toggleFilter(this,'NonLaw')">Non-Law Spells<span class="short">nonlaw</span></button>
+      <button class="filter-btn fb-align" onclick="toggleFilter(this,'Neutral')">Neutral Spells<span class="short">neutral</span></button>
+      <button class="filter-btn fb-align" onclick="toggleFilter(this,'NonNeutral')">Non-Neutral Spells<span class="short">nonneutral</span></button>
+      <button class="filter-btn fb-align" onclick="toggleFilter(this,'Chaos')">Chaos Spells<span class="short">chaos</span></button>
+      <button class="filter-btn fb-align" onclick="toggleFilter(this,'NonChaos')">Non-Chaos Spells<span class="short">nonchaos</span></button>
+      <span class="filter-group-label">Entity type</span>
+      <button class="filter-btn fb-creature" onclick="toggleFilter(this,'Creature')">Creature Spells<span class="short">creature</span></button>
+      <button class="filter-btn fb-creature" onclick="toggleFilter(this,'NonCreature')">Non-Creature Spells<span class="short">noncreature</span></button>
+      <button class="filter-btn fb-creature" onclick="toggleFilter(this,'Structure')">Structure Spells<span class="short">structure</span></button>
+      <button class="filter-btn fb-creature" onclick="toggleFilter(this,'Growth')">Growth Spells<span class="short">growth</span></button>
+      <span class="filter-group-label">Creature properties</span>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'Air')">Flying Creature Spells<span class="short">air</span></button>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'NonAir')">Non-Flying Creature Spells<span class="short">nonair</span></button>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'Ranged')">Ranged Creature Spells<span class="short">ranged</span></button>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'NonRanged')">Non-Ranged Creature Spells<span class="short">nonranged</span></button>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'Mount')">Creature Mounts<span class="short">mount</span></button>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'NonMount')">Non-Mount Creatures<span class="short">nonmount</span></button>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'Speed')">Fast Creature Spells<span class="short">speed</span></button>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'Slow')">Slow Creature Spells<span class="short">slow</span></button>
+      <button class="filter-btn fb-property" onclick="toggleFilter(this,'Undead')">Undead Spells<span class="short">undead</span></button>
+      <span class="filter-group-label">Spell type</span>
+      <button class="filter-btn fb-type" onclick="toggleFilter(this,'Attack')">Attack Spells<span class="short">attack</span></button>
+      <button class="filter-btn fb-type" onclick="toggleFilter(this,'Armoury')">Magic Weapon Spells<span class="short">armoury</span></button>
+      <span class="filter-group-label">Cast chance</span>
+      <button class="filter-btn fb-cast" onclick="toggleFilter(this,'LowCast')">Low Casting Chance Spells<span class="short">lowcast</span></button>
+      <button class="filter-btn fb-cast" onclick="toggleFilter(this,'HighCast')">High Casting Chance Spells<span class="short">highcast</span></button>
+    </div>
+    <div class="count-line" id="count-line"></div>
+    <div class="spell-grid" id="spell-grid"></div>
+  </div>
+
+  <div id="tab-taboos" class="tab-content">
+    <div class="group-head">Alignment taboos</div>
+    <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-alignment"></tbody></table>
+    <div class="group-head">Creature property taboos</div>
+    <p class="group-note">These only match creature spells. All non-creature spells (attacks, weapons, structures, etc.) are unaffected.</p>
+    <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-creature"></tbody></table>
+    <div class="group-head">Entity type taboos</div>
+    <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-entity"></tbody></table>
+    <div class="group-head">Spell type taboos</div>
+    <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-spelltype"></tbody></table>
+    <div class="group-head">Cast chance taboos</div>
+    <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-cast"></tbody></table>
+  </div>
+</div>
+
+<script>
+const TAG_CLASSES={
+  Law:"t-align",NonLaw:"t-align",Neutral:"t-align",NonNeutral:"t-align",Chaos:"t-align",NonChaos:"t-align",
+  Creature:"t-creature",NonCreature:"t-creature",Structure:"t-creature",Growth:"t-creature",
+  Air:"t-property",NonAir:"t-property",Ranged:"t-property",NonRanged:"t-property",Mount:"t-property",NonMount:"t-property",Speed:"t-property",Slow:"t-property",Undead:"t-property",
+  Attack:"t-type",Armoury:"t-type",
+  LowCast:"t-cast",HighCast:"t-cast"
+};
+
+const SPELLS=[
+{id:64,name:"Air Elemental",taboos:["NonLaw","Neutral","NonChaos","Creature","Air","NonRanged","NonMount","Speed","HighCast"]},
+{id:55,name:"Bloodlust Totem",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Structure","HighCast"]},
+{id:61,name:"Bolt Tower",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Structure","HighCast"]},
+{id:29,name:"Chaos Shift",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","HighCast"]},
+{id:65,name:"Crystal Wall",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","Growth","HighCast"]},
+{id:26,name:"MA-3 Damnation (Chaos)",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Attack","HighCast"]},
+{id:23,name:"MA-1 Decree (Law)",taboos:["Law","NonNeutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:0,name:"Disbelieve",taboos:[]},
+{id:4,name:"Dwarf",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","HighCast"]},
+{id:15,name:"Eagle",taboos:["NonLaw","Neutral","NonChaos","Creature","Air","NonRanged","NonMount","Speed","HighCast"]},
+{id:1,name:"Elf",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","HighCast"]},
+{id:31,name:"Elephant",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","Mount","Slow","LowCast"]},
+{id:57,name:"Fountain of Life",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","LowCast"]},
+{id:3,name:"Giant",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","LowCast"]},
+{id:9,name:"Goblin",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","HighCast"]},
+{id:16,name:"Gooey Blob",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Growth","HighCast"]},
+{id:56,name:"Guardian Totem",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","HighCast"]},
+{id:45,name:"Hellhound",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","Ranged","NonMount","Speed","Undead","LowCast"]},
+{id:44,name:"Hydra",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","LowCast"]},
+{id:62,name:"Icarus Tower",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","HighCast"]},
+{id:25,name:"MA-3 Justice (Law)",taboos:["Law","NonNeutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:28,name:"Law Shift",taboos:["Law","NonNeutral","NonChaos","NonCreature","HighCast"]},
+{id:2,name:"Lion",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
+{id:27,name:"Magic Bolt",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:21,name:"Magic Bow",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
+{id:20,name:"Magic Shield",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
+{id:19,name:"Magic Sword",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
+{id:48,name:"Magic Wood",taboos:["Law","NonNeutral","NonChaos","NonCreature","Growth","HighCast"]},
+{id:30,name:"Manticore",taboos:["NonLaw","NonNeutral","Chaos","Creature","Air","Ranged","Mount","Speed","LowCast"]},
+{id:63,name:"Meteor Shower",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","HighCast"]},
+{id:47,name:"Paladin",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Slow","LowCast"]},
+{id:60,name:"Paralyse",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:32,name:"Pegasus",taboos:["Law","NonNeutral","NonChaos","Creature","Air","NonRanged","Mount","Speed","LowCast"]},
+{id:50,name:"Raise Dead",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Undead","LowCast"]},
+{id:46,name:"Rat Pack",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
+{id:12,name:"Sapphire Dragon",taboos:["Law","NonNeutral","NonChaos","Creature","Air","Ranged","NonMount","Speed","LowCast"]},
+{id:18,name:"Shadow Wood",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Growth","HighCast"]},
+{id:8,name:"Skeleton",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","Undead","HighCast"]},
+{id:5,name:"Spider",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
+{id:22,name:"Subversion",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:17,name:"Tangle Vine",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Growth","HighCast"]},
+{id:51,name:"Teleport",taboos:["NonLaw","Neutral","NonChaos","NonCreature","HighCast"]},
+{id:58,name:"Turmoil",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","LowCast"]},
+{id:14,name:"Unicorn",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","NonRanged","Mount","Speed","HighCast"]},
+{id:7,name:"Vampire",taboos:["NonLaw","NonNeutral","Chaos","Creature","Air","NonRanged","NonMount","Speed","Undead","LowCast"]},
+{id:24,name:"MA-1 Vengeance (Chaos)",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Attack","HighCast"]},
+{id:59,name:"Wind Walker",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Armoury","HighCast"]},
+{id:6,name:"Zombie",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","Undead","HighCast"]}
+];
+
+let activeFilters=new Set();
+let mode="show";
+
+function isExcluded(spell){
+  return activeFilters.size>0&&spell.taboos.length>0&&[...activeFilters].some(f=>spell.taboos.includes(f));
+}
+
+function buildSpellGrid(){
+  const grid=document.getElementById("spell-grid");
+  grid.innerHTML="";
+  [...SPELLS].sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{
+    const tagHtml=s.taboos.length===0
+      ?'<span class="no-tags">not affected by any taboo</span>'
+      :s.taboos.map(t=>`<span class="tag ${TAG_CLASSES[t]||""}" data-key="${t}">${t.toLowerCase()}</span>`).join("");
+    grid.innerHTML+=`<div class="spell-card" data-id="${s.id}" data-name="${s.name.toLowerCase()}">
+      <div class="spell-name">${s.name}</div>
+      <div class="tag-row">${tagHtml}</div>
+    </div>`;
+  });
+}
+
+function update(){
+  const q=document.getElementById("spell-search").value.toLowerCase();
+  const cards=document.querySelectorAll(".spell-card");
+  let poolCount=0,excludedCount=0;
+  cards.forEach(card=>{
+    const id=parseInt(card.dataset.id);
+    const spell=SPELLS.find(s=>s.id===id);
+    const nameMatch=card.dataset.name.includes(q);
+    const excluded=isExcluded(spell);
+    card.querySelectorAll(".tag").forEach(tag=>{
+      tag.classList.toggle("hit",excluded&&activeFilters.has(tag.dataset.key));
+    });
+    if(!nameMatch){card.classList.add("hidden");return;}
+    card.classList.remove("hidden");
+    if(excluded) excludedCount++; else poolCount++;
+    if(mode==="show") card.classList.toggle("hidden",excluded);
+    else card.classList.toggle("hidden",!excluded);
+  });
+  const cl=document.getElementById("count-line");
+  if(activeFilters.size===0){cl.textContent="";}
+  else if(mode==="show") cl.innerHTML=`<strong>${poolCount}</strong> spell${poolCount!==1?"s":""} remain in the pool &middot; <strong>${excludedCount}</strong> excluded by active taboos`;
+  else cl.innerHTML=`<strong>${excludedCount}</strong> spell${excludedCount!==1?"s":""} excluded by active taboos`;
+}
+
+function setMode(m){
+  mode=m;
+  document.getElementById("btn-show").className="mode-btn"+(m==="show"?" active-show":"");
+  document.getElementById("btn-hide").className="mode-btn"+(m==="hide"?" active-hide":"");
+  update();
+}
+
+function toggleFilter(btn,taboo){
+  if(activeFilters.has(taboo)){activeFilters.delete(taboo);btn.classList.remove("active");}
+  else{activeFilters.add(taboo);btn.classList.add("active");}
+  update();
+}
+
+function clearFilters(){
+  activeFilters.clear();
+  document.querySelectorAll(".filter-btn.active").forEach(b=>b.classList.remove("active"));
+  update();
+}
+
+function switchTab(id,btn){
+  document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("tab-"+id).classList.add("active");
+  btn.classList.add("active");
+}
+
+const TABOO_GROUPS={
+  alignment:[
+    {name:"Law Spells",short:"law",cond:"Blocks all Law-aligned spells.",spells:"Crystal Wall, MA-1 Decree (Law), Dwarf, Elf, Fountain of Life, Guardian Totem, Icarus Tower, Law Shift, Magic Bow, Magic Shield, Magic Sword, Magic Wood, MA-3 Justice (Law), Paladin, Pegasus, Sapphire Dragon, Unicorn"},
+    {name:"Non-Law Spells",short:"nonlaw",cond:"Blocks everything that is not Law-aligned — Neutral and Chaos spells.",spells:"Air Elemental, Bloodlust Totem, Bolt Tower, Chaos Shift, MA-3 Damnation (Chaos), Eagle, Elephant, Giant, Goblin, Gooey Blob, Hellhound, Hydra, Lion, Magic Bolt, Manticore, Meteor Shower, Paralyse, Raise Dead, Rat Pack, Shadow Wood, Skeleton, Spider, Subversion, Tangle Vine, Teleport, Turmoil, MA-1 Vengeance (Chaos), Vampire, Wind Walker, Zombie"},
+    {name:"Neutral Spells",short:"neutral",cond:"Blocks all Neutral-aligned spells.",spells:"Air Elemental, Bolt Tower, Eagle, Elephant, Giant, Lion, Magic Bolt, Paralyse, Rat Pack, Spider, Subversion, Tangle Vine, Teleport, Wind Walker"},
+    {name:"Non-Neutral Spells",short:"nonneutral",cond:"Blocks everything that is not Neutral-aligned — Law and Chaos spells.",spells:"Bloodlust Totem, Chaos Shift, Crystal Wall, MA-3 Damnation (Chaos), MA-1 Decree (Law), Dwarf, Elf, Fountain of Life, Goblin, Gooey Blob, Guardian Totem, Hellhound, Hydra, Icarus Tower, MA-3 Justice (Law), Law Shift, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Manticore, Meteor Shower, Paladin, Pegasus, Raise Dead, Sapphire Dragon, Shadow Wood, Skeleton, Turmoil, Unicorn, MA-1 Vengeance (Chaos), Vampire, Zombie"},
+    {name:"Chaos Spells",short:"chaos",cond:"Blocks all Chaos-aligned spells.",spells:"Bloodlust Totem, Chaos Shift, MA-3 Damnation (Chaos), Goblin, Gooey Blob, Hellhound, Hydra, Manticore, Meteor Shower, Raise Dead, Shadow Wood, Skeleton, Turmoil, MA-1 Vengeance (Chaos), Vampire, Zombie"},
+    {name:"Non-Chaos Spells",short:"nonchaos",cond:"Blocks everything that is not Chaos-aligned — Law and Neutral spells.",spells:"Air Elemental, Bolt Tower, Crystal Wall, MA-1 Decree (Law), Dwarf, Eagle, Elf, Elephant, Fountain of Life, Giant, Guardian Totem, Icarus Tower, MA-3 Justice (Law), Law Shift, Lion, Magic Bolt, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Paladin, Paralyse, Pegasus, Rat Pack, Sapphire Dragon, Spider, Subversion, Tangle Vine, Teleport, Unicorn, Wind Walker"}
+  ],
+  creature:[
+    {name:"Flying Creature Spells",short:"air",cond:"Blocks creatures that can fly.",spells:"Air Elemental, Eagle, Manticore, Pegasus, Sapphire Dragon, Vampire"},
+    {name:"Non-Flying Creature Spells",short:"nonair",cond:"Blocks creatures that cannot fly.",spells:"Dwarf, Elf, Elephant, Giant, Goblin, Hellhound, Hydra, Lion, Paladin, Rat Pack, Skeleton, Spider, Unicorn, Zombie"},
+    {name:"Ranged Creature Spells",short:"ranged",cond:"Blocks creatures with a ranged attack.",spells:"Dwarf, Elf, Giant, Hellhound, Manticore, Sapphire Dragon"},
+    {name:"Non-Ranged Creature Spells",short:"nonranged",cond:"Blocks creatures without a ranged attack.",spells:"Air Elemental, Eagle, Elephant, Goblin, Hydra, Lion, Paladin, Pegasus, Rat Pack, Skeleton, Spider, Unicorn, Vampire, Zombie"},
+    {name:"Creature Mounts",short:"mount",cond:"Blocks creatures that can be ridden as a mount.",spells:"Elephant, Manticore, Pegasus, Unicorn"},
+    {name:"Non-Mount Creatures",short:"nonmount",cond:"Blocks creatures that cannot be ridden.",spells:"Air Elemental, Dwarf, Eagle, Elf, Giant, Goblin, Hellhound, Hydra, Lion, Paladin, Rat Pack, Sapphire Dragon, Skeleton, Spider, Vampire, Zombie"},
+    {name:"Fast Creature Spells",short:"speed",cond:"Blocks creatures with a move of 3 or more.",spells:"Air Elemental, Eagle, Hellhound, Lion, Manticore, Pegasus, Rat Pack, Sapphire Dragon, Spider, Unicorn, Vampire"},
+    {name:"Slow Creature Spells",short:"slow",cond:"Blocks creatures with a move of 2 or less.",spells:"Dwarf, Elf, Elephant, Giant, Goblin, Hydra, Paladin, Skeleton, Zombie"},
+    {name:"Undead Spells",short:"undead",cond:"Blocks undead creatures, plus Raise Dead.",spells:"Hellhound, Raise Dead, Skeleton, Vampire, Zombie"}
+  ],
+  entity:[
+    {name:"Creature Spells",short:"creature",cond:"Blocks all creature summons.",spells:"Air Elemental, Dwarf, Eagle, Elf, Elephant, Giant, Goblin, Hellhound, Hydra, Lion, Manticore, Paladin, Pegasus, Rat Pack, Sapphire Dragon, Skeleton, Spider, Unicorn, Vampire, Zombie"},
+    {name:"Non-Creature Spells",short:"noncreature",cond:"Blocks everything that is not a creature — attacks, weapons, structures, growths, and utility spells.",spells:"Bloodlust Totem, Bolt Tower, Chaos Shift, Crystal Wall, MA-3 Damnation (Chaos), MA-1 Decree (Law), Fountain of Life, Gooey Blob, Guardian Totem, Icarus Tower, MA-3 Justice (Law), Law Shift, Magic Bolt, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Meteor Shower, Paralyse, Raise Dead, Shadow Wood, Subversion, Tangle Vine, Teleport, Turmoil, MA-1 Vengeance (Chaos), Wind Walker"},
+    {name:"Structure Spells",short:"structure",cond:"Blocks all static structures that are placed on the board.",spells:"Bloodlust Totem, Bolt Tower, Crystal Wall, Fountain of Life, Guardian Totem, Icarus Tower"},
+    {name:"Growth Spells",short:"growth",cond:"Blocks all spreading growth spells.",spells:"Crystal Wall, Gooey Blob, Magic Wood, Shadow Wood, Tangle Vine"}
+  ],
+  spelltype:[
+    {name:"Attack Spells",short:"attack",cond:"Blocks direct damage and control spells. Note: Meteor Shower is not included despite being favored by Attack staff.",spells:"MA-3 Damnation (Chaos), MA-1 Decree (Law), MA-3 Justice (Law), Magic Bolt, Paralyse, Subversion, MA-1 Vengeance (Chaos)"},
+    {name:"Magic Weapon Spells",short:"armoury",cond:"Blocks spells that equip your wizard with a weapon or mobility buff.",spells:"Magic Bow, Magic Shield, Magic Sword, Wind Walker"}
+  ],
+  cast:[
+    {name:"Low Casting Chance Spells",short:"lowcast",cond:"Blocks spells with a base casting chance below 60%. These are typically the strongest or rarest spells in the game.",spells:"Elephant, Fountain of Life, Giant, Hellhound, Hydra, Manticore, Paladin, Pegasus, Raise Dead, Sapphire Dragon, Turmoil, Vampire"},
+    {name:"High Casting Chance Spells",short:"highcast",cond:"Blocks spells with a base casting chance of 60% or higher. This covers the majority of the spell pool.",spells:"Air Elemental, Bloodlust Totem, Bolt Tower, Chaos Shift, Crystal Wall, MA-3 Damnation (Chaos), MA-1 Decree (Law), Dwarf, Eagle, Elf, Goblin, Gooey Blob, Guardian Totem, Icarus Tower, MA-3 Justice (Law), Law Shift, Lion, Magic Bolt, Magic Bow, Magic Shield, Magic Sword, Magic Wood, Meteor Shower, Paralyse, Rat Pack, Shadow Wood, Skeleton, Spider, Subversion, Tangle Vine, Teleport, Unicorn, MA-1 Vengeance (Chaos), Wind Walker, Zombie"}
+  ]
+};
+
+function buildTables(){
+  ["alignment","creature","entity","spelltype","cast"].forEach(group=>{
+    const tbody=document.getElementById("tbl-"+group);
+    if(!tbody)return;
+    TABOO_GROUPS[group].forEach(row=>{
+      tbody.innerHTML+=`<tr>
+        <td class="taboo-name">${row.name}<span class="taboo-short">${row.short}</span></td>
+        <td class="cond">${row.cond}</td>
+        <td class="spell-list">${row.spells}</td>
+      </tr>`;
+    });
+  });
+}
+
+buildSpellGrid();
+buildTables();
+update();
+</script>
+</body>
+</html>
