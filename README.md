@@ -238,7 +238,7 @@ A complete overview of all taboos and how they filter spells is available in the
 
 ## 🔧 Installation
 
-1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** (the zip under Assets) and extract it into your Chaos Reborn folder. This is the folder where Steam or another manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`.
+1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** (the zip under Assets) and extract it into your Chaos Reborn folder. This is the folder where Steam or another game manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`.
    - **Windows (Steam, 64 bit):** use [BepInEx_win_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x64_5.4.23.5.zip)
    - **Windows (GOG, 32 bit):** use [BepInEx_win_x86_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x86_5.4.23.5.zip)
    - **Linux/Mac:** see [below](#linux--mac)
