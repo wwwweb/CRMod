@@ -215,7 +215,7 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 
 🐉 Toggle **Dragon Skins** in the F4 overlay to summon Emerald and Ruby Dragons! The secret to their appearance, though, is yours to uncover through arcane studies.
 
-🔅 Dim Team Markers in the F4 overlay to fade the colored team highlights. Ideal for clean screenshots, especially paired with MapCam's UI hide, or for the extra challenge of guessing which unicorn is yours mid-battle.
+🔅 Dim **Team Markers** in the F4 overlay to fade the colored team highlights. Ideal for clean screenshots, especially paired with MapCam's UI hide, or for the extra challenge of guessing which unicorn is yours mid-battle.
 
 ---
 
