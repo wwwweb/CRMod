@@ -8,7 +8,7 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 ---
 
-## ✨ Mods v1.8.9
+## ✨ Mods v1.8.10
 
 ### 📜 Async Creator `[F8]`
 
@@ -246,7 +246,7 @@ A complete overview of all taboos and how they filter spells is available in the
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.8.9.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.8.10.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
