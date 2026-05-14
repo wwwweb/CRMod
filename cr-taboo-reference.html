@@ -130,11 +130,13 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
       <button class="filter-btn fb-align" onclick="toggleFilter(this,'NonNeutral')">Non-Neutral Spells<span class="short">nonneutral</span></button>
       <button class="filter-btn fb-align" onclick="toggleFilter(this,'Chaos')">Chaos Spells<span class="short">chaos</span></button>
       <button class="filter-btn fb-align" onclick="toggleFilter(this,'NonChaos')">Non-Chaos Spells<span class="short">nonchaos</span></button>
-      <span class="filter-group-label">Entity type</span>
+      <span class="filter-group-label">Spell type</span>
       <button class="filter-btn fb-creature" onclick="toggleFilter(this,'Creature')">Creature Spells<span class="short">creature</span></button>
       <button class="filter-btn fb-creature" onclick="toggleFilter(this,'NonCreature')">Non-Creature Spells<span class="short">noncreature</span></button>
       <button class="filter-btn fb-creature" onclick="toggleFilter(this,'Structure')">Structure Spells<span class="short">structure</span></button>
       <button class="filter-btn fb-creature" onclick="toggleFilter(this,'Growth')">Growth Spells<span class="short">growth</span></button>
+      <button class="filter-btn fb-creature" onclick="toggleFilter(this,'Attack')">Attack Spells<span class="short">attack</span></button>
+      <button class="filter-btn fb-creature" onclick="toggleFilter(this,'Armoury')">Magic Weapon Spells<span class="short">armoury</span></button>
       <span class="filter-group-label">Creature properties</span>
       <button class="filter-btn fb-property" onclick="toggleFilter(this,'Air')">Flying Creature Spells<span class="short">air</span></button>
       <button class="filter-btn fb-property" onclick="toggleFilter(this,'NonAir')">Non-Flying Creature Spells<span class="short">nonair</span></button>
@@ -145,9 +147,6 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
       <button class="filter-btn fb-property" onclick="toggleFilter(this,'Speed')">Fast Creature Spells<span class="short">speed</span></button>
       <button class="filter-btn fb-property" onclick="toggleFilter(this,'Slow')">Slow Creature Spells<span class="short">slow</span></button>
       <button class="filter-btn fb-property" onclick="toggleFilter(this,'Undead')">Undead Spells<span class="short">undead</span></button>
-      <span class="filter-group-label">Spell type</span>
-      <button class="filter-btn fb-type" onclick="toggleFilter(this,'Attack')">Attack Spells<span class="short">attack</span></button>
-      <button class="filter-btn fb-type" onclick="toggleFilter(this,'Armoury')">Magic Weapon Spells<span class="short">armoury</span></button>
       <span class="filter-group-label">Cast chance</span>
       <button class="filter-btn fb-cast" onclick="toggleFilter(this,'LowCast')">Low Casting Chance Spells<span class="short">lowcast</span></button>
       <button class="filter-btn fb-cast" onclick="toggleFilter(this,'HighCast')">High Casting Chance Spells<span class="short">highcast</span></button>
@@ -164,13 +163,11 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
     </div>
     <div class="group-head">Alignment taboos</div>
     <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-alignment"></tbody></table>
+    <div class="group-head">Spell type taboos</div>
+    <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-entity"></tbody></table>
     <div class="group-head">Creature property taboos</div>
     <p class="group-note">These only match creature spells. All non-creature spells (attacks, weapons, structures, etc.) are unaffected.</p>
     <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-creature"></tbody></table>
-    <div class="group-head">Entity type taboos</div>
-    <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-entity"></tbody></table>
-    <div class="group-head">Spell type taboos</div>
-    <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-spelltype"></tbody></table>
     <div class="group-head">Cast chance taboos</div>
     <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-cast"></tbody></table>
   </div>
@@ -181,7 +178,7 @@ const TAG_CLASSES={
   Law:"t-align",NonLaw:"t-align",Neutral:"t-align",NonNeutral:"t-align",Chaos:"t-align",NonChaos:"t-align",
   Creature:"t-creature",NonCreature:"t-creature",Structure:"t-creature",Growth:"t-creature",
   Air:"t-property",NonAir:"t-property",Ranged:"t-property",NonRanged:"t-property",Mount:"t-property",NonMount:"t-property",Speed:"t-property",Slow:"t-property",Undead:"t-property",
-  Attack:"t-type",Armoury:"t-type",
+  Attack:"t-creature",Armoury:"t-creature",
   LowCast:"t-cast",HighCast:"t-cast"
 };
 
@@ -330,9 +327,7 @@ const TABOO_GROUPS={
     {name:"Creature Spells",short:"creature",cond:"Blocks all creature summons.",taboo:"Creature"},
     {name:"Non-Creature Spells",short:"noncreature",cond:"Blocks everything that is not a creature — attacks, weapons, structures, growths, and utility spells.",taboo:"NonCreature"},
     {name:"Structure Spells",short:"structure",cond:"Blocks all static structures that are placed on the board.",taboo:"Structure"},
-    {name:"Growth Spells",short:"growth",cond:"Blocks all spreading growth spells.",taboo:"Growth"}
-  ],
-  spelltype:[
+    {name:"Growth Spells",short:"growth",cond:"Blocks all spreading growth spells.",taboo:"Growth"},
     {name:"Attack Spells",short:"attack",cond:"Blocks direct damage and control spells. Note: Meteor Shower is not included despite being favored by Attack staff.",taboo:"Attack"},
     {name:"Magic Weapon Spells",short:"armoury",cond:"Blocks spells that equip your wizard with a weapon or mobility buff.",taboo:"Armoury"}
   ],
@@ -345,7 +340,7 @@ const TABOO_GROUPS={
 const SORTED_SPELLS=[...SPELLS].sort((a,b)=>a.name.localeCompare(b.name));
 
 function buildTables(){
-  ["alignment","creature","entity","spelltype","cast"].forEach(group=>{
+  ["alignment","creature","entity","cast"].forEach(group=>{
     const tbody=document.getElementById("tbl-"+group);
     if(!tbody)return;
     TABOO_GROUPS[group].forEach(row=>{
