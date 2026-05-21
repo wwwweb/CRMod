@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents eighteen client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents twenty client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.8.11
+## ✨ Mods v1.9.0
 
 ### 📜 Async Creator `[F8]`
 
@@ -16,7 +16,9 @@ Ever tried to run a taboo match in async, only to find the controls missing?
 
 In live lobbies, Reward and Taboo controls are available directly in the UI. In **async lobbies**, these controls are missing entirely. This mod fills that gap. Taboos and rewards can be set and viewed by using an enhanced UI that is enabled by pressing **F8** on the async games lobby screen. Alternatively, chat commands can be used for configuration without using the enhanced UI.
 
-As the server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it. If you use the UI for setting taboos, do not forget to post the setting by `/share`, so non-mod users know about them. A complete taboo reference is available [here](https://wwwweb.github.io/CRMod/cr-taboo-reference.html).
+As the server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it. If you use the UI for setting taboos, do not forget to post the setting by `/share`, so non-mod users know about them.
+
+All default taboos as well as wizard classes defined by avolebva are supported by Async Creator. A complete taboo reference is available [here](#-taboo-reference).
 
 | Command (Lobby Chat) | Effect |
 |---|---|
@@ -64,6 +66,22 @@ Trigger pixelart animations over the battle field through lobby chat. Type `!gg`
 If you join an async battle after opponents have already played emotes since your last turn, they are replayed in sequence once you enter.
  
 > ⚠️ Only players with the Battle Emotes mod installed see the animations. For everyone else, the command text (`!gg`) appears in chat as a normal message.
+
+---
+
+### 🏕️ Botcamp `[F7]`
+ 
+Your lobby, your rules, your dress code.
+ 
+Press **F7** in an online custom lobby to open the Botcamp overlay. Each slot shows a dropdown to pick the AI's equipment configuration. Choose any of your online configs to dress the AIs accordingly. When ready, click **Start Offline** to leave the online lobby and launch the battle locally against AI opponents.
+ 
+---
+ 
+### 🤖 Bot Revenge
+ 
+One more round.
+ 
+Adds a **REMATCH** button to the end screen of async battles where all opponents were AI. Challenge them again without setting up a new lobby.
 
 ---
  
@@ -188,6 +206,8 @@ Know thy enemy's constraints.
 
 When you select an opponent's wizard during battle, their active taboos are shown in the top-left panel at the same spot your own taboos normally appear. Deselecting restores your own taboo display. Kind of a companion mod to Async Creator taboos, but can also be used for live games.
 
+If a wizard's taboo combination matches one of the known wizard classes, the class name is shown as a suffix. A complete taboo reference is available [here](#-taboo-reference).
+
 ---
 
 ### 📍 Team Ping `[Ctrl+P]`
@@ -217,6 +237,8 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 
 🔅 Dim **Team Markers** in the F4 overlay to fade the colored team highlights. Ideal for clean screenshots, especially paired with MapCam's UI hide, or for the extra challenge of guessing which unicorn is yours mid-battle.
 
+🏷️ Toggle **Class Suffix** in the F4 overlay to append the class to wizard names in battle. A complete taboo reference is available [here](#-taboo-reference).
+
 ---
 
 ## ⌨️ Keyboard Reference
@@ -226,6 +248,8 @@ A quick overview of all mod key bindings is available in the [Keyboard Reference
 
 ## 🃏 Taboo Reference
 A complete overview of all taboos and how they filter spells is available in the [Taboo Reference](https://wwwweb.github.io/CRMod/cr-taboo-reference.html).
+
+Thanks to avolebva's careful work, meaningful taboo combinations are available as named wizard classes. Async Creator, Taboo Display, and Wizard Skin support wizard classes for configration and display.
 
 ---
 
@@ -246,7 +270,7 @@ A complete overview of all taboos and how they filter spells is available in the
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.8.11.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.9.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
@@ -266,6 +290,8 @@ ChaosReborn\
             CRMod.AsyncLobbyFix.dll
             CRMod.AsyncReadyStatus.dll
             CRMod.BattleEmotes.dll
+            CRMod.Botcamp.dll
+            CRMod.BotRevenge.dll
             CRMod.ChaosManager.dll
             CRMod.ChatCommand.dll
             CRMod.EquipSort.dll
