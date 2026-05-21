@@ -81,7 +81,7 @@ Press **F7** in an online custom lobby to open the Botcamp overlay. Each slot sh
  
 One more round.
  
-Adds a **REMATCH** button to the end screen of async battles where all opponents were AI. Challenge them again without setting up a new lobby.
+Adds a **Rematch** button to the end screen of async battles where all opponents were AI. Challenge them again without setting up a new lobby.
 
 ---
  
