@@ -222,7 +222,7 @@ Right-click any tile during battle to place a ping marker visible to your team. 
 
 ---
 
-### 🎨 Wizard Skins `[F4]`
+### 🎨 Wizard Skin `[F4]`
 
 Let your aura speak for itself.
 
