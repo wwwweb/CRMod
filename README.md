@@ -71,7 +71,7 @@ If you join an async battle after opponents have already played emotes since you
 
 ### 🏕️ Botcamp `[F7]`
  
-Your lobby, your rules, your dress code.
+Your lobby, your dress code.
  
 Press **F7** in an online custom lobby to open the Botcamp overlay. Each slot shows a dropdown to pick the AI's equipment configuration. Choose any of your online configs to dress the AIs accordingly. When ready, click **Start Offline** to leave the online lobby and launch the battle locally against AI opponents.
  
