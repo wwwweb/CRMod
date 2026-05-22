@@ -317,7 +317,7 @@ ChaosReborn\
 
 ### Linux / Mac
 
-Linux and macOS are supported by BepInEx, but step 1 of the installation above needs some extra steps. Chaos Reborn is usually run as a Windows game through a compatibility layer (Proton/Crossover/...), so the Windows version of BepInEx is used, and the game has to be launched with an additional command line parameter. The exact steps depend on your setup and are easy to find via a web search. I have not tested this myself, so please look up the exact parameter for your platform.
+Linux and macOS are supported by BepInEx, but step 1 of the installation above needs some extra steps. Chaos Reborn is usually run as a Windows game through a compatibility layer (Proton/Crossover/...), so the Windows version of BepInEx is used, and the game has to be launched with an additional command line parameter or compatibility layer setting, especially regarding `winhttp.dll`. The exact steps depend on your setup and are easy to find via a web search. I have not tested this myself, so please look up the exact parameter for your platform.
 
 Untested on Linux/Mac - feedback welcome.
 
