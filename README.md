@@ -353,6 +353,14 @@ Ideas and suggestions are welcome. Open an issue or drop a message on Discord.
 
 ---
 
+## 🙏 Acknowledgements
+
+CRMod would not be where it is without the small but dedicated Chaos Reborn community. Thanks for the ideas, the feedback, and the willingness to install mods from a stranger on the internet.
+
+Special thanks to **avolebva** for designing the wizard classes and for allowing their integration into CRMod.
+
+---
+
 ## Disclaimer
 
 This is private fan work. No guarantee that it works, no warranty that it doesn't break something. See the License for details.
