@@ -98,6 +98,13 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
 .taboo-short{font-size:11px;color:var(--text3);font-weight:400;display:block;margin-top:2px}
 .cond{font-size:12px;color:var(--text2);line-height:1.5;min-width:150px}
 .spell-list{font-size:12px;color:var(--text2);line-height:1.7}
+.filter-btn.fb-class.active{background:#6B21A8;border-color:#6B21A8}
+.class-details{width:100%;margin-top:.4rem}
+.class-details summary{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.class-details summary::-webkit-details-marker{display:none}
+.class-details summary::after{content:"▸";font-size:10px;transition:transform .15s}
+.class-details[open] summary::after{transform:rotate(90deg)}
+.class-details-inner{display:flex;flex-wrap:wrap;gap:6px;padding-top:4px}
 .info-block{font-size:13px;color:var(--text2);line-height:1.6;background:var(--bg2);border-radius:var(--radius);padding:12px 16px;margin-bottom:1.5rem}
 .info-block p{margin:.5rem 0 0}
 </style>
@@ -150,6 +157,23 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
       <span class="filter-group-label">Cast chance</span>
       <button class="filter-btn fb-cast" onclick="toggleFilter(this,'LowCast')">Low Casting Chance Spells<span class="short">lowcast</span></button>
       <button class="filter-btn fb-cast" onclick="toggleFilter(this,'HighCast')">High Casting Chance Spells<span class="short">highcast</span></button>
+      <details class="class-details" id="class-details">
+        <summary>Classes</summary>
+        <div class="class-details-inner">
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Arcanist')">Arcanist<span class="short">creature · chaos · armoury</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Dark Priest')">Dark Priest<span class="short">creature · law · armoury</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Demonic Knight')">Demonic Knight<span class="short">neutral · structure · growth · slow</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Druid')">Druid<span class="short">chaos · structure · attack · armoury</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Ingeniarius')">Ingeniarius<span class="short">creature · attack · armoury</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Mage')">Mage<span class="short">creature · structure · armoury</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Pegasus Knight')">Pegasus Knight<span class="short">chaos · structure · growth · nonair</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Rogue')">Rogue<span class="short">nonranged · structure · growth · attack</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Shaman')">Shaman<span class="short">law · structure · undead · attack · armoury</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Sorcerer')">Sorcerer<span class="short">nonchaos · growth · mount</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Summoner')">Summoner<span class="short">noncreature · undead</span></button>
+          <button class="filter-btn fb-class" onclick="toggleClass(this,'Warrior')">Warrior<span class="short">nonmount · attack · undead · growth · structure</span></button>
+        </div>
+      </details>
     </div>
     <div class="count-line" id="count-line"></div>
     <div class="spell-grid" id="spell-grid"></div>
@@ -170,6 +194,9 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
     <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-creature"></tbody></table>
     <div class="group-head">Cast chance taboos</div>
     <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-cast"></tbody></table>
+    <div class="group-head">Wizard classes</div>
+    <p class="group-note">Classes are presets — named combinations of taboos that define a wizard archetype. Selecting a class in the Spells tab activates all its taboos at once. Wizard classes are designed by Chaos Archmage avolebva.</p>
+    <table class="taboo-table"><thead><tr><th>Class</th><th>Active taboos</th><th>Spells in pool</th></tr></thead><tbody id="tbl-classes"></tbody></table>
   </div>
 </div>
 
@@ -232,11 +259,60 @@ const SPELLS=[
 {id:6,name:"Zombie",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","Undead","HighCast"]}
 ];
 
-let activeFilters=new Set();
-let mode="show";
+const UI_NAMES={
+  Law:"Law Spells",NonLaw:"Non-Law Spells",Neutral:"Neutral Spells",NonNeutral:"Non-Neutral Spells",
+  Chaos:"Chaos Spells",NonChaos:"Non-Chaos Spells",
+  Creature:"Creature Spells",NonCreature:"Non-Creature Spells",Structure:"Structure Spells",Growth:"Growth Spells",
+  Attack:"Attack Spells",Armoury:"Magic Weapon Spells",
+  Air:"Flying Creature Spells",NonAir:"Non-Flying Creature Spells",Ranged:"Ranged Creature Spells",NonRanged:"Non-Ranged Creature Spells",
+  Mount:"Creature Mounts",NonMount:"Non-Mount Creatures",Speed:"Fast Creature Spells",Slow:"Slow Creature Spells",Undead:"Undead Spells",
+  LowCast:"Low Casting Chance Spells",HighCast:"High Casting Chance Spells"
+};
 
-function isExcluded(spell){
-  return activeFilters.size>0&&spell.taboos.length>0&&[...activeFilters].some(f=>spell.taboos.includes(f));
+const CLASSES={
+  "Arcanist":["Creature","Chaos","Armoury"],
+  "Dark Priest":["Creature","Law","Armoury"],
+  "Demonic Knight":["Neutral","Structure","Growth","Slow"],
+  "Druid":["Chaos","Structure","Attack","Armoury"],
+  "Ingeniarius":["Creature","Attack","Armoury"],
+  "Mage":["Creature","Structure","Armoury"],
+  "Pegasus Knight":["Chaos","Structure","Growth","NonAir"],
+  "Rogue":["NonRanged","Structure","Growth","Attack"],
+  "Shaman":["Law","Structure","Undead","Attack","Armoury"],
+  "Sorcerer":["NonChaos","Growth","Mount"],
+  "Summoner":["NonCreature","Undead"],
+  "Warrior":["NonMount","Attack","Undead","Growth","Structure"]
+};
+
+let activeClass=null;
+
+function toggleClass(btn,className){
+  const wasActive=activeFilters.size===CLASSES[className].length&&CLASSES[className].every(t=>activeFilters.has(t));
+  activeFilters.clear();
+  document.querySelectorAll(".filter-btn:not(.fb-class).active").forEach(b=>b.classList.remove("active"));
+  if(!wasActive){
+    CLASSES[className].forEach(t=>{
+      activeFilters.add(t);
+      document.querySelectorAll(`.filter-btn[onclick*="toggleFilter(this,'${t}')"]`).forEach(b=>b.classList.add("active"));
+    });
+    document.getElementById("class-details").open=true;
+  }
+  update();
+}
+
+function toggleFilter(btn,taboo){
+  document.querySelectorAll(".fb-class.active").forEach(b=>b.classList.remove("active"));
+  activeClass=null;
+  if(activeFilters.has(taboo)){activeFilters.delete(taboo);btn.classList.remove("active");}
+  else{activeFilters.add(taboo);btn.classList.add("active");}
+  update();
+}
+
+function clearFilters(){
+  activeFilters.clear();
+  activeClass=null;
+  document.querySelectorAll(".filter-btn.active").forEach(b=>b.classList.remove("active"));
+  update();
 }
 
 function buildSpellGrid(){
@@ -275,6 +351,13 @@ function update(){
   if(activeFilters.size===0){cl.textContent="";}
   else if(mode==="show") cl.innerHTML=`<strong>${poolCount}</strong> spell${poolCount!==1?"s":""} remain in the pool &middot; <strong>${excludedCount}</strong> excluded by active taboos`;
   else cl.innerHTML=`<strong>${excludedCount}</strong> spell${excludedCount!==1?"s":""} excluded by active taboos`;
+
+  document.querySelectorAll(".fb-class").forEach(btn=>{
+    const name=btn.getAttribute("onclick").match(/'([^']+)'/)[1];
+    const classTaboos=CLASSES[name];
+    const isExactMatch=classTaboos.length===activeFilters.size&&classTaboos.every(t=>activeFilters.has(t));
+    btn.classList.toggle("active",isExactMatch);
+  });
 }
 
 function setMode(m){
@@ -284,16 +367,11 @@ function setMode(m){
   update();
 }
 
-function toggleFilter(btn,taboo){
-  if(activeFilters.has(taboo)){activeFilters.delete(taboo);btn.classList.remove("active");}
-  else{activeFilters.add(taboo);btn.classList.add("active");}
-  update();
-}
+let activeFilters=new Set();
+let mode="show";
 
-function clearFilters(){
-  activeFilters.clear();
-  document.querySelectorAll(".filter-btn.active").forEach(b=>b.classList.remove("active"));
-  update();
+function isExcluded(spell){
+  return activeFilters.size>0&&spell.taboos.length>0&&[...activeFilters].some(f=>spell.taboos.includes(f));
 }
 
 function switchTab(id,btn){
@@ -357,8 +435,40 @@ function buildTables(){
   });
 }
 
+const CLASS_DESCRIPTIONS={
+  "Arcanist":"This is a wizard who focuses on the study and application of offensive magic of order and neutrality, and the construction of various fortifications and structures. A support mage, indispensable in large-scale team play on the side of the law.",
+  "Dark Priest":"This priest is anything but holy. Only the dark arts of magic beckon him, only hellfire and destructive energies warm his soul. He controls minds, paralyzes wills, resurrects the dead, breathes fire, erects dark totems, and summons mystical, malevolent ents - hell and chaos are in his sight. An excellent companion for a shaman or demonic knight.",
+  "Demonic Knight":"This unstoppable fighter, with a restless soul, charges straight into the thick of battle, refusing half-measures or neutrality. The ethereal energies of law and chaos create a halo of sparkling light around him. Armed to the teeth, he is extremely dangerous, riding the swiftest steeds of law and chaos. He steers the swiftest celestial and infernal creatures before him, so that his glory may thunder before him.",
+  "Druid":"A wizard of nature and law, he acts cautiously and prefers to negotiate with magical beings who will protect his interests in battle rather than engage in hand-to-hand combat or hurl lightning bolts. Beings of law and neutrality side with him.",
+  "Ingeniarius":"The Engineer is a jack of all trades, capable of supporting allied forces, fortifying positions, deterring the enemy, altering terrain to control territory, and supplying allies with mana. A powerful intellect and ability to find innovative solutions in the field have earned this wizard a reputation as a brilliant strategist.",
+  "Mage":"This wizard is no stranger to any form of magical energy - the flames of hell and the lightning of heaven perform a mystical dance of creation and destruction around him, while bolts of wild energy can tear anyone to shreds; he can subjugate any enemy creature, paralyze or trap them in sticky gooey blobs of chaos, resurrect a fallen unit, and raise an entire forest in the blink of an eye. The Mage excels both in one-on-one combat and as part of a team.",
+  "Pegasus Knight":"This is a wizard of order, a knight who flies in on his light-winged pegasus, hurling lightning bolts, armed with a magical sword, bow, and shield. Flying creatures of neutrality and law often circle around him on the battlefield, sensing his ethereal, aerial essence and following him.",
+  "Rogue":"The Rogue Wizard prefers to keep his enemies at bay, surrounding himself with ranged units of all stripes and skill levels - he might be accompanied by dwarves and elves, or even enormous dragons and mountain giants. His rangers are hellhounds, and he himself often rides atop a manticore. And while he prefers to operate from afar, approaching him can still be dangerous - his sharp sword is always at the ready, and his quiver is full of arrows.",
+  "Shaman":"This cunning wizard, skilled in summoning dark and wild creatures, summoning stone rain and a gloomy living forest on the battlefield, setting traps and obstacles for enemies at every turn, nevertheless disdains necromancy and remains closer to the primordial forces of nature. He is a chthonic summoner, consorting with chaotic mages.",
+  "Sorcerer":"Sorcerers have chosen the path of chaos, resorting to the darkest and most violent rituals, summoning hellfire, and surrounding themselves with undead and demonic creatures. Their totems serve only one purpose: to empower their unholy creatures, allowing them to wreak even more destruction and chaos.",
+  "Summoner":"A summoner wizard is a general, a leader - armies of fearsome creatures follow him - and in these armies, you can encounter virtually any creature from any plane. However, you'll rarely encounter undead near a summoner - all that necro stuff isn't for him - the stench of the grave is detrimental to his mental clarity and appetite. A summoner ally is an excellent source of skilled fighters on the battlefield.",
+  "Warrior":"This mage-knight is accustomed to relying on his own strength in close combat, mounted on his trusty mount. His arsenal includes all the magical weapons available to wizards, as well as a cunning martial move that allows him to instantly move to any point in the battle. All magical mounts are available in the Warrior deck."
+};
+
+function buildClassTable(){
+  const tbody=document.getElementById("tbl-classes");
+  if(!tbody)return;
+  Object.entries(CLASSES).forEach(([name,taboos])=>{
+    const sortedTaboos=[...taboos].sort((a,b)=>(UI_NAMES[a]||a).localeCompare(UI_NAMES[b]||b));
+    const tabooStr=sortedTaboos.map(t=>UI_NAMES[t]||t).join(", ");
+    const pool=SORTED_SPELLS.filter(s=>s.taboos.length===0||!taboos.some(t=>s.taboos.includes(t))).map(s=>s.name).join(", ");
+    const desc=CLASS_DESCRIPTIONS[name]||"";
+    tbody.innerHTML+=`<tr>
+      <td class="taboo-name">${name}</td>
+      <td class="cond">${tabooStr}</td>
+      <td class="spell-list">${pool}</td>
+    </tr>${desc?`<tr><td colspan="3" style="font-size:12px;color:var(--text2);font-style:italic;padding:2px 10px 4px;border-bottom:none">${desc}</td></tr><tr><td colspan="3" style="padding:16px 0;border-bottom:1px solid var(--border)"></td></tr>`:""}`
+  });
+}
+
 buildSpellGrid();
 buildTables();
+buildClassTable();
 update();
 </script>
 </body>
