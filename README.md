@@ -16,7 +16,7 @@ Ever tried to run a taboo match in async, only to find the controls missing?
 
 In live lobbies, Reward and Taboo controls are available directly in the UI. In **async lobbies**, these controls are missing entirely. This mod fills that gap. Taboos and rewards can be set and viewed by using an enhanced UI that is enabled by pressing **F8** on the async games lobby screen. Alternatively, chat commands can be used for configuration without using the enhanced UI.
 
-As the server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it. If you use the UI for setting taboos, do not forget to post the setting by `/share`, so non-mod users know about them.
+As the server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it. If you use the UI for setting taboos, do not forget to post the setting by `/sharelong`, so non-mod users know about them.
 
 All default taboos as well as wizard classes defined by avolebva are supported by Async Creator. A complete taboo reference is available [here](#-taboo-reference).
 
@@ -24,8 +24,8 @@ All default taboos as well as wizard classes defined by avolebva are supported b
 |---|---|
 | `/reward none\|gold\|crystals` | Set the reward for the winner |
 | `/taboo <slot(s)> <taboo(s)>` | Sets taboos for one or more slots (additive) |
-| `/status` | Show reward + taboos for all slots locally |
-| `/share` | Show reward + taboos for all in lobby chat |
+| `/status`, `/statuslong` | Show reward + taboos for all slots locally |
+| `/share`, `/sharelong` | Show reward + taboos for all in lobby chat |
 | `/help` | List available commands |
 
 > ⚠️ Taboos apply to deck cards only. The wizard's Mega Spell (staff ability) cannot be restricted.
