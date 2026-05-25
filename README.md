@@ -59,7 +59,7 @@ Trigger pixelart animations over the battle field through lobby chat. Type `!gg`
 | Command (Battle Chat) | Effect |
 |---|---|
 | `!<emote name>` | Play the emote animation |
-| `!moon <text>` | CR moon with a text overlay |
+| `!moon [text]` | CR moon with a text overlay |
 | `!replay` | Replay this session's emotes locally |
 | `!help` | Show the full list of available emotes |
  
