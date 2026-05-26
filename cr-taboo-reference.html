@@ -32,19 +32,15 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:2rem 1rem 4rem}
-.wrap{max-width:900px;margin:0 auto}
+.wrap{max-width:1600px;margin:0 auto}
 h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
 .subtitle{font-size:14px;color:var(--text2);margin-bottom:2rem;line-height:1.5}
 .tabs{display:flex;gap:4px;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
-.tab{font-size:14px;padding:7px 16px;border:none;background:transparent;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s;font-family:inherit}
+.tab{font-size:14px;font-weight:600;padding:7px 16px;border:none;background:transparent;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s;font-family:inherit}
 .tab.active{color:var(--purple);border-bottom-color:var(--purple)}
 .tab:hover{color:var(--text)}
 .tab-content{display:none}
 .tab-content.active{display:block}
-.search-row{display:flex;gap:8px;margin-bottom:.75rem}
-.search-row input{flex:1;font-size:14px;padding:8px 12px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-family:inherit;outline:none}
-.search-row input:focus{border-color:var(--purple)}
-.search-row input::placeholder{color:var(--text3)}
 .clear-btn{font-size:13px;padding:8px 14px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text2);cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .15s}
 .clear-btn:hover{background:var(--bg2)}
 .mode-row{display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap}
@@ -53,6 +49,8 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
 .mode-btn.active-show{background:#085041;border-color:#085041;color:#fff}
 .mode-btn.active-hide{background:#712B13;border-color:#712B13;color:#fff}
 .controls{display:flex;flex-wrap:wrap;gap:6px;margin:.5rem 0 1.25rem}
+.footer{font-size:12px;color:var(--text3);margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);line-height:1.6}
+.footer a{color:var(--text3)}
 .filter-group-label{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;width:100%;margin-top:.6rem;margin-bottom:2px}
 .filter-btn{font-size:12px;padding:5px 10px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--bg3);color:var(--text2);cursor:pointer;line-height:1.3;text-align:left;font-family:inherit;transition:all .15s}
 .filter-btn:hover{background:var(--bg2)}
@@ -62,15 +60,17 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
 .fb-align.active{background:#5F5E5A}
 .fb-creature.active{background:#185FA5}
 .fb-property.active{background:#0F6E56}
-.fb-type.active{background:#3B6D11}
 .fb-cast.active{background:#854F0B}
-.count-line{font-size:13px;color:var(--text3);margin-bottom:.75rem}
+.tag-row.hidden-tags .tag{display:none}
+.tag-row.hidden-tags .no-tags{display:none}
+.spell-card.tags-hidden .spell-name{display:none}
+.count-line{font-size:13px;color:var(--text3);padding-left:6px}
 .count-line strong{color:var(--text);font-weight:600}
-.spell-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.spell-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
 .spell-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;transition:border-color .15s}
-.spell-card:hover{border-color:var(--border2)}
+.spell-card .card-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:calc(var(--radius) - 2px);margin:0 auto 8px;display:block}
 .spell-card.hidden{display:none}
-.spell-name{font-size:14px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+.spell-name{font-size:14px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em;text-align:center}
 .tag-row{display:flex;flex-wrap:wrap;gap:4px}
 .no-tags{font-size:11px;color:var(--text3);font-style:italic}
 .tag{font-size:11px;padding:2px 7px;border-radius:7px;border:1px solid var(--border)}
@@ -107,27 +107,33 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
 .class-details-inner{display:flex;flex-wrap:wrap;gap:6px;padding-top:4px}
 .info-block{font-size:13px;color:var(--text2);line-height:1.6;background:var(--bg2);border-radius:var(--radius);padding:12px 16px;margin-bottom:1.5rem}
 .info-block p{margin:.5rem 0 0}
+
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;cursor:pointer}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+
+.class-img-grid{display:flex;flex-direction:column;gap:2rem;align-items:flex-start}
+.class-img-grid img{max-width:100%;border-radius:var(--radius);display:block}
+.class-img-placeholder{background:var(--bg2);border:1px dashed var(--border2);border-radius:var(--radius);padding:3rem 2rem;color:var(--text3);font-size:14px;text-align:center;min-width:300px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Chaos Reborn — Taboo Reference</h1>
-  <p class="subtitle">A complete reference for all 23 taboos and how they filter spells from wizard decks.</p>
+  <p class="subtitle">A complete reference for all 23 taboos, how they filter spells from wizard decks, and the wizard classes built around them.</p>
 
   <div class="tabs">
     <button class="tab active" onclick="switchTab('spells',this)">Spells</button>
     <button class="tab" onclick="switchTab('taboos',this)">Taboo Groups</button>
+    <button class="tab" onclick="switchTab('classes',this)">Wizard Classes</button>
   </div>
 
   <div id="tab-spells" class="tab-content active">
-    <div class="search-row">
-      <input id="spell-search" type="text" placeholder="Search spell name…" oninput="update()">
-      <button class="clear-btn" onclick="clearFilters()">Clear filters</button>
-    </div>
     <div class="mode-row">
       <span class="mode-label">Active taboos remove spells —</span>
       <button id="btn-show" class="mode-btn active-show" onclick="setMode('show')">Show remaining pool</button>
       <button id="btn-hide" class="mode-btn" onclick="setMode('hide')">Show excluded spells</button>
+      <button class="clear-btn" onclick="clearFilters()" style="margin-left:1rem">Clear filters</button>
     </div>
     <div class="controls">
       <span class="filter-group-label">Alignment</span>
@@ -157,7 +163,7 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
       <span class="filter-group-label">Cast chance</span>
       <button class="filter-btn fb-cast" onclick="toggleFilter(this,'LowCast')">Low Casting Chance Spells<span class="short">lowcast</span></button>
       <button class="filter-btn fb-cast" onclick="toggleFilter(this,'HighCast')">High Casting Chance Spells<span class="short">highcast</span></button>
-      <details class="class-details" id="class-details">
+      <details class="class-details" id="class-details" open>
         <summary>Classes</summary>
         <div class="class-details-inner">
           <button class="filter-btn fb-class" onclick="toggleClass(this,'Arcanist')">Arcanist<span class="short">creature · chaos · armoury</span></button>
@@ -175,7 +181,14 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
         </div>
       </details>
     </div>
-    <div class="count-line" id="count-line"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:6px">
+      <div class="count-line" id="count-line"></div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <input id="spell-search" type="text" placeholder="Search…" oninput="update()" style="font-size:12px;padding:3px 8px;border-radius:20px;border:1px solid var(--border2);background:var(--bg3);color:var(--text);width:130px;font-family:inherit;outline:none">
+        <button id="toggle-tags-btn" onclick="toggleTags()" style="font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid var(--border2);background:var(--bg3);color:var(--text3);cursor:pointer;font-family:inherit">Hide tags</button>
+        <button id="sort-align-btn" onclick="toggleSortAlign()" style="font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid var(--border2);background:var(--bg3);color:var(--text3);cursor:pointer;font-family:inherit">Sort by alignment</button>
+      </div>
+    </div>
     <div class="spell-grid" id="spell-grid"></div>
   </div>
 
@@ -194,12 +207,17 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
     <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-creature"></tbody></table>
     <div class="group-head">Cast chance taboos</div>
     <table class="taboo-table"><thead><tr><th>Taboo</th><th>What gets blocked</th><th>Spells</th></tr></thead><tbody id="tbl-cast"></tbody></table>
-    <div class="group-head">Wizard classes</div>
-    <p class="group-note">Classes are presets — named combinations of taboos that define a wizard archetype. Selecting a class in the Spells tab activates all its taboos at once. Wizard classes are designed by Chaos Archmage avolebva.</p>
-    <table class="taboo-table"><thead><tr><th>Class</th><th>Active taboos</th><th>Spells in pool</th></tr></thead><tbody id="tbl-classes"></tbody></table>
   </div>
+
+  <div id="tab-classes" class="tab-content">
+    <div class="info-block" style="margin-bottom:1.5rem">Classes are presets — named combinations of taboos that define a wizard archetype. They are designed with team play in mind and work best in multiplayer games. Wizard classes are designed by Chaos Archmage avolebva.</div>
+    <div class="class-img-grid" id="class-img-grid"></div>
+  </div>
+  <p class="footer">Created by Blubber as part of <a href="https://github.com/wwwweb/CRMod" target="_blank">CRMod</a>. Wizard classes and wizard class artwork designed by avolebva.<br>
+  Artwork on this page is taken or derived from the <a href="https://www.chaos-reborn.com/press/" target="_blank">Chaos Reborn press kit</a> &copy; Snapshot Games and from the <a href="https://chaosreborn.fandom.com" target="_blank">Chaos Reborn Fandom Wiki</a>, both originally licensed under CC BY-SA, and is available here under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</p>
 </div>
 
+<div class="lightbox" id="lightbox" onclick="closeLightbox()"><img id="lightbox-img" src="" alt=""></div>
 <script>
 const TAG_CLASSES={
   Law:"t-align",NonLaw:"t-align",Neutral:"t-align",NonNeutral:"t-align",Chaos:"t-align",NonChaos:"t-align",
@@ -210,53 +228,53 @@ const TAG_CLASSES={
 };
 
 const SPELLS=[
-{id:64,name:"Air Elemental",taboos:["NonLaw","Neutral","NonChaos","Creature","Air","NonRanged","NonMount","Speed","HighCast"]},
-{id:55,name:"Bloodlust Totem",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Structure","HighCast"]},
-{id:61,name:"Bolt Tower",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Structure","HighCast"]},
-{id:29,name:"Chaos Shift",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","HighCast"]},
-{id:65,name:"Crystal Wall",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","Growth","HighCast"]},
-{id:26,name:"MA-3 Damnation (Chaos)",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Attack","HighCast"]},
-{id:23,name:"MA-1 Decree (Law)",taboos:["Law","NonNeutral","NonChaos","NonCreature","Attack","HighCast"]},
-{id:0,name:"Disbelieve",taboos:[]},
-{id:4,name:"Dwarf",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","HighCast"]},
-{id:15,name:"Eagle",taboos:["NonLaw","Neutral","NonChaos","Creature","Air","NonRanged","NonMount","Speed","HighCast"]},
-{id:1,name:"Elf",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","HighCast"]},
-{id:31,name:"Elephant",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","Mount","Slow","LowCast"]},
-{id:57,name:"Fountain of Life",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","LowCast"]},
-{id:3,name:"Giant",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","LowCast"]},
-{id:9,name:"Goblin",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","HighCast"]},
-{id:16,name:"Gooey Blob",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Growth","HighCast"]},
-{id:56,name:"Guardian Totem",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","HighCast"]},
-{id:45,name:"Hellhound",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","Ranged","NonMount","Speed","Undead","LowCast"]},
-{id:44,name:"Hydra",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","LowCast"]},
-{id:62,name:"Icarus Tower",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","HighCast"]},
-{id:25,name:"MA-3 Justice (Law)",taboos:["Law","NonNeutral","NonChaos","NonCreature","Attack","HighCast"]},
-{id:28,name:"Law Shift",taboos:["Law","NonNeutral","NonChaos","NonCreature","HighCast"]},
-{id:2,name:"Lion",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
-{id:27,name:"Magic Bolt",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
-{id:21,name:"Magic Bow",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
-{id:20,name:"Magic Shield",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
-{id:19,name:"Magic Sword",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
-{id:48,name:"Magic Wood",taboos:["Law","NonNeutral","NonChaos","NonCreature","Growth","HighCast"]},
-{id:30,name:"Manticore",taboos:["NonLaw","NonNeutral","Chaos","Creature","Air","Ranged","Mount","Speed","LowCast"]},
-{id:63,name:"Meteor Shower",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","HighCast"]},
-{id:47,name:"Paladin",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Slow","LowCast"]},
-{id:60,name:"Paralyse",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
-{id:32,name:"Pegasus",taboos:["Law","NonNeutral","NonChaos","Creature","Air","NonRanged","Mount","Speed","LowCast"]},
-{id:50,name:"Raise Dead",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Undead","LowCast"]},
-{id:46,name:"Rat Pack",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
-{id:12,name:"Sapphire Dragon",taboos:["Law","NonNeutral","NonChaos","Creature","Air","Ranged","NonMount","Speed","LowCast"]},
-{id:18,name:"Shadow Wood",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Growth","HighCast"]},
-{id:8,name:"Skeleton",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","Undead","HighCast"]},
-{id:5,name:"Spider",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
-{id:22,name:"Subversion",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
-{id:17,name:"Tangle Vine",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Growth","HighCast"]},
-{id:51,name:"Teleport",taboos:["NonLaw","Neutral","NonChaos","NonCreature","HighCast"]},
-{id:14,name:"Unicorn",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","NonRanged","Mount","Speed","HighCast"]},
-{id:7,name:"Vampire",taboos:["NonLaw","NonNeutral","Chaos","Creature","Air","NonRanged","NonMount","Speed","Undead","LowCast"]},
-{id:24,name:"MA-1 Vengeance (Chaos)",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Attack","HighCast"]},
-{id:59,name:"Wind Walker",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Armoury","HighCast"]},
-{id:6,name:"Zombie",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","Undead","HighCast"]}
+{id:64,name:"Air Elemental",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","Creature","Air","NonRanged","NonMount","Speed","HighCast"]},
+{id:55,name:"Bloodlust Totem",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Structure","HighCast"]},
+{id:61,name:"Bolt Tower",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Structure","HighCast"]},
+{id:29,name:"Chaos Shift",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","HighCast"]},
+{id:65,name:"Crystal Wall",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","Growth","HighCast"]},
+{id:26,name:"MA-3 Damnation (Chaos)",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Attack","HighCast"]},
+{id:23,name:"MA-1 Decree (Law)",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:0,name:"Disbelieve",align:"neutral",taboos:[]},
+{id:4,name:"Dwarf",align:"law",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","HighCast"]},
+{id:15,name:"Eagle",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","Creature","Air","NonRanged","NonMount","Speed","HighCast"]},
+{id:1,name:"Elf",align:"law",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","HighCast"]},
+{id:31,name:"Elephant",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","Mount","Slow","LowCast"]},
+{id:57,name:"Fountain of Life",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","LowCast"]},
+{id:3,name:"Giant",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","Ranged","NonMount","Slow","LowCast"]},
+{id:9,name:"Goblin",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","HighCast"]},
+{id:16,name:"Gooey Blob",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Growth","HighCast"]},
+{id:56,name:"Guardian Totem",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","HighCast"]},
+{id:45,name:"Hellhound",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","Ranged","NonMount","Speed","Undead","LowCast"]},
+{id:44,name:"Hydra",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","LowCast"]},
+{id:62,name:"Icarus Tower",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Structure","HighCast"]},
+{id:25,name:"MA-3 Justice (Law)",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:28,name:"Law Shift",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","HighCast"]},
+{id:2,name:"Lion",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
+{id:27,name:"Magic Bolt",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:21,name:"Magic Bow",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
+{id:20,name:"Magic Shield",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
+{id:19,name:"Magic Sword",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Armoury","HighCast"]},
+{id:48,name:"Magic Wood",align:"law",taboos:["Law","NonNeutral","NonChaos","NonCreature","Growth","HighCast"]},
+{id:30,name:"Manticore",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","Creature","Air","Ranged","Mount","Speed","LowCast"]},
+{id:63,name:"Meteor Shower",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","HighCast"]},
+{id:47,name:"Paladin",align:"law",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Slow","LowCast"]},
+{id:60,name:"Paralyse",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:32,name:"Pegasus",align:"law",taboos:["Law","NonNeutral","NonChaos","Creature","Air","NonRanged","Mount","Speed","LowCast"]},
+{id:50,name:"Raise Dead",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Undead","LowCast"]},
+{id:46,name:"Rat Pack",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
+{id:12,name:"Sapphire Dragon",align:"law",taboos:["Law","NonNeutral","NonChaos","Creature","Air","Ranged","NonMount","Speed","LowCast"]},
+{id:18,name:"Shadow Wood",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Growth","HighCast"]},
+{id:8,name:"Skeleton",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","Undead","HighCast"]},
+{id:5,name:"Spider",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","Creature","NonAir","NonRanged","NonMount","Speed","HighCast"]},
+{id:22,name:"Subversion",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Attack","HighCast"]},
+{id:17,name:"Tangle Vine",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Growth","HighCast"]},
+{id:51,name:"Teleport",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","NonCreature","HighCast"]},
+{id:14,name:"Unicorn",align:"law",taboos:["Law","NonNeutral","NonChaos","Creature","NonAir","NonRanged","Mount","Speed","HighCast"]},
+{id:7,name:"Vampire",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","Creature","Air","NonRanged","NonMount","Speed","Undead","LowCast"]},
+{id:24,name:"MA-1 Vengeance (Chaos)",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","NonCreature","Attack","HighCast"]},
+{id:59,name:"Wind Walker",align:"neutral",taboos:["NonLaw","Neutral","NonChaos","NonCreature","Armoury","HighCast"]},
+{id:6,name:"Zombie",align:"chaos",taboos:["NonLaw","NonNeutral","Chaos","Creature","NonAir","NonRanged","NonMount","Slow","Undead","HighCast"]}
 ];
 
 const UI_NAMES={
@@ -315,14 +333,76 @@ function clearFilters(){
   update();
 }
 
+const SPELL_IMAGES={
+  "Disbelieve":{thumb:"images/spells/Spell_Card_-_Disbelieve.webp",full:"images/spells/Spell_Card_-_Disbelieve.webp"},
+  "Air Elemental":{thumb:"images/spells/Spell_Card_-_Air_Elemental.webp",full:"images/spells/Spell_Card_-_Air_Elemental.webp"},
+  "Bloodlust Totem":{thumb:"images/spells/Spell_Card_-_Bloodlust_Totem.webp",full:"images/spells/Spell_Card_-_Bloodlust_Totem.webp"},
+  "Bolt Tower":{thumb:"images/spells/Spell_Card_-_Bolt_Tower.webp",full:"images/spells/Spell_Card_-_Bolt_Tower.webp"},
+  "Chaos Shift":{thumb:"images/spells/Spell_Card_-_Chaos_Shift.webp",full:"images/spells/Spell_Card_-_Chaos_Shift.webp"},
+  "Crystal Wall":{thumb:"images/spells/Spell_Card_-_Crystal_Maze.webp",full:"images/spells/Spell_Card_-_Crystal_Maze.webp"},
+  "Dwarf":{thumb:"images/spells/Spell_Card_-_Dwarf.webp",full:"images/spells/Spell_Card_-_Dwarf.webp"},
+  "Eagle":{thumb:"images/spells/Spell_Card_-_Eagle.webp",full:"images/spells/Spell_Card_-_Eagle.webp"},
+  "Elephant":{thumb:"images/spells/Spell_Card_-_Elephant.webp",full:"images/spells/Spell_Card_-_Elephant.webp"},
+  "Elf":{thumb:"images/spells/Spell_Card_-_Elf.webp",full:"images/spells/Spell_Card_-_Elf.webp"},
+  "Fountain of Life":{thumb:"images/spells/Spell_Card_-_Fountain_of_Life.webp",full:"images/spells/Spell_Card_-_Fountain_of_Life.webp"},
+  "Giant":{thumb:"images/spells/Spell_Card_-_Giant.webp",full:"images/spells/Spell_Card_-_Giant.webp"},
+  "Goblin":{thumb:"images/spells/Spell_Card_-_Goblin.webp",full:"images/spells/Spell_Card_-_Goblin.webp"},
+  "Gooey Blob":{thumb:"images/spells/Spell_Card_-_Gooey_Blob.webp",full:"images/spells/Spell_Card_-_Gooey_Blob.webp"},
+  "Guardian Totem":{thumb:"images/spells/Spell_Card_-_Guardian_Totem.webp",full:"images/spells/Spell_Card_-_Guardian_Totem.webp"},
+  "Hellhound":{thumb:"images/spells/Spell_Card_-_Hellhound.webp",full:"images/spells/Spell_Card_-_Hellhound.webp"},
+  "Hydra":{thumb:"images/spells/Spell_Card_-_Hydra.webp",full:"images/spells/Spell_Card_-_Hydra.webp"},
+  "Icarus Tower":{thumb:"images/spells/Spell_Card_-_Icarus_Tower.webp",full:"images/spells/Spell_Card_-_Icarus_Tower.webp"},
+  "Law Shift":{thumb:"images/spells/Spell_Card_-_Law_Shift.webp",full:"images/spells/Spell_Card_-_Law_Shift.webp"},
+  "Lion":{thumb:"images/spells/Spell_Card_-_Lion.webp",full:"images/spells/Spell_Card_-_Lion.webp"},
+  "MA-1 Decree (Law)":{thumb:"images/spells/Spell_Card_-_Magic_Attack_-_Decree.webp",full:"images/spells/Spell_Card_-_Magic_Attack_-_Decree.webp"},
+  "MA-1 Vengeance (Chaos)":{thumb:"images/spells/Spell_Card_-_Magic_Attack_-_Vengeance.webp",full:"images/spells/Spell_Card_-_Magic_Attack_-_Vengeance.webp"},
+  "MA-3 Damnation (Chaos)":{thumb:"images/spells/Spell_Card_-_Magic_Attack_-_Damnation.webp",full:"images/spells/Spell_Card_-_Magic_Attack_-_Damnation.webp"},
+  "MA-3 Justice (Law)":{thumb:"images/spells/Spell_Card_-_Magic_Attack_-_Justice.webp",full:"images/spells/Spell_Card_-_Magic_Attack_-_Justice.webp"},
+  "Magic Bolt":{thumb:"images/spells/Spell_Card_-_Magic_Bolt.webp",full:"images/spells/Spell_Card_-_Magic_Bolt.webp"},
+  "Magic Bow":{thumb:"images/spells/Spell_Card_-_Magic_Bow.webp",full:"images/spells/Spell_Card_-_Magic_Bow.webp"},
+  "Magic Shield":{thumb:"images/spells/Spell_Card_-_Magic_Shield.webp",full:"images/spells/Spell_Card_-_Magic_Shield.webp"},
+  "Magic Sword":{thumb:"images/spells/Spell_Card_-_Magic_Sword.webp",full:"images/spells/Spell_Card_-_Magic_Sword.webp"},
+  "Magic Wood":{thumb:"images/spells/Spell_Card_-_Magic_Wood.webp",full:"images/spells/Spell_Card_-_Magic_Wood.webp"},
+  "Manticore":{thumb:"images/spells/Spell_Card_-_Manticore.webp",full:"images/spells/Spell_Card_-_Manticore.webp"},
+  "Meteor Shower":{thumb:"images/spells/Spell_Card_-_Meteor_Shower.webp",full:"images/spells/Spell_Card_-_Meteor_Shower.webp"},
+  "Paladin":{thumb:"images/spells/Spell_Card_-_Paladin.webp",full:"images/spells/Spell_Card_-_Paladin.webp"},
+  "Paralyse":{thumb:"images/spells/Spell_Card_-_Paralyse.webp",full:"images/spells/Spell_Card_-_Paralyse.webp"},
+  "Pegasus":{thumb:"images/spells/Spell_Card_-_Pegasus.webp",full:"images/spells/Spell_Card_-_Pegasus.webp"},
+  "Raise Dead":{thumb:"images/spells/Spell_Card_-_Raise_Dead.webp",full:"images/spells/Spell_Card_-_Raise_Dead.webp"},
+  "Rat Pack":{thumb:"images/spells/Spell_Card_-_Rat_Pack.webp",full:"images/spells/Spell_Card_-_Rat_Pack.webp"},
+  "Sapphire Dragon":{thumb:"images/spells/Spell_Card_-_Sapphire_Dragon.webp",full:"images/spells/Spell_Card_-_Sapphire_Dragon.webp"},
+  "Shadow Wood":{thumb:"images/spells/Spell_Card_-_Shadow_Wood.webp",full:"images/spells/Spell_Card_-_Shadow_Wood.webp"},
+  "Skeleton":{thumb:"images/spells/Spell_Card_-_Skeleton.webp",full:"images/spells/Spell_Card_-_Skeleton.webp"},
+  "Spider":{thumb:"images/spells/Spell_Card_-_Spider.webp",full:"images/spells/Spell_Card_-_Spider.webp"},
+  "Subversion":{thumb:"images/spells/Spell_Card_-_Subversion.webp",full:"images/spells/Spell_Card_-_Subversion.webp"},
+  "Tangle Vine":{thumb:"images/spells/Spell_Card_-_Tangle_Vine.webp",full:"images/spells/Spell_Card_-_Tangle_Vine.webp"},
+  "Teleport":{thumb:"images/spells/Spell_Card_-_Teleport.webp",full:"images/spells/Spell_Card_-_Teleport.webp"},
+  "Unicorn":{thumb:"images/spells/Spell_Card_-_Unicorn.webp",full:"images/spells/Spell_Card_-_Unicorn.webp"},
+  "Vampire":{thumb:"images/spells/Spell_Card_-_Vampire.webp",full:"images/spells/Spell_Card_-_Vampire.webp"},
+  "Wind Walker":{thumb:"images/spells/Spell_Card_-_Wind_Walker.webp",full:"images/spells/Spell_Card_-_Wind_Walker.webp"},
+  "Zombie":{thumb:"images/spells/Spell_Card_-_Zombie.webp",full:"images/spells/Spell_Card_-_Zombie.webp"},
+};
+
+
 function buildSpellGrid(){
   const grid=document.getElementById("spell-grid");
   grid.innerHTML="";
-  [...SPELLS].sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{
+  const sorted=[...SPELLS].sort((a,b)=>{
+    if(sortByAlign){
+      const ao=ALIGN_ORDER[a.align]??1, bo=ALIGN_ORDER[b.align]??1;
+      if(ao!==bo) return ao-bo;
+      const ac=CAST_CHANCE[a.name]??50, bc=CAST_CHANCE[b.name]??50;
+      if(ac!==bc) return bc-ac;
+    }
+    return a.name.localeCompare(b.name);
+  });
+  sorted.forEach(s=>{
     const tagHtml=s.taboos.length===0
       ?'<span class="no-tags">not affected by any taboo</span>'
       :s.taboos.map(t=>`<span class="tag ${TAG_CLASSES[t]||""}" data-key="${t}">${t.toLowerCase()}</span>`).join("");
+    const img=SPELL_IMAGES[s.name]?`<img class="card-img" src="${SPELL_IMAGES[s.name].thumb}" alt="${s.name}" onclick="openLightbox('${SPELL_IMAGES[s.name].full}')" style="cursor:pointer">`:"";
     grid.innerHTML+=`<div class="spell-card" data-id="${s.id}" data-name="${s.name.toLowerCase()}">
+      ${img}
       <div class="spell-name">${s.name}</div>
       <div class="tag-row">${tagHtml}</div>
     </div>`;
@@ -367,7 +447,40 @@ function setMode(m){
   update();
 }
 
+let sortByAlign=false;
+let tagsVisible=true;
+const ALIGN_ORDER={law:0,neutral:1,chaos:2};
+const CAST_CHANCE={
+  "Disbelieve":100,"Elf":60,"Lion":70,"Giant":40,"Dwarf":90,"Spider":60,
+  "Zombie":65,"Vampire":40,"Skeleton":75,"Goblin":90,"Sapphire Dragon":20,
+  "Unicorn":60,"Eagle":80,"Gooey Blob":70,"Tangle Vine":80,"Shadow Wood":70,
+  "Magic Sword":70,"Magic Shield":65,"Magic Bow":60,"Subversion":75,
+  "MA-1 Decree (Law)":80,"MA-1 Vengeance (Chaos)":80,"MA-3 Justice (Law)":60,
+  "MA-3 Damnation (Chaos)":60,"Magic Bolt":100,"Law Shift":80,"Chaos Shift":80,
+  "Manticore":40,"Elephant":50,"Pegasus":40,"Hydra":30,"Hellhound":50,
+  "Rat Pack":90,"Paladin":40,"Magic Wood":70,"Raise Dead":50,"Teleport":90,
+  "Bloodlust Totem":60,"Guardian Totem":60,"Fountain of Life":40,
+  "Wind Walker":60,"Paralyse":80,"Bolt Tower":70,"Icarus Tower":60,
+  "Meteor Shower":80,"Air Elemental":70,"Crystal Wall":70
+};
+
+function toggleSortAlign(){
+  sortByAlign=!sortByAlign;
+  document.getElementById("sort-align-btn").textContent=sortByAlign?"Sort alphabetically":"Sort by alignment";
+  buildSpellGrid();
+  if(!tagsVisible){
+    document.querySelectorAll(".tag-row").forEach(r=>r.classList.add("hidden-tags"));
+    document.querySelectorAll(".spell-card").forEach(c=>c.classList.add("tags-hidden"));
+  }
+  update();
+}
 let activeFilters=new Set();
+function toggleTags(){
+  tagsVisible=!tagsVisible;
+  document.querySelectorAll(".tag-row").forEach(r=>r.classList.toggle("hidden-tags",!tagsVisible));
+  document.querySelectorAll(".spell-card").forEach(c=>c.classList.toggle("tags-hidden",!tagsVisible));
+  document.getElementById("toggle-tags-btn").textContent=tagsVisible?"Hide tags":"Show tags";
+}
 let mode="show";
 
 function isExcluded(spell){
@@ -378,7 +491,9 @@ function switchTab(id,btn){
   document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
   document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
   document.getElementById("tab-"+id).classList.add("active");
-  btn.classList.add("active");
+  if(btn) btn.classList.add("active");
+  else document.querySelector(`.tab[onclick*="'${id}'"]`).classList.add("active");
+  location.hash=id;
 }
 
 const TABOO_GROUPS={
@@ -466,9 +581,52 @@ function buildClassTable(){
   });
 }
 
+function openLightbox(src){
+  document.getElementById("lightbox-img").src=src;
+  document.getElementById("lightbox").classList.add("open");
+}
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("open");
+}
+const CLASS_IMAGES={
+  "Arcanist":"images/wizard-classes/Arcanist.jpg",
+  "Dark Priest":"images/wizard-classes/Dark_Priest.jpg",
+  "Demonic Knight":"images/wizard-classes/Demonic_Knight.jpg",
+  "Druid":"images/wizard-classes/Druid.jpg",
+  "Ingeniarius":"images/wizard-classes/Ingeniarius.jpg",
+  "Mage":"images/wizard-classes/Mage.jpg",
+  "Pegasus Knight":"images/wizard-classes/Pegasus_Knight.jpg",
+  "Rogue":"images/wizard-classes/Rogue.jpg",
+  "Shaman":"images/wizard-classes/Shaman.jpg",
+  "Sorcerer":"images/wizard-classes/Sorcerer.jpg",
+  "Summoner":"images/wizard-classes/Summoner.jpg",
+  "Warrior":"images/wizard-classes/Warrior.jpg",
+};
+
+function buildClassImgGrid(){
+  const grid=document.getElementById("class-img-grid");
+  if(!grid)return;
+  const sorted=['Arcanist', 'Dark Priest', 'Demonic Knight', 'Druid', 'Ingeniarius', 'Mage', 'Pegasus Knight', 'Rogue', 'Shaman', 'Sorcerer', 'Summoner', 'Warrior'];
+  sorted.forEach(name=>{
+    if(CLASS_IMAGES[name]){
+      const img=document.createElement("img");
+      img.src=CLASS_IMAGES[name];
+      img.alt=name;
+      grid.appendChild(img);
+    } else {
+      const ph=document.createElement("div");
+      ph.className="class-img-placeholder";
+      ph.textContent=name+" — artwork coming soon";
+      grid.appendChild(ph);
+    }
+  });
+}
 buildSpellGrid();
 buildTables();
 buildClassTable();
+buildClassImgGrid();
+const initTab=["spells","taboos","classes"].includes(location.hash.slice(1))?location.hash.slice(1):"spells";
+switchTab(initTab,null);
 update();
 </script>
 </body>
