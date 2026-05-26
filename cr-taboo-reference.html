@@ -112,8 +112,11 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
 .lightbox.open{display:flex}
 .lightbox img{max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.6)}
 
-.class-img-grid{display:flex;flex-direction:column;gap:2rem;align-items:flex-start}
+.class-img-grid{display:flex;flex-direction:column;gap:0;align-items:flex-start}
 .class-img-grid img{max-width:100%;border-radius:var(--radius);display:block}
+.class-img-entry{width:100%;padding:2rem 0;border-bottom:1px solid var(--border)}
+.class-img-entry:first-child{padding-top:0}
+.class-img-entry:last-child{border-bottom:none}
 .class-img-placeholder{background:var(--bg2);border:1px dashed var(--border2);border-radius:var(--radius);padding:3rem 2rem;color:var(--text3);font-size:14px;text-align:center;min-width:300px}
 </style>
 </head>
@@ -210,7 +213,7 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
   </div>
 
   <div id="tab-classes" class="tab-content">
-    <div class="info-block" style="margin-bottom:1.5rem">Classes are presets — named combinations of taboos that define a wizard archetype. They are designed with team play in mind and work best in multiplayer games. Wizard classes are designed by Chaos Archmage avolebva.</div>
+    <div class="info-block" style="margin-bottom:1.5rem">Classes are presets — named combinations of taboos that define a wizard archetype. They are designed with team play in mind and work best in multiplayer team games. Wizard classes are designed by Chaos Archmage avolebva.</div>
     <div class="class-img-grid" id="class-img-grid"></div>
   </div>
   <p class="footer">Created by Blubber as part of <a href="https://github.com/wwwweb/CRMod" target="_blank">CRMod</a>. Wizard classes and wizard class artwork designed by avolebva.<br>
@@ -608,17 +611,20 @@ function buildClassImgGrid(){
   if(!grid)return;
   const sorted=['Arcanist', 'Dark Priest', 'Demonic Knight', 'Druid', 'Ingeniarius', 'Mage', 'Pegasus Knight', 'Rogue', 'Shaman', 'Sorcerer', 'Summoner', 'Warrior'];
   sorted.forEach(name=>{
+    const entry=document.createElement("div");
+    entry.className="class-img-entry";
     if(CLASS_IMAGES[name]){
       const img=document.createElement("img");
       img.src=CLASS_IMAGES[name];
       img.alt=name;
-      grid.appendChild(img);
+      entry.appendChild(img);
     } else {
       const ph=document.createElement("div");
       ph.className="class-img-placeholder";
       ph.textContent=name+" — artwork coming soon";
-      grid.appendChild(ph);
+      entry.appendChild(ph);
     }
+    grid.appendChild(entry);
   });
 }
 buildSpellGrid();
