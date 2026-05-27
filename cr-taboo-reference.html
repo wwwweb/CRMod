@@ -113,7 +113,7 @@ h1{font-size:24px;font-weight:600;margin-bottom:4px;letter-spacing:-.02em}
 .lightbox img{max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.6)}
 
 .class-img-grid{display:flex;flex-direction:column;gap:0;align-items:flex-start}
-.class-img-grid img{max-width:100%;border-radius:var(--radius);display:block}
+.class-img-grid img{max-width:1084px;width:100%;border-radius:var(--radius);display:block}
 .class-img-entry{width:100%;padding:2rem 0;border-bottom:1px solid var(--border)}
 .class-img-entry:first-child{padding-top:0}
 .class-img-entry:last-child{border-bottom:none}
@@ -617,6 +617,8 @@ function buildClassImgGrid(){
       const img=document.createElement("img");
       img.src=CLASS_IMAGES[name];
       img.alt=name;
+      img.style.cursor="pointer";
+      img.onclick=()=>openLightbox(CLASS_IMAGES[name]);
       entry.appendChild(img);
     } else {
       const ph=document.createElement("div");
