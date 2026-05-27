@@ -18,7 +18,7 @@ In live lobbies, Reward and Taboo controls are available directly in the UI. In 
 
 As the server does not store the configuration, all settings are reconstructed from chat history when you reopen the lobby. The mod only needs to be installed by the lobby creator. Other players can join without it. If you use the UI for setting taboos, do not forget to post the setting by `/sharelong`, so non-mod users know about them.
 
-All default taboos as well as wizard classes defined by avolebva are supported by Async Creator. A complete taboo reference is available [here](#-taboo-reference).
+All default taboos as well as wizard classes defined by avolebva are supported by Async Creator. A complete taboo reference is available [here](https://wwwweb.github.io/CRMod/cr-taboo-reference.html).
 
 | Command (Lobby Chat) | Effect |
 |---|---|
@@ -206,7 +206,7 @@ Know thy enemy's constraints.
 
 When you select an opponent's wizard during battle, their active taboos are shown in the top-left panel at the same spot your own taboos normally appear. Deselecting restores your own taboo display. Kind of a companion mod to Async Creator taboos, but can also be used for live games.
 
-If a wizard's taboo combination matches one of the known wizard classes, the class name is shown as a suffix. A complete taboo reference is available [here](#-taboo-reference).
+If a wizard's taboo combination matches one of the known wizard classes, the class name is shown as a suffix. A complete taboo reference is available [here](https://wwwweb.github.io/CRMod/cr-taboo-reference.html).
 
 ---
 
@@ -237,7 +237,7 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 
 🔅 Dim **Team Markers** in the F4 overlay to fade the colored team highlights. Ideal for clean screenshots, especially paired with MapCam's UI hide, or for the extra challenge of guessing which unicorn is yours mid-battle.
 
-🏷️ Toggle **Class Suffix** in the F4 overlay to append the class to wizard names in battle. A complete taboo reference is available [here](#-taboo-reference).
+🏷️ Toggle **Class Suffix** in the F4 overlay to append the class to wizard names in battle. A complete taboo reference is available [here](https://wwwweb.github.io/CRMod/cr-taboo-reference.html).
 
 ---
 
