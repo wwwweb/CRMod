@@ -373,4 +373,4 @@ Tested under Windows 11 with the Steam version (64 bit) and GOG version (32 bit)
 
 Code: [MIT](LICENSE) — © 2026 Blubber
 
-Images (`config/maps/`): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+Images (`BepInEx/config/maps/`): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
