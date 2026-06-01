@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents twenty client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents twenty-one client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.9.3
+## ✨ Mods v1.10.0
 
 ### 📜 Async Creator `[F8]`
 
@@ -44,7 +44,9 @@ Fixes a bug in the base game where UI elements (including wizard names) can beco
  
 See at a glance how many are ready to rumble.
  
-On the custom games screen, this mod enhances the game list by changing the display content of some columns. The lobby name is shown instead of a raw battle ID. Press **F5** to scan all fully booked lobbies for their ready status. Your own ready status is shown with ✓ or ✗ in the turn column. Also changes some other columns to more meaningful values, dependent on the match state.
+On the custom and ranked asynchronous games screen, this mod enhances the game list by changing the display content of some columns. 
+For custom games, the lobby name is shown instead of a raw battle ID. Press **F5** to scan all fully booked lobbies for their ready status. Your own ready status is shown with ✓ or ✗ in the turn column.
+Other columns are also adjusted to more meaningful values depending on the match state, on both the custom and ranked games screens.
 
 > ⚠️ Note: F5 works by automatically entering and exiting each lobby to gather ready information. This generates no more server requests than a wizard normally generates by entering each lobby, but in quicker succession. Please don't spam it.
 
@@ -113,6 +115,14 @@ Works out of the box. Optionally, reports are fully customizable: define multipl
 A tidy spellbook is a powerful spellbook.
 
 Sorts your equipment configurations alphabetically — no more hunting through an unsorted list. Click the **Name**, **Staff**, or **Bodygear** column headers on the equipping screen to sort by that column (click again to reverse). Click on Staff column header multiple times to sort by **Mega Spell**. The selected configuration stays highlighted after sorting. Also keeps the equipment dropdown in lobbies sorted alphabetically at all times.
+
+---
+
+### 🏎️ Gear Shift `[F3]`
+
+Wrong staff, right moment — swap your loadout without taking your hands off the wheel.
+
+Press **F3** on any screen to open the Gear Shift overlay and switch your active equipment configuration on the spot, without visiting the equipping screen.
 
 ---
 
@@ -270,7 +280,7 @@ Thanks to avolebva's careful work, meaningful taboo combinations are available a
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.9.3.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.10.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
@@ -295,6 +305,7 @@ ChaosReborn\
             CRMod.ChaosManager.dll
             CRMod.ChatCommand.dll
             CRMod.EquipSort.dll
+            CRMod.GearShift.dll
             CRMod.HeightMap.dll
             CRMod.InfiniteWardrobe.dll
             CRMod.MapCam.dll
