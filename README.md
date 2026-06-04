@@ -8,7 +8,7 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 ---
 
-## ✨ Mods v1.10.0
+## ✨ Mods v1.10.1
 
 ### 📜 Async Creator `[F8]`
 
@@ -76,6 +76,7 @@ If you join an async battle after opponents have already played emotes since you
 Your lobby, your dress code.
  
 Press **F7** in an online custom lobby to open the Botcamp overlay. Each slot shows a dropdown to pick the AI's equipment configuration. Choose any of your online configs to dress the AIs accordingly. When ready, click **Start Offline** to leave the online lobby and launch the battle locally against AI opponents.
+Enable **AI Duel** to use AI Duel progression logic for equipped which gives the AI a mana advantage dependent on the level you set.
  
 ---
  
@@ -83,7 +84,7 @@ Press **F7** in an online custom lobby to open the Botcamp overlay. Each slot sh
  
 One more round.
  
-Adds a **Rematch** button to the end screen of async battles where all opponents were AI. Challenge them again without setting up a new lobby.
+Adds a **Rematch** button to the end screen of async battles and duels where all opponents were AI. Challenge them again without setting up a new lobby.
 
 ---
  
@@ -99,7 +100,9 @@ A mod manager button on the login screen opens a list of all installed CRMod mod
 
 ### 💬 Chat Commands
 
-Every great battle deserves a chronicle. Adds commands for reporting to in-game chat. Reports are either posted to chat and clipboard, or directly to Discord
+Every great battle deserves a chronicle. 
+
+Adds commands for reporting to in-game chat. Reports are either posted to chat and clipboard, or directly to Discord
 
 | Command | Effect |
 |---|---|
@@ -280,7 +283,7 @@ Thanks to avolebva's careful work, meaningful taboo combinations are available a
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.10.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.10.1.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
