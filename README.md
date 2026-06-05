@@ -141,8 +141,8 @@ Displays the total height of every tile as an overlay label during battle. Usefu
  
 Your equipment, unlimited.
  
-The game limits how many equipment configurations you can store on the server. Infinite Wardrobe lifts that ceiling by saving additional configurations locally. Local configs appear in **yellow** in the configuration list; configs with missing items appear in **red**.
- 
+The game limits how many equipment configurations you can store on the server, actually capping your number of builds. Infinite Wardrobe lifts that ceiling by saving configurations to a local archive. Once a configuration is stored locally, the online slot can be re-used for another configuration. Local configurations are cannot be directly used in battle, but can be restored to an online slot. Local configs appear in **yellow** in the configuration list; configs with missing items appear in **red**.
+
 A **+** button on the equipping screen saves a local copy of the current configuration. Click a local config to load it back to the server, delete it, or rename it. When you want to promote a local config to the server, the mod handles the upload automatically. If the server is full, it offers to save an existing server config locally so its slot can be reused for the upload.
  
 Local configs are stored in `BepInEx/config/CRMod.InfiniteWardrobe.json`.
