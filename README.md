@@ -341,15 +341,15 @@ Untested on Linux/Mac - feedback welcome.
 
 The chat command mod supports multiple configurable report formats. Reports can optionally be sent to Discord.
 
-1. Launch the game once with the Chat Command mod active, then close it; this creates the config file `BepInEx\config\CRMod.ChatCommand.cfg` in your Chaos Reborn folder
-2. Open `BepInEx\config\CRMod.ChatCommand.cfg` in any text editor. It provides two pre-defined report formats and a help to add your own format
+1. Launch the game with the Chat Command mod active. On first launch, an initial configuration is created in `BepInEx\config\CRMod.ChatCommand.cfg`. You can test the report feature by typing `/report` in battle chat. The report should appear in chat (visible only to you by default) and is copied to clipboard for manual transport.
+2. If you want to configure own report formats, open `BepInEx\config\CRMod.ChatCommand.cfg` in any text editor. It provides two pre-defined report formats and a help to add your own format. The different formats can be used in game by typing `/report formatname`.
 3. If you want to connect to Discord, in your Discord server: **Server Settings → Integrations → Webhooks → New Webhook**
 4. Copy the Webhook URL and set it in the config file
    ```ini
    WebhookUrl=https://discord.com/api/webhooks/...
    ```
-5. Save the file and restart the game (or type `/reloadconfig` in in-game chat)
-6. Test the connection by sending a report. Type `/reportdiscord` (with optional template name from the config file where you set the Webhook URL) in in-game chat. The report should appear in the Discord channel you used in step 3.
+5. Save the file and restart the game (or type `/reloadconfig` in in-game chat).
+6. Test the connection by sending a report. Type `/reportdiscord` (with optional template name from the config file where you set the Webhook URL) in battle chat. The report should appear in the Discord channel you used in step 3.
 
 ---
 
