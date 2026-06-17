@@ -363,7 +363,7 @@ To enable or disable individual mods without uninstalling, use the Chaos Manager
 
 Rule of thumb: Mods can **read and display** most of what the game sends to your client, and **automate** most of what you can click yourself: lobby setup, chat commands, UI interactions. What's out of reach is anything the **server decides**: cast results, combat outcomes, balance, new cards.
 
-Ideas and suggestions are welcome. Open an issue or drop a message on Discord.
+Ideas and suggestions are welcome. Open an issue or drop a message on [Discord](https://discord.gg/HPHEnHvt4e).
 
 ---
 
