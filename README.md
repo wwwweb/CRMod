@@ -8,7 +8,7 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 ---
 
-## ✨ Mods v1.10.4
+## ✨ Mods v1.11.0
 
 ### 📜 Async Creator `[F8]`
 
@@ -92,9 +92,9 @@ Adds a **Rematch** button to the end screen of async battles and duels where all
  
 One panel to rule them all.
  
-A mod manager button on the login screen opens a list of all installed CRMod mods. Enable or disable individual mods with a checkbox; the header checkbox toggles all at once. Disabled mods are moved out of `BepInEx/plugins/` on the next game launch and re-enabled when you check them again.
+A mod manager button on the login screen opens a list of all installed CRMod mods. Enable or disable individual mods with a checkbox; the header checkbox toggles all at once. Disabled mods are moved out of `BepInEx/plugins/` on the next game launch and re-enabled when you check them again. 
 
-> ⚠️ `CRMod.ChaosManager.dll` must be placed in **both** `BepInEx/plugins/` and `BepInEx/patchers/` to work correctly. The zip from the Releases page handles this automatically.
+Check for CRMod updates and install updates from this github repositoy by using the provided button.  
 
 ---
 
@@ -279,26 +279,32 @@ Thanks to avolebva's careful work, meaningful taboo combinations are available a
 
 ## 🔧 Installation
 
+For the **first installation**, apply the following steps:
 1. Download **[BepInEx 5.4.23.5](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5/)** (the zip under Assets) and extract it into your Chaos Reborn folder. This is the folder where Steam or another game manager installed the game, e.g. `C:\SteamLibrary\steamapps\common\ChaosReborn`.
    - **Windows (Steam, 64 bit):** use [BepInEx_win_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x64_5.4.23.5.zip)
    - **Windows (GOG, 32 bit):** use [BepInEx_win_x86_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x86_5.4.23.5.zip)
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.10.4.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.11.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
 
-If you are updating from a previous version of CRMod, steps 1 and 3 can be omitted.
+For **updating from a previous version** of CRMod:
+- If you are updating from CRMod v1.11.0 or newer, use the Chaos Manager. Click on the Mod Manager button on the login screen and check for updates. Alternatively, update can be applied manually like for versions below v1.11.0.
+- If you are updating from a version below CRMod v1.11.0, apply steps 2 and 4 of the installation procedure above (i.e. CRMod download and extract, game launch). Steps 1 and 3 can be omitted.
+
 
 Your folder structure should look like this afterwards:
 ```
 ChaosReborn\
     ChaosRebornWin64.exe
-    winhttp.dll                        ← added by BepInEx
+    winhttp.dll                         ← added by BepInEx
     BepInEx\
-        patchers\                      ← from here on added by CRMod
+        CRMod.core\                     ← from here on added by CRMod
+            CRMod.ChaosManager.Core.dll
+        patchers\
             CRMod.ChaosManager.dll
         plugins\
             CRMod.AsyncCreator.dll

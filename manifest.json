@@ -1,0 +1,567 @@
+{
+    "schema":  1,
+    "crmodVersion":  "v1.11.0",
+    "published":  [
+                      {
+                          "id":  "crmod.asynccreator",
+                          "version":  "1.2.0",
+                          "dll":  "BepInEx/plugins/CRMod.AsyncCreator.dll",
+                          "sha256":  "7d7fe796f456f959b657b00445f433d884cd93ee66cdf1afa2c943f03ca758ef",
+                          "description":  "Reward and taboo settings for async lobbies",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.asynclobbyfix",
+                          "version":  "1.1.0",
+                          "dll":  "BepInEx/plugins/CRMod.AsyncLobbyFix.dll",
+                          "sha256":  "83877dffab385350fa791859ff9a2736ec0803f3c06cd6a96f54940a52183c61",
+                          "description":  "Fixes invisible UI in async lobbies",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.asyncreadystatus",
+                          "version":  "1.0.3",
+                          "dll":  "BepInEx/plugins/CRMod.AsyncReadyStatus.dll",
+                          "sha256":  "40b17029f3f5542161ea815a1b451c6e831bf09e104294338de72a1d7e856965",
+                          "description":  "Updated custom games list",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.battleemotes",
+                          "version":  "1.1.0",
+                          "dll":  "BepInEx/plugins/CRMod.BattleEmotes.dll",
+                          "sha256":  "c27458206239b680c1c18d8775f17966fb9f7b28a4ad313052e0803520774eaf",
+                          "description":  "Pixelart emote animations in battle chat",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.botcamp",
+                          "version":  "1.1.0",
+                          "dll":  "BepInEx/plugins/CRMod.Botcamp.dll",
+                          "sha256":  "95db7ad1f9b0e86fcd284339f46657db53d349d9672694f564ce341337dfc855",
+                          "description":  "Play against custom AI",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.botrevenge",
+                          "version":  "1.1.0",
+                          "dll":  "BepInEx/plugins/CRMod.BotRevenge.dll",
+                          "sha256":  "576117a8b9dfb4994691a1ceeaebc3ff8eb36aff9c32cdbbeecfee68f40f29bd",
+                          "description":  "Rematch button in async games against AI",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.chaosmanager",
+                          "version":  "2.0.0",
+                          "dll":  "BepInEx/plugins/CRMod.ChaosManager.dll",
+                          "sha256":  "033a687282f657f9f8d5c788cc3777fa4cdcf6b156ec22bfccb43cb5a515ef09",
+                          "description":  "",
+                          "extra":  [
+
+                                    ],
+                          "core":  {
+                                       "path":  "BepInEx/CRMod.core/CRMod.ChaosManager.Core.dll",
+                                       "sha256":  "31687e474f566f83eaf2c5710d2ef4f92810176b30633f29f8c0638a5552fb28"
+                                   }
+                      },
+                      {
+                          "id":  "crmod.chatcommands",
+                          "version":  "1.2.0",
+                          "dll":  "BepInEx/plugins/CRMod.ChatCommand.dll",
+                          "sha256":  "90b37e43b4076f9dfb98f0673d068ccbc9868cbfe892518b88386d60ccbb509c",
+                          "description":  "Extra chat commands",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.equipsort",
+                          "version":  "1.0.2",
+                          "dll":  "BepInEx/plugins/CRMod.EquipSort.dll",
+                          "sha256":  "d795fdf30df1f383377ad2bd626e6fa485ee44ede67d4b4f35efc57f32daa33b",
+                          "description":  "Alphabetical equipment config sorting",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.gearshift",
+                          "version":  "1.0.0",
+                          "dll":  "BepInEx/plugins/CRMod.GearShift.dll",
+                          "sha256":  "93db275be0290028e65eb84e929ed7a24f01d81ad39c0594262c7e7eb82b4b93",
+                          "description":  "Switch active equipment config from the online menu",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.heightmap",
+                          "version":  "1.1.0",
+                          "dll":  "BepInEx/plugins/CRMod.HeightMap.dll",
+                          "sha256":  "2b2b12f938e4b9d84546abdd027489968557d7341d1412d54581e00961dec822",
+                          "description":  "Terrain height overlay for all tiles",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.infinitewardrobe",
+                          "version":  "1.0.4",
+                          "dll":  "BepInEx/plugins/CRMod.InfiniteWardrobe.dll",
+                          "sha256":  "1c9b930d935dff25c5f02609a48da2fd08f7568a3db7dcf5d55e8e67ed492a33",
+                          "description":  "Unlimited local equipment configs",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.mapcam",
+                          "version":  "1.4.0",
+                          "dll":  "BepInEx/plugins/CRMod.MapCam.dll",
+                          "sha256":  "04e422e8944d7643764f70dcee48918c8688e071b3393895054115f79af8ea01",
+                          "description":  "Extended camera zoom",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.mappreview",
+                          "version":  "1.0.6",
+                          "dll":  "BepInEx/plugins/CRMod.MapPreview.dll",
+                          "sha256":  "8e365925e6a5c805c64559139b8d346a6a6a9e2a0cc0da6a34aea86c63fce815",
+                          "description":  "Map preview in the lobby",
+                          "extra":  [
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Backbone.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Broken_Forest.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Bulgaria.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Dancing_In_The_Woods.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Ditchesfield.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Duelling_Plateau.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Eagles_Heaven.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Erosion.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Faith_And_Knowledge.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Flanking_Valley.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Flux_Valley.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Golden_Porches.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Haunted_Ruins.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Headland_Plains.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_High_Valley.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Horseshoe.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Le_Jardin_Des_Fontaines.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Loch_Mana.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Mana_Pillars.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Nowhere_In_The_Middle.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Octarion.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Petals_And_Pools.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Pillars_Of_Stone.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Puddles_In_Limbo.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Rocky_Arena.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Sacrificial_Altar.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Small_Canyon.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Snowflake.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Superstition_Hall.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_The_Blot.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_The_Eye.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_The_Lobby.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_The_Lost_Temple.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_The_Nave.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_The_Potato_Farm.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_The_Private_Chapel.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_The_Sanctuary.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Triangle_Pit.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Twin_Lake.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Vicious_Circle.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/2_Yin_Yang_Chaos.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Agora.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Amoeba.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Arrested_Vortex.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Diggin_The_Flux.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Extinct_Volcano.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Heaven_Sprays.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Hecatomb_Square.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Hex_And_Power.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Le_Foyer.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Logged_Wood.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Mana_Rush.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Perfect_BBQ.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Rocky_Stage.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Sleepless_Well.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Tabula_Rasa.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Temple_Of_Death.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Terracic_Park.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_The_Crumb.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_The_Orchard.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_The_Pancake.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_The_Propeller.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Trinity.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/3_Triradiation.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Acid_Burn.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_All_That_Glitters_Is_Gold.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Bagel.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Baldrs_Shrine.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Beeswax_Showroom.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Cheese_Mold.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Clover_Hills.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Cowards_Den.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_David_Was_Here.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Deus_Ex_Machina.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Dust_In_The_Wind.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Elfic_Pass.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Equilibrarium.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Eternal_Ruins.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Gods_Playground.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Pillars_Of_Bureaucracy.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Rockdale.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Sere_Moss.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Stone_Wood_And_Mud.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_The_Bridges.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_The_Cogwheel.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_The_Deck.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_The_Pedestal.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_The_Swamp.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Vanity_Fair.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/4_Walk_In_The_Park.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Despairs_Cradle.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Euglenas_Peak.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Forest_Hills.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Holy_Lights_Gap.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Hyde_Park.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Lions_Arena.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Rock_Isles.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Room_For_Five.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_The_Rig.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_The_Six_Columns.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Water_Drops.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Where_The_Wild_Roses_Rot.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Woodshock.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/5_Worship_Deck.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_A_Dead_Piece_Of_Chaos.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Crazy_Forest.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Here_And_There.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Mana_Piscine.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Over_The_Hollow_Hill.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Peace_Upon_Chaos.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Plainful_Gathering.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Ready_For_Takeoff.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Techstatic.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_The_Space_Between.jpg"
+                                        },
+                                        {
+                                            "path":  "BepInEx/config/maps/6_Triple_Double.jpg"
+                                        }
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.mapsetup",
+                          "version":  "1.0.8",
+                          "dll":  "BepInEx/plugins/CRMod.MapSetup.dll",
+                          "sha256":  "8d8fb51be3280ab77b7a9b508dc8ff224bfb716f10dd4116a7e0973636ee6b07",
+                          "description":  "Team setup overlay for 6-player lobbies",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.randomequip",
+                          "version":  "1.1.0",
+                          "dll":  "BepInEx/plugins/CRMod.RandomEquip.dll",
+                          "sha256":  "a1559625557ad464d0639b6e96f951e90f89a91c8554e9d613247d0b83281d4b",
+                          "description":  "Random equipment generator",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.replay",
+                          "version":  "1.0.1",
+                          "dll":  "BepInEx/plugins/CRMod.Replay.dll",
+                          "sha256":  "8d9275d421882b995615f9cddcefafc6f7ff4d02730596dd3e69c971ea1e6b22",
+                          "description":  "Export and replay battles",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.setupwizard",
+                          "version":  "1.0.2",
+                          "dll":  "BepInEx/plugins/CRMod.SetupWizard.dll",
+                          "sha256":  "2d9c63b57b0389466f504329ebb136d0382637d305045d2b0b421b8b618c6af9",
+                          "description":  "Lobby manager",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.skin",
+                          "version":  "1.5.0",
+                          "dll":  "BepInEx/plugins/CRMod.Skin.dll",
+                          "sha256":  "ca64eed2820b0f1c77ec2e055aafc88cef2beacca21ae7757e769d75f7c75191",
+                          "description":  "Switch between skins",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.taboodisplay",
+                          "version":  "1.1.0",
+                          "dll":  "BepInEx/plugins/CRMod.TabooDisplay.dll",
+                          "sha256":  "0b64cac55ad2b3fc367b76df0dfe8f8131d1265c6b00129efe7a773a4769add9",
+                          "description":  "Shows taboos of other wizards",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.teamping",
+                          "version":  "1.1.0",
+                          "dll":  "BepInEx/plugins/CRMod.TeamPing.dll",
+                          "sha256":  "b04f95e64b1773359b4edfeb3a32c29a4b19e69415629eed7f1b04829d0c0a60",
+                          "description":  "Ping markers on the battle map",
+                          "extra":  [
+
+                                    ]
+                      }
+                  ],
+    "removed":  [
+
+                ]
+}
