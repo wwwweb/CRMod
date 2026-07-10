@@ -1,6 +1,6 @@
 {
     "schema":  1,
-    "crmodVersion":  "v1.11.0",
+    "crmodVersion":  "v1.11.1",
     "published":  [
                       {
                           "id":  "crmod.asynccreator",
@@ -44,9 +44,9 @@
                       },
                       {
                           "id":  "crmod.botcamp",
-                          "version":  "1.1.0",
-                          "dll":  "BepInEx/plugins/CRMod.Botcamp.dll",
-                          "sha256":  "95db7ad1f9b0e86fcd284339f46657db53d349d9672694f564ce341337dfc855",
+                          "version":  "1.1.1",
+                          "dll":  "BepInEx/plugins/CRMod.BotCamp.dll",
+                          "sha256":  "0a6a6bce50b1491cadbb301691efa36d128abe93ddc4625e274b58f8d0b55d4b",
                           "description":  "Play against custom AI",
                           "extra":  [
 
@@ -64,16 +64,16 @@
                       },
                       {
                           "id":  "crmod.chaosmanager",
-                          "version":  "2.0.0",
+                          "version":  "2.0.1",
                           "dll":  "BepInEx/plugins/CRMod.ChaosManager.dll",
-                          "sha256":  "033a687282f657f9f8d5c788cc3777fa4cdcf6b156ec22bfccb43cb5a515ef09",
+                          "sha256":  "2b01445bd0dcec39a0c9798377351d388a85db16fd936dac1392d2679823f891",
                           "description":  "",
                           "extra":  [
 
                                     ],
                           "core":  {
                                        "path":  "BepInEx/CRMod.core/CRMod.ChaosManager.Core.dll",
-                                       "sha256":  "31687e474f566f83eaf2c5710d2ef4f92810176b30633f29f8c0638a5552fb28"
+                                       "sha256":  "81ba8d4fb8e05663467272c5f29d946b8bf955c7aeaf2518b96fc9be851d149a"
                                    }
                       },
                       {
@@ -81,7 +81,7 @@
                           "version":  "1.2.0",
                           "dll":  "BepInEx/plugins/CRMod.ChatCommand.dll",
                           "sha256":  "90b37e43b4076f9dfb98f0673d068ccbc9868cbfe892518b88386d60ccbb509c",
-                          "description":  "Extra chat commands",
+                          "description":  "Report commands in chat",
                           "extra":  [
 
                                     ]
@@ -101,7 +101,7 @@
                           "version":  "1.0.0",
                           "dll":  "BepInEx/plugins/CRMod.GearShift.dll",
                           "sha256":  "93db275be0290028e65eb84e929ed7a24f01d81ad39c0594262c7e7eb82b4b93",
-                          "description":  "Switch active equipment config from the online menu",
+                          "description":  "Switch active equipment from main screen",
                           "extra":  [
 
                                     ]
@@ -127,11 +127,21 @@
                                     ]
                       },
                       {
+                          "id":  "crmod.linkswap",
+                          "version":  "1.0.0",
+                          "dll":  "BepInEx/plugins/CRMod.LinkSwap.dll",
+                          "sha256":  "bc85bd375dcc5d3d7bc4a67129b2d211110ac6a66b0c56dc041f7075498b16e8",
+                          "description":  "Updated Discord server link",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
                           "id":  "crmod.mapcam",
                           "version":  "1.4.0",
                           "dll":  "BepInEx/plugins/CRMod.MapCam.dll",
                           "sha256":  "04e422e8944d7643764f70dcee48918c8688e071b3393895054115f79af8ea01",
-                          "description":  "Extended camera zoom",
+                          "description":  "Extended camera view",
                           "extra":  [
 
                                     ]
@@ -144,349 +154,464 @@
                           "description":  "Map preview in the lobby",
                           "extra":  [
                                         {
-                                            "path":  "BepInEx/config/maps/2_Backbone.jpg"
+                                            "path":  "BepInEx/config/maps/2_Backbone.jpg",
+                                            "sha256":  "1dba89e94ecd0e8a106ef06c2066c7b32d41fb5fbbdf91d379a4c5f4be3d8973"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Broken_Forest.jpg"
+                                            "path":  "BepInEx/config/maps/2_Broken_Forest.jpg",
+                                            "sha256":  "417cc59add980afb50b993e1742368e4444b817140cc49fbfd3c95d91b819038"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Bulgaria.jpg"
+                                            "path":  "BepInEx/config/maps/2_Bulgaria.jpg",
+                                            "sha256":  "9ea9d1dcd8866a1f93e6a6ea99779d19a713cd9b357205b8b8eb8602b874249e"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Dancing_In_The_Woods.jpg"
+                                            "path":  "BepInEx/config/maps/2_Dancing_In_The_Woods.jpg",
+                                            "sha256":  "278163d4daf437876f5976fca687d3a198a03f7fc4f9607880d9ac2713696929"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Ditchesfield.jpg"
+                                            "path":  "BepInEx/config/maps/2_Ditchesfield.jpg",
+                                            "sha256":  "ed00856bf3a993203cb8227c53e27ebfb8d0cd527d2f33b697abf1cf737cde60"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Duelling_Plateau.jpg"
+                                            "path":  "BepInEx/config/maps/2_Duelling_Plateau.jpg",
+                                            "sha256":  "b17f6dd105b8467f837952ec3f1338c586aee751dd94273aef71127183637ed4"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Eagles_Heaven.jpg"
+                                            "path":  "BepInEx/config/maps/2_Eagles_Heaven.jpg",
+                                            "sha256":  "d195ca56848298dca6dbb95e62c7d786836241a2eecb3730ad39a0fab7cf33d0"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Erosion.jpg"
+                                            "path":  "BepInEx/config/maps/2_Erosion.jpg",
+                                            "sha256":  "e9c4076a501cce7107e2eade3052a05cfede9d3f253de730a75698fe9cc70830"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Faith_And_Knowledge.jpg"
+                                            "path":  "BepInEx/config/maps/2_Faith_And_Knowledge.jpg",
+                                            "sha256":  "ffc774872bd398b0cb85295bdda79eabee720523e6c1b6fb715396cbcb21a9f8"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Flanking_Valley.jpg"
+                                            "path":  "BepInEx/config/maps/2_Flanking_Valley.jpg",
+                                            "sha256":  "d59f7ba8b4e778e35d1a9a7a224bcc32f97e06971e35cb19c13c0914cab37d24"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Flux_Valley.jpg"
+                                            "path":  "BepInEx/config/maps/2_Flux_Valley.jpg",
+                                            "sha256":  "b6bb6ada273d369e5021cd34a0aa8d1c5893ce6c7bf77dfaffcabae6dea704cd"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Golden_Porches.jpg"
+                                            "path":  "BepInEx/config/maps/2_Golden_Porches.jpg",
+                                            "sha256":  "a36c7263bfdbc86e0697d5d0a76f9a3bde7e40c987e033131a5216a9b010655f"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Haunted_Ruins.jpg"
+                                            "path":  "BepInEx/config/maps/2_Haunted_Ruins.jpg",
+                                            "sha256":  "9a7f3add4d8ed4fb4ba123eefb4815de3aae2887adbcdb8c3bb26fee5bd7df0b"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Headland_Plains.jpg"
+                                            "path":  "BepInEx/config/maps/2_Headland_Plains.jpg",
+                                            "sha256":  "7bbf583ee109f053f482940f91ee5826e0020a3697bb042c930cdcd82f60de7b"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_High_Valley.jpg"
+                                            "path":  "BepInEx/config/maps/2_High_Valley.jpg",
+                                            "sha256":  "76f3907b27d894d66a8d6188b13497b09ed0912f62f07c41518d2b13e97c953b"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Horseshoe.jpg"
+                                            "path":  "BepInEx/config/maps/2_Horseshoe.jpg",
+                                            "sha256":  "24d9559643b71978a13282dce1263760a31de107d8a0bfe66835b2e24f8e613a"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Le_Jardin_Des_Fontaines.jpg"
+                                            "path":  "BepInEx/config/maps/2_Le_Jardin_Des_Fontaines.jpg",
+                                            "sha256":  "2b332b3ecb7a5329b7cd5915576bce77c0e38762b53477ae3f98e7913334d4d9"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Loch_Mana.jpg"
+                                            "path":  "BepInEx/config/maps/2_Loch_Mana.jpg",
+                                            "sha256":  "5bd02142cb7865a88c93475a98ad8b61463b2721422100dca928a6768f7bd1be"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Mana_Pillars.jpg"
+                                            "path":  "BepInEx/config/maps/2_Mana_Pillars.jpg",
+                                            "sha256":  "058ed1458cfff673c458c8b8e01111d2d39a175e829ddb117f14d622941dde2f"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Nowhere_In_The_Middle.jpg"
+                                            "path":  "BepInEx/config/maps/2_Nowhere_In_The_Middle.jpg",
+                                            "sha256":  "2957554cac862d63b3bdd8bedd18fc0539955f620deddfa453bd1505d364a223"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Octarion.jpg"
+                                            "path":  "BepInEx/config/maps/2_Octarion.jpg",
+                                            "sha256":  "0547f1fb8de6fc349b3fd0e4ea86f77af07efde1f04c5ab884242b663aaa9d67"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Petals_And_Pools.jpg"
+                                            "path":  "BepInEx/config/maps/2_Petals_And_Pools.jpg",
+                                            "sha256":  "09d7352e2b3f4859d6b4ba12ee0a6feb2cc679ab82eeb72b8fd64e4bcfb68bbf"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Pillars_Of_Stone.jpg"
+                                            "path":  "BepInEx/config/maps/2_Pillars_Of_Stone.jpg",
+                                            "sha256":  "682db868e294991f91126e3103ba7678a7fe65c5d9bf1aeed2d4294285e340b3"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Puddles_In_Limbo.jpg"
+                                            "path":  "BepInEx/config/maps/2_Puddles_In_Limbo.jpg",
+                                            "sha256":  "3f0e5d19e7669dc44a08c0dd3e778822ca4f3c542d3945b59bb403ae94b21807"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Rocky_Arena.jpg"
+                                            "path":  "BepInEx/config/maps/2_Rocky_Arena.jpg",
+                                            "sha256":  "776abe6d5010b480f5cc7d734b15cf4f90fc083b7370e486f858b1e2f0043758"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Sacrificial_Altar.jpg"
+                                            "path":  "BepInEx/config/maps/2_Sacrificial_Altar.jpg",
+                                            "sha256":  "52bcba48dd1e6bf4c5c489fb7618d8674c6d819698d92432d47a9832fa664614"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Small_Canyon.jpg"
+                                            "path":  "BepInEx/config/maps/2_Small_Canyon.jpg",
+                                            "sha256":  "66e61b431e335d352b4ccb923057da43c3b6a8c7b8907b8459c92f7073d59ad3"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Snowflake.jpg"
+                                            "path":  "BepInEx/config/maps/2_Snowflake.jpg",
+                                            "sha256":  "930c11d4c77e5eb71b52a0208344d00378949c34b179e4f801d7f2634c535ade"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Superstition_Hall.jpg"
+                                            "path":  "BepInEx/config/maps/2_Superstition_Hall.jpg",
+                                            "sha256":  "32058583f7e8a50a57ba80908aa20afe5d7e11b924be92291f8a2d16aa696a74"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_The_Blot.jpg"
+                                            "path":  "BepInEx/config/maps/2_The_Blot.jpg",
+                                            "sha256":  "d8f444f823b45a792023b1d42299678f20fb9498fde80bf0f68e9a5141bf4b5f"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_The_Eye.jpg"
+                                            "path":  "BepInEx/config/maps/2_The_Eye.jpg",
+                                            "sha256":  "03f166912eb621bf73c6ca9f2f738bee8bce5a1d986fc7298e2e7a2f431979d9"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_The_Lobby.jpg"
+                                            "path":  "BepInEx/config/maps/2_The_Lobby.jpg",
+                                            "sha256":  "b4bef0100163971da7b7294a8a3db5481fa22c5a4942727da5ef34517a5d84fb"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_The_Lost_Temple.jpg"
+                                            "path":  "BepInEx/config/maps/2_The_Lost_Temple.jpg",
+                                            "sha256":  "b1dbd0d856a2cff69976d4579ee52623af49d30711448684af04277b175f8fd2"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_The_Nave.jpg"
+                                            "path":  "BepInEx/config/maps/2_The_Nave.jpg",
+                                            "sha256":  "f17c6176d5152fb6e4fafbdacdcefb62e881bcd21b5e0603c657e1896fedf447"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_The_Potato_Farm.jpg"
+                                            "path":  "BepInEx/config/maps/2_The_Potato_Farm.jpg",
+                                            "sha256":  "057d8e5273c586a7101f73c5d702601a25c365ef4df3e87fff51afd6e8cb24c3"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_The_Private_Chapel.jpg"
+                                            "path":  "BepInEx/config/maps/2_The_Private_Chapel.jpg",
+                                            "sha256":  "7e0f2c4ba9f48e585d5bd571557f82a2a0cad3ccf567cacfa833e9899dabaf88"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_The_Sanctuary.jpg"
+                                            "path":  "BepInEx/config/maps/2_The_Sanctuary.jpg",
+                                            "sha256":  "5c59ee4fc4373488457be137570bf5d8b210cc764640c8178fa5d401b82f42c9"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Triangle_Pit.jpg"
+                                            "path":  "BepInEx/config/maps/2_Triangle_Pit.jpg",
+                                            "sha256":  "f370c12a78c9c82ed957d1f6decfbc3f011d95076d280136b30f39880773100e"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Twin_Lake.jpg"
+                                            "path":  "BepInEx/config/maps/2_Twin_Lake.jpg",
+                                            "sha256":  "244c4272bca7c582280857a213a53afba54074ad312f1771e3424e7fe5bf8193"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Vicious_Circle.jpg"
+                                            "path":  "BepInEx/config/maps/2_Vicious_Circle.jpg",
+                                            "sha256":  "db0ca32cec880609a89bc9e6fd1d24f6575df59e655608780152647d601baca2"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/2_Yin_Yang_Chaos.jpg"
+                                            "path":  "BepInEx/config/maps/2_Yin_Yang_Chaos.jpg",
+                                            "sha256":  "238a16fc4f121b64ce2565ca73f672bd2a6786572ed0076ea908b9019d1642fe"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Agora.jpg"
+                                            "path":  "BepInEx/config/maps/3_Agora.jpg",
+                                            "sha256":  "fff81fdfd0c82f68750f9fd3d9d972b55ccf4b573b573aaf8b346b64ff8f9efe"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Amoeba.jpg"
+                                            "path":  "BepInEx/config/maps/3_Amoeba.jpg",
+                                            "sha256":  "64143b6f4faae024fd7955d687e9e7aded68688fe41db97935c8b4eb74d6b6f7"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Arrested_Vortex.jpg"
+                                            "path":  "BepInEx/config/maps/3_Arrested_Vortex.jpg",
+                                            "sha256":  "5d9a7487a54b3a42206732bf184dd2d815737e3033b56f9221b1615e6b15948f"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Diggin_The_Flux.jpg"
+                                            "path":  "BepInEx/config/maps/3_Diggin_The_Flux.jpg",
+                                            "sha256":  "dc86d75ae14f32a5ead36fab6612e9fd189c52323d731a45fef1c7ae3a1af247"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Extinct_Volcano.jpg"
+                                            "path":  "BepInEx/config/maps/3_Extinct_Volcano.jpg",
+                                            "sha256":  "689cdcef5d2bc4e700e69a06d11d54995a92d8ede1f9169be5d2589d082665d8"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Heaven_Sprays.jpg"
+                                            "path":  "BepInEx/config/maps/3_Heaven_Sprays.jpg",
+                                            "sha256":  "6b6ac0f7ceb5f77d408286ee427c1426d1d505feb24e38ac708641cb9cf2bc57"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Hecatomb_Square.jpg"
+                                            "path":  "BepInEx/config/maps/3_Hecatomb_Square.jpg",
+                                            "sha256":  "8c1406d8b15d0d8fc6d485d67974e183f4c89c074b9a54726a6099b508826076"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Hex_And_Power.jpg"
+                                            "path":  "BepInEx/config/maps/3_Hex_And_Power.jpg",
+                                            "sha256":  "3304aa40033c721629dd0cdca808e25588772af55695c126e213e74d36fde5c5"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Le_Foyer.jpg"
+                                            "path":  "BepInEx/config/maps/3_Le_Foyer.jpg",
+                                            "sha256":  "6e5d5814b56d15ec230d8377a8084470d9789eef5bfe4a5d6926883bbb7cfef4"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Logged_Wood.jpg"
+                                            "path":  "BepInEx/config/maps/3_Logged_Wood.jpg",
+                                            "sha256":  "1b83d2602be20cad2957f17a047684fa0128a1c489fa6197005e580506832be9"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Mana_Rush.jpg"
+                                            "path":  "BepInEx/config/maps/3_Mana_Rush.jpg",
+                                            "sha256":  "6c8774521a9f89d3399c55f3b32adf043839f799bc883342249ea102948c17f6"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Perfect_BBQ.jpg"
+                                            "path":  "BepInEx/config/maps/3_Perfect_BBQ.jpg",
+                                            "sha256":  "9777e5902470f5ed3bd713effd8af39b16f0770ae9b2ea92a7d5b5001f52f691"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Rocky_Stage.jpg"
+                                            "path":  "BepInEx/config/maps/3_Rocky_Stage.jpg",
+                                            "sha256":  "6b84982f2b73885257c7744bcc62b157f8ff554a59e0381de9b7b9ef5e06fc33"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Sleepless_Well.jpg"
+                                            "path":  "BepInEx/config/maps/3_Sleepless_Well.jpg",
+                                            "sha256":  "6da36636a4e8e118b50a5ca2104db57edfa5e3bb77e206b40abb5c00132e6242"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Tabula_Rasa.jpg"
+                                            "path":  "BepInEx/config/maps/3_Tabula_Rasa.jpg",
+                                            "sha256":  "bb7e1ff22a47d9aa33520fc5d78a16d17de2fc374887118290e89822bbf54d6d"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Temple_Of_Death.jpg"
+                                            "path":  "BepInEx/config/maps/3_Temple_Of_Death.jpg",
+                                            "sha256":  "b4ec6206660f6a6a4e50baa3865f6e46998cf19275f8d4a05fdb12a374d0390f"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Terracic_Park.jpg"
+                                            "path":  "BepInEx/config/maps/3_Terracic_Park.jpg",
+                                            "sha256":  "ac51d5233ba11c31e382db7db458e125ecc5928441e92901d5f0ac72b22844d5"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_The_Crumb.jpg"
+                                            "path":  "BepInEx/config/maps/3_The_Crumb.jpg",
+                                            "sha256":  "9e2ab1988cc38e7800664b8f0a6efe41605f20863a8422e93d547c202b57cabc"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_The_Orchard.jpg"
+                                            "path":  "BepInEx/config/maps/3_The_Orchard.jpg",
+                                            "sha256":  "e83cce03ac83263e390a43d78e1c9f78bd66609d83ce66f5ccfdc52e051ff505"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_The_Pancake.jpg"
+                                            "path":  "BepInEx/config/maps/3_The_Pancake.jpg",
+                                            "sha256":  "c52516afb0b048b5c9072211128ca54c326d8e5b45b929eec606d079000a78c8"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_The_Propeller.jpg"
+                                            "path":  "BepInEx/config/maps/3_The_Propeller.jpg",
+                                            "sha256":  "8a83e1c4b1bb77f8fda0b4f55487b961f6ad1dfdd84bebf061ac6349a19b03f2"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Trinity.jpg"
+                                            "path":  "BepInEx/config/maps/3_Trinity.jpg",
+                                            "sha256":  "a135571cff78e41259162bd8feb5c5ce5f7363e5155c2b270d5754c37d49cf37"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/3_Triradiation.jpg"
+                                            "path":  "BepInEx/config/maps/3_Triradiation.jpg",
+                                            "sha256":  "242dea90803df28715a6ce20dfa4bc79e18b1a3365dac724153558423096c029"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Acid_Burn.jpg"
+                                            "path":  "BepInEx/config/maps/4_Acid_Burn.jpg",
+                                            "sha256":  "0227e0e7fc5ec2e2a089bb9066dc5cd24cba505107d65d3c195453585830ed6e"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_All_That_Glitters_Is_Gold.jpg"
+                                            "path":  "BepInEx/config/maps/4_All_That_Glitters_Is_Gold.jpg",
+                                            "sha256":  "a95a775fcefe2009b1849c747dbae3f4d5f55285c0e34bfe4fe6e56f18dea44f"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Bagel.jpg"
+                                            "path":  "BepInEx/config/maps/4_Bagel.jpg",
+                                            "sha256":  "c51755bb6ab44e792148579b6dcc998b37cba8dbf6073124412e49f7387dea1b"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Baldrs_Shrine.jpg"
+                                            "path":  "BepInEx/config/maps/4_Baldrs_Shrine.jpg",
+                                            "sha256":  "6f8157bc121f6a31f544716159057b392f0b9292c8297f05d19d99a8b7461838"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Beeswax_Showroom.jpg"
+                                            "path":  "BepInEx/config/maps/4_Beeswax_Showroom.jpg",
+                                            "sha256":  "ef36ade10e37fb87f822ac6ab46b385870f5b17e0c6c3dea2f0d4ac8e2b3cb67"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Cheese_Mold.jpg"
+                                            "path":  "BepInEx/config/maps/4_Cheese_Mold.jpg",
+                                            "sha256":  "bf01117cb0850aefdb748994bd67a84ef0b50ebec9f70c41acc7c3f4e68c254b"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Clover_Hills.jpg"
+                                            "path":  "BepInEx/config/maps/4_Clover_Hills.jpg",
+                                            "sha256":  "5c943fe282f452669783f2f8599d39eee6103625ddafe208989b0b16a983fe3c"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Cowards_Den.jpg"
+                                            "path":  "BepInEx/config/maps/4_Cowards_Den.jpg",
+                                            "sha256":  "50352f09157b1cb7a1fc2fc3da7df5b29335978bd646d135d38547675e7af8a6"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_David_Was_Here.jpg"
+                                            "path":  "BepInEx/config/maps/4_David_Was_Here.jpg",
+                                            "sha256":  "478b9cdec1b528e3bb209e40ca789ba0cb99b1a0c1d65f02d86fe2950512db35"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Deus_Ex_Machina.jpg"
+                                            "path":  "BepInEx/config/maps/4_Deus_Ex_Machina.jpg",
+                                            "sha256":  "813d9a77778fe14b600bfc4ad39f65ddcecdeab03853acf3ddf20dd206790147"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Dust_In_The_Wind.jpg"
+                                            "path":  "BepInEx/config/maps/4_Dust_In_The_Wind.jpg",
+                                            "sha256":  "bc64be7e76f5f79d555f1fbfe1cfdc7a6cb6d43e37a86fa256d41fa384559865"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Elfic_Pass.jpg"
+                                            "path":  "BepInEx/config/maps/4_Elfic_Pass.jpg",
+                                            "sha256":  "bd41f4d15cb722eb759855d45096626cb95c252acfc0dd1c7959572e7de9bd19"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Equilibrarium.jpg"
+                                            "path":  "BepInEx/config/maps/4_Equilibrarium.jpg",
+                                            "sha256":  "24a1025674001663eb2524b10a8cf08f3cc5cd9d79d136c8a7166685055e5eae"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Eternal_Ruins.jpg"
+                                            "path":  "BepInEx/config/maps/4_Eternal_Ruins.jpg",
+                                            "sha256":  "219137c2a326ef47ea5db5d55d10b9e6a49280838e50c401d211a83a504f326b"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Gods_Playground.jpg"
+                                            "path":  "BepInEx/config/maps/4_Gods_Playground.jpg",
+                                            "sha256":  "d899871de974a14289b1c0cab7be1284d2417778e03ee2069f6fc6e397d7b2d0"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Pillars_Of_Bureaucracy.jpg"
+                                            "path":  "BepInEx/config/maps/4_Pillars_Of_Bureaucracy.jpg",
+                                            "sha256":  "287fcbb0b43fafa208d7d9aa0c10e38b8fe8aa4d4623b3f3e39f22bbaf41e7e9"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Rockdale.jpg"
+                                            "path":  "BepInEx/config/maps/4_Rockdale.jpg",
+                                            "sha256":  "8520d19e4cf26da193d264f2f5cde81126f8208dec3cafdb0803f48f0e3148e4"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Sere_Moss.jpg"
+                                            "path":  "BepInEx/config/maps/4_Sere_Moss.jpg",
+                                            "sha256":  "20858d2ed6db5a2162f404834f824a99d05d0ed6a5a5ba3e7934815816e577fe"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Stone_Wood_And_Mud.jpg"
+                                            "path":  "BepInEx/config/maps/4_Stone_Wood_And_Mud.jpg",
+                                            "sha256":  "9d50c64538fbcc8b43b33af8773d6e50e2f2a896bc0d190a776cf99391bf8d17"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_The_Bridges.jpg"
+                                            "path":  "BepInEx/config/maps/4_The_Bridges.jpg",
+                                            "sha256":  "da5d37fcb29fb886019454534948256cc42210fa6920f9537c2ed40ea6d3a2ad"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_The_Cogwheel.jpg"
+                                            "path":  "BepInEx/config/maps/4_The_Cogwheel.jpg",
+                                            "sha256":  "db71dc8e18e78c4922ec293d9468157586772736fc6da3ad1e5abfed9423739e"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_The_Deck.jpg"
+                                            "path":  "BepInEx/config/maps/4_The_Deck.jpg",
+                                            "sha256":  "47680bdf982aeb205ac1f1d15e15abfa6ba364ad1baf8e800f74a307a0efbd43"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_The_Pedestal.jpg"
+                                            "path":  "BepInEx/config/maps/4_The_Pedestal.jpg",
+                                            "sha256":  "25d424d5441a8a8d4122355520451c358876532bf73c6235a8015716584b302e"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_The_Swamp.jpg"
+                                            "path":  "BepInEx/config/maps/4_The_Swamp.jpg",
+                                            "sha256":  "4ca214973f555fef7bd47f7c58a0e8e8aa5b4aad31579dd6ec41d4d85adc9aa8"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Vanity_Fair.jpg"
+                                            "path":  "BepInEx/config/maps/4_Vanity_Fair.jpg",
+                                            "sha256":  "adc996e78b86195550c60e7f1fbfa3d668933751d60cca297762b8d97c9fc85e"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/4_Walk_In_The_Park.jpg"
+                                            "path":  "BepInEx/config/maps/4_Walk_In_The_Park.jpg",
+                                            "sha256":  "e0ed5dfbcc93886000b109738044877002f5db5e5b142dfc87224e481e2f09fd"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Despairs_Cradle.jpg"
+                                            "path":  "BepInEx/config/maps/5_Despairs_Cradle.jpg",
+                                            "sha256":  "557404ea8794093aea6f9f18e528b1d93f11496c0c2d29b5cc3c65983ed56b62"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Euglenas_Peak.jpg"
+                                            "path":  "BepInEx/config/maps/5_Euglenas_Peak.jpg",
+                                            "sha256":  "faf02e1fb8d1adc3a6265b831a7d497b9db40e155c5b94a81994618bb71b9347"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Forest_Hills.jpg"
+                                            "path":  "BepInEx/config/maps/5_Forest_Hills.jpg",
+                                            "sha256":  "44e066119ee2365af47176dff69c141da4e53648f8ad509fc0e2640867c793ba"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Holy_Lights_Gap.jpg"
+                                            "path":  "BepInEx/config/maps/5_Holy_Lights_Gap.jpg",
+                                            "sha256":  "0244fe0ab2e673d7a863ac3d91134577b9aac9bc38bde8df3df723c958557361"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Hyde_Park.jpg"
+                                            "path":  "BepInEx/config/maps/5_Hyde_Park.jpg",
+                                            "sha256":  "34cf6bd29eebccbf4c9be97527a8a75e4f479ccfc80e4b3553cfed3b2430c33e"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Lions_Arena.jpg"
+                                            "path":  "BepInEx/config/maps/5_Lions_Arena.jpg",
+                                            "sha256":  "7b28b86b716c3d858e3e7358a55799baf744fac1fc11ded1af2ab4b9bb7d4db9"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Rock_Isles.jpg"
+                                            "path":  "BepInEx/config/maps/5_Rock_Isles.jpg",
+                                            "sha256":  "0e87cea6df7e9eb192d896aae05fb5392bfc393844a77a311fff5692aba75865"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Room_For_Five.jpg"
+                                            "path":  "BepInEx/config/maps/5_Room_For_Five.jpg",
+                                            "sha256":  "c7d2f2f6d27eaea310b24b8287d75b4b4d52697dbad0d76bd2de970ed536d8aa"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_The_Rig.jpg"
+                                            "path":  "BepInEx/config/maps/5_The_Rig.jpg",
+                                            "sha256":  "872763a7155c12e0853b3bb7f46f70eba1ac085bbf48691ca4fa5d6674eb3b24"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_The_Six_Columns.jpg"
+                                            "path":  "BepInEx/config/maps/5_The_Six_Columns.jpg",
+                                            "sha256":  "c6eab139b807369a99bf2fb00b4e8e4f8defd81820e5c5496d250a7eb9d1e061"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Water_Drops.jpg"
+                                            "path":  "BepInEx/config/maps/5_Water_Drops.jpg",
+                                            "sha256":  "3c843aeb4e8395d8b5b21413f07a142c14a1b79e833b0f784a691dd096275ea7"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Where_The_Wild_Roses_Rot.jpg"
+                                            "path":  "BepInEx/config/maps/5_Where_The_Wild_Roses_Rot.jpg",
+                                            "sha256":  "0dcd7ceaac3b9f1f180c1a955caaf0ceec6cb2042f1c1b0ce04892dec6757392"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Woodshock.jpg"
+                                            "path":  "BepInEx/config/maps/5_Woodshock.jpg",
+                                            "sha256":  "994a8e96cf2275a0d28bc4b4fefe2fa73a2bde44b4e9a780af90e87a2508096c"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/5_Worship_Deck.jpg"
+                                            "path":  "BepInEx/config/maps/5_Worship_Deck.jpg",
+                                            "sha256":  "6cf7cb2d30675ac32cf96385a08ca8510a1f1692f3be3482d3f50bd911800c13"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_A_Dead_Piece_Of_Chaos.jpg"
+                                            "path":  "BepInEx/config/maps/6_A_Dead_Piece_Of_Chaos.jpg",
+                                            "sha256":  "730e3fd43ae7c0a668fb7fa4fbeb453f8f87fd2720a9a436887a10009507d641"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Crazy_Forest.jpg"
+                                            "path":  "BepInEx/config/maps/6_Crazy_Forest.jpg",
+                                            "sha256":  "78272259e920dc6005ac8560bf8b7e686487228e5ec0c4bddc760357907c63ce"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Here_And_There.jpg"
+                                            "path":  "BepInEx/config/maps/6_Here_And_There.jpg",
+                                            "sha256":  "b50e84c500462f1b961a946abf0f1940b302b5f99e1835f441721e00232d8e20"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Mana_Piscine.jpg"
+                                            "path":  "BepInEx/config/maps/6_Mana_Piscine.jpg",
+                                            "sha256":  "1a792083c8be9eea0eadb655d6f1b9db3c85b0b0bba4c95316511b472ead67db"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Over_The_Hollow_Hill.jpg"
+                                            "path":  "BepInEx/config/maps/6_Over_The_Hollow_Hill.jpg",
+                                            "sha256":  "86eba418a7fae02e11810dd431de780883f6917470cb6b2c6cd367a1e372bf06"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Peace_Upon_Chaos.jpg"
+                                            "path":  "BepInEx/config/maps/6_Peace_Upon_Chaos.jpg",
+                                            "sha256":  "ee377b68b5ff5a6b7a17929875b2213a823c50080ff075639b7bb5f0003850d8"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Plainful_Gathering.jpg"
+                                            "path":  "BepInEx/config/maps/6_Plainful_Gathering.jpg",
+                                            "sha256":  "e47e9be133d02625cb8236293cc94a53a44650fb4ad7763ac5143cfea4b35802"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Ready_For_Takeoff.jpg"
+                                            "path":  "BepInEx/config/maps/6_Ready_For_Takeoff.jpg",
+                                            "sha256":  "8812a2ee19bdc13948fa7d211af90ce8c6b1fc6b73a86982d7aff6593b9809c1"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Techstatic.jpg"
+                                            "path":  "BepInEx/config/maps/6_Techstatic.jpg",
+                                            "sha256":  "ac0e258ef6521be23bc07dd1d19c90ab7af39352b75c16ba4c3278d361cb96f0"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_The_Space_Between.jpg"
+                                            "path":  "BepInEx/config/maps/6_The_Space_Between.jpg",
+                                            "sha256":  "95f4faac48b0237973b6f2b18800c6e58faadfc456402c1f7ff4093c35d0f22a"
                                         },
                                         {
-                                            "path":  "BepInEx/config/maps/6_Triple_Double.jpg"
+                                            "path":  "BepInEx/config/maps/6_Triple_Double.jpg",
+                                            "sha256":  "cc11df5c76046b644d398b86dbe32c1c35409795dae31b424eebd81c455664d1"
                                         }
                                     ]
                       },
@@ -532,10 +657,10 @@
                       },
                       {
                           "id":  "crmod.skin",
-                          "version":  "1.5.0",
-                          "dll":  "BepInEx/plugins/CRMod.Skin.dll",
-                          "sha256":  "ca64eed2820b0f1c77ec2e055aafc88cef2beacca21ae7757e769d75f7c75191",
-                          "description":  "Switch between skins",
+                          "version":  "1.5.1",
+                          "dll":  "BepInEx/plugins/CRMod.WizardSkin.dll",
+                          "sha256":  "c0bdd69d46fee3b0f73fbcb1d164296101b710dc3ac09b599cde67b2ead5e131",
+                          "description":  "Battle cosmetics",
                           "extra":  [
 
                                     ]

@@ -2,13 +2,13 @@
 
 > *Because 1.13 was never the end.*
 
-Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents twenty-one client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
+Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents twenty-two client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
 *May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
 
 ---
 
-## ✨ Mods v1.11.0
+## ✨ Mods v1.11.1
 
 ### 📜 Async Creator `[F8]`
 
@@ -71,7 +71,7 @@ If you join an async battle after opponents have already played emotes since you
 
 ---
 
-### 🏕️ Botcamp `[F7]`
+### 🏕️ Bot Camp `[F7]`
  
 Your lobby, your dress code.
  
@@ -146,6 +146,12 @@ The game limits how many equipment configurations you can store on the server, a
 A **+** button on the equipping screen saves a local copy of the current configuration. Click a local config to load it back to the server, delete it, or rename it. When you want to promote a local config to the server, the mod handles the upload automatically. If the server is full, it offers to save an existing server config locally so its slot can be reused for the upload.
  
 Local configs are stored in `BepInEx/config/CRMod.InfiniteWardrobe.json`.
+
+---
+
+### 🔄 Link Swap
+
+Changes the in game Discord link to the new [Chaos Reborn in Exile](https://discord.gg/HPHEnHvt4e) Discord server.
 
 ---
  
@@ -286,7 +292,7 @@ For the **first installation**, apply the following steps:
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`.
-2. Download **`CRMod-v1.11.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.11.1.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup
 4. Launch the game again. Now the mods are active
