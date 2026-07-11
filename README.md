@@ -325,6 +325,7 @@ ChaosReborn\
             CRMod.GearShift.dll
             CRMod.HeightMap.dll
             CRMod.InfiniteWardrobe.dll
+            CRMod.LinkSwap.dll
             CRMod.MapCam.dll
             CRMod.MapPreview.dll
             CRMod.MapSetup.dll
