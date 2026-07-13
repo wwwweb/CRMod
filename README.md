@@ -94,7 +94,7 @@ One panel to rule them all.
  
 A mod manager button on the login screen opens a list of all installed CRMod mods. Enable or disable individual mods with a checkbox; the header checkbox toggles all at once. Disabled mods are moved out of `BepInEx/plugins/` on the next game launch and re-enabled when you check them again. 
 
-Check for CRMod updates and install updates from this github repositoy by using the provided button.  
+Chaos Manager also provides a button to check for and install CRMod updates from this github repository.  
 
 ---
 
@@ -147,7 +147,7 @@ Displays the total height of every tile as an overlay label during battle. Usefu
  
 Your equipment, unlimited.
  
-The game limits how many equipment configurations you can store on the server, actually capping your number of builds. Infinite Wardrobe lifts that ceiling by saving configurations to a local archive. Once a configuration is stored locally, the online slot can be re-used for another configuration. Local configurations are cannot be directly used in battle, but can be restored to an online slot. Local configs appear in **yellow** in the configuration list; configs with missing items appear in **red**.
+The game limits how many equipment configurations you can store on the server, actually capping your number of builds. Infinite Wardrobe lifts that ceiling by saving configurations to a local archive. Once a configuration is stored locally, the online slot can be re-used for another configuration. Local configurations cannot be directly used in battle, but can be restored to an online slot. Local configs appear in **yellow** in the configuration list; configs with missing items appear in **red**.
 
 A **+** button on the equipping screen saves a local copy of the current configuration. Click a local config to load it back to the server, delete it, or rename it. When you want to promote a local config to the server, the mod handles the upload automatically. If the server is full, it offers to save an existing server config locally so its slot can be reused for the upload.
  
@@ -161,7 +161,7 @@ Changes the in game Discord link to the new [Chaos Reborn in Exile](https://disc
 
 ---
  
-### 🔭 Map Cam `[Ctrl+Scroll]` `[Alt+Move]` `[Ctrl+H]`
+### 🔭 Map Cam `[Ctrl+Scroll]` `[Alt+Move]` `[Ctrl+H]` `[Ctrl+ +/-]`
  
 See the bigger picture — or zoom in for the kill.
  
@@ -339,9 +339,9 @@ ChaosReborn\
             CRMod.RandomEquip.dll
             CRMod.Replay.dll
             CRMod.SetupWizard.dll
-            CRMod.Skin.dll
             CRMod.TabooDisplay.dll
             CRMod.TeamPing.dll
+            CRMod.WizardSkin.dll
         config\
             maps\
                 2_Backbone.jpg
@@ -377,7 +377,7 @@ The chat command mod supports multiple configurable report formats. Reports can 
 
 ## 🗑️ Uninstall
 
-To enable or disable individual mods without uninstalling, use the Chaos Manager on the login screen. To remove all mods entirely, remove the `BepInEx` folder and `winhttp.dll` from your Chaos Reborn folder. To remove a single mod permanently, delete the according dll from `BepInEx/plugins`.
+To enable or disable individual mods without uninstalling, use the Chaos Manager on the login screen. To remove all mods entirely, remove the `BepInEx` folder and `winhttp.dll` from your Chaos Reborn folder.
 
 ---
 
