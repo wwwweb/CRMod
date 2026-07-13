@@ -1,6 +1,6 @@
 {
     "schema":  1,
-    "crmodVersion":  "v1.11.1",
+    "crmodVersion":  "v1.12.0",
     "published":  [
                       {
                           "id":  "crmod.asynccreator",
@@ -92,6 +92,16 @@
                           "dll":  "BepInEx/plugins/CRMod.EquipSort.dll",
                           "sha256":  "d795fdf30df1f383377ad2bd626e6fa485ee44ede67d4b4f35efc57f32daa33b",
                           "description":  "Alphabetical equipment config sorting",
+                          "extra":  [
+
+                                    ]
+                      },
+                      {
+                          "id":  "crmod.fabricfix",
+                          "version":  "1.0.0",
+                          "dll":  "BepInEx/plugins/CRMod.FabricFix.dll",
+                          "sha256":  "ddb499cb20c5597563dd3f7e70c4c9461ed509e06de8c72eea5ad0563b5301e4",
+                          "description":  "Fixes gear icons in the equip screen",
                           "extra":  [
 
                                     ]
@@ -627,9 +637,9 @@
                       },
                       {
                           "id":  "crmod.randomequip",
-                          "version":  "1.1.0",
+                          "version":  "1.1.1",
                           "dll":  "BepInEx/plugins/CRMod.RandomEquip.dll",
-                          "sha256":  "a1559625557ad464d0639b6e96f951e90f89a91c8554e9d613247d0b83281d4b",
+                          "sha256":  "15e71da9d552650fb8bc54f3520f6551eca67890918507ee54b46e261047ee07",
                           "description":  "Random equipment generator",
                           "extra":  [
 
