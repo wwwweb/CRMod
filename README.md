@@ -1,4 +1,6 @@
-# 🧙 Chaos Reborn — Community Patch 1.14
+![CRMod Moon](https://wwwweb.github.io/CRMod/images/mods/moon-CRMod.gif)
+
+# Chaos Reborn — Community Patch 1.14
 
 > *Because 1.13 was never the end.*
 
