@@ -1,12 +1,10 @@
-![CRMod Moon](https://wwwweb.github.io/CRMod/images/mods/moon-CRMod.gif)
-
-# Chaos Reborn — Community Patch 1.14
+# 🧙 Chaos Reborn — Community Patch 1.14
 
 > *Because 1.13 was never the end.*
 
 Snapshot Games may have laid down their staffs, but the arcane fires have not gone cold. With the magic of artificial intelligence and the stubbornness of a Chaos wizard who just won't disbelieve, **Blubber** proudly presents twenty-three client-side mods for [Chaos Reborn](https://store.steampowered.com/app/319050/Chaos_Reborn/), requiring no server-side sorcery.
 
-*May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.* 🧙
+*May your casts be true, your illusions undetected, and your Gooey Blob land exactly where intended.*
 
 ---
 
@@ -414,3 +412,7 @@ Tested under Windows 11 with the Steam version (64 bit) and GOG version (32 bit)
 Code: [MIT](LICENSE) — © 2026 Blubber
 
 Images (`BepInEx/config/maps/`): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+---
+
+![CRMod Moon](https://wwwweb.github.io/CRMod/images/mods/moon-CRMod.gif)
