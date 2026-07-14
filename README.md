@@ -75,7 +75,7 @@ If you join an async battle after opponents have already played emotes since you
  
 Your lobby, your dress code.
  
-Press **F7** in an online custom lobby to open the Botcamp overlay. Each slot shows a dropdown to pick the AI's equipment configuration. Choose any of your online configs to dress the AIs accordingly. When ready, click **Start Offline** to leave the online lobby and launch the battle locally against AI opponents.
+Press **F7** in an online custom lobby to open the Bot Camp overlay. Each slot shows a dropdown to pick the AI's equipment configuration. Choose any of your online configs to dress the AIs accordingly. When ready, click **Start Offline** to leave the online lobby and launch the battle locally against AI opponents.
 Enable **AI Duel** for equipped modes to use the AI duel logic which gives the AI a mana advantage dependent on the level you set.
  
 ---
@@ -323,7 +323,7 @@ ChaosReborn\
             CRMod.AsyncLobbyFix.dll
             CRMod.AsyncReadyStatus.dll
             CRMod.BattleEmotes.dll
-            CRMod.Botcamp.dll
+            CRMod.BotCamp.dll
             CRMod.BotRevenge.dll
             CRMod.ChaosManager.dll
             CRMod.ChatCommand.dll
