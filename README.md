@@ -227,6 +227,8 @@ Lobbies move through a clear lifecycle: **idle → todo → waiting → ready �
 
 Once a lobby is configured and all reward/taboo settings have been applied, the **▶ Start game** button becomes available. Setup Wizard coordinates with Async Creator automatically: rewards and taboos defined by Async Creator chat commands in the `.setupwizard` file are applied to the lobby.
 
+An html showcase of Setup Wizard is available [here](https://wwwweb.github.io/CRMod/showcase-lobbysetup.html).
+
 ---
 
 ### 🔖 Taboo Display
