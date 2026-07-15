@@ -275,12 +275,24 @@ A `*` next to a wizard's name indicates the displayed skin differs from their ac
 ## ⌨️ Keyboard Reference
 A quick overview of all mod key bindings is available in the [Keyboard Reference](https://wwwweb.github.io/CRMod/CRModKeyboardReference.html).
 
+<p align="left">
+<a href="https://wwwweb.github.io/CRMod/CRModKeyboardReference.html">
+<img src="https://wwwweb.github.io/CRMod/images/html-preview/CRModKeyboardReference-top-preview.png" width="30%"/>
+</a>
+</p>
+
 ---
 
 ## 🃏 Taboo Reference
 A complete overview of all taboos and how they filter spells is available in the [Taboo Reference](https://wwwweb.github.io/CRMod/cr-taboo-reference.html).
 
 Thanks to avolebva's careful work, meaningful taboo combinations are available as named wizard classes. Async Creator, Taboo Display, and Wizard Skin support wizard classes for configuration and display.
+
+<p align="left">
+<a href="https://wwwweb.github.io/CRMod/cr-taboo-reference.html">
+<img src="https://wwwweb.github.io/CRMod/images/html-preview/cr-taboo-reference-preview.png" width="30%"/>
+</a>
+</p>
 
 ---
 
