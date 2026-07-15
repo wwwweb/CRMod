@@ -306,9 +306,10 @@ For the **first installation**, apply the following steps:
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`. Use BepInEx 5.4.x only - version 6 is not compatible.
 2. Download **`CRMod-v1.12.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
-   - 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
-3. Launch the game once, then close it. BepInEx will finalize its setup
-4. Launch the game again. Now the mods are active
+   > 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
+3. Launch the game once, then close it. BepInEx will finalize its setup.
+4. Launch the game again. Now the mods are active.
+   > Troubleshooting: If you are not sure if BepInEx and CRMod loaded, check `BepInEx\LogOutput.log`. The mod names should appear there.
 
 For **updating from a previous version** of CRMod:
 - If you are updating from CRMod v1.11.0 or newer, use the Chaos Manager. Click on the Mod Manager button on the login screen and check for updates. Alternatively, update can be applied manually like for versions below v1.11.0.
@@ -355,8 +356,6 @@ ChaosReborn\
                 ... (all map images)
                 6_Triple_Double.jpg
 ```
-
-> Not sure if BepInEx loaded? Check `BepInEx\LogOutput.log`. The mod names should appear there.
 
 ### Linux / Mac
 
