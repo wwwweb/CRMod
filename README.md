@@ -417,4 +417,117 @@ Images (`BepInEx/config/maps/`): [CC BY-SA 4.0](https://creativecommons.org/lice
 
 ---
 
-![CRMod Moon](https://wwwweb.github.io/CRMod/images/mods/moon-CRMod.gif)
+## 🖼️ Mod Gallery
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="https://wwwweb.github.io/CRMod/images/mods/asynccreator.jpg" width="100%"/><br/>
+<sub><b>Async Creator</b></sub>
+</td>
+<td align="center" width="50%">
+<img src="https://wwwweb.github.io/CRMod/images/mods/asyncreadystatus.jpg" width="100%"/><br/>
+<sub><b>Async Ready Status</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/wp.gif" width="30%"/><br/>
+<sub><b>Battle Emotes</b> — <code>!wp</code></sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/botcamp.jpg" width="100%"/><br/>
+<sub><b>Bot Camp</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/botrevenge.jpg" width="70%"/><br/>
+<sub><b>Bot Revenge</b></sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/chaosmanager.jpg" width="50%"/><br/>
+<sub><b>Chaos Manager</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/chatcommand.jpg" width="50%"/><br/>
+<sub><b>Chat Commands</b> - Discord report</sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/equipsort.jpg" width="100%"/><br/>
+<sub><b>Equip Sort</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/gearshift.jpg" width="100%"/><br/>
+<sub><b>Gear Shift</b></sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/heightmap.jpg" width="100%"/><br/>
+<sub><b>Height Map</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/infinitewardrobe.jpg" width="100%"/><br/>
+<sub><b>Infinite Wardrobe</b></sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/mapcam-zoom.jpg" width="100%"/><br/>
+<sub><b>Map Cam</b> - Zoom & UI hide</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/mappreview.jpg" width="100%"/><br/>
+<sub><b>Map Preview</b></sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/mapsetup.jpg" width="100%"/><br/>
+<sub><b>Map Setup & Map Preview</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/randomequip.jpg" width="100%"/><br/>
+<sub><b>Random Equip & Fabric Fix</b></sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/replay.jpg" width="60%"/><br/>
+<sub><b>Replay</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/setupwizard.jpg" width="100%"/><br/>
+<sub><b>Setup Wizard</b></sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/taboodisplay.jpg" width="100%"/><br/>
+<sub><b>Taboo Display</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/teamping.jpg" width="100%"/><br/>
+<sub><b>Team Ping</b></sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/wizardskin.jpg" width="100%"/><br/>
+<sub><b>Wizard Skin</b> - Dragon Skin & Winter Mode</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/wizardskin-labels.jpg" width="50%"/><br/>
+<sub><b>Wizard Skin</b> — Wizard Aura & Class Labels</sub>
+</td>
+<td align="center">
+<img src="https://wwwweb.github.io/CRMod/images/mods/moon-CRMod.gif" width="40%"/><br/>
+<sub><b>Battle Emotes</b> — <code>!moon</code></sub>
+</td>
+</tr>
+</table>
