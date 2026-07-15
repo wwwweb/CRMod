@@ -10,6 +10,8 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 ## ✨ Mods v1.12.0
 
+> Note: The last official game version is 1.13. This community patch virtually increases the game version to 1.14 by adding various modifications, bundled in CRMod. As CRMod itself is subject to continuous development, it has its own independent version.
+
 ### 📜 Async Creator `[F8]`
 
 Ever tried to run a taboo match in async, only to find the controls missing?
