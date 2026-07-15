@@ -433,7 +433,7 @@ Images (`BepInEx/config/maps/`): [CC BY-SA 4.0](https://creativecommons.org/lice
 <tr>
 <td align="center">
 <img src="https://wwwweb.github.io/CRMod/images/mods/wp.gif" width="30%"/><br/>
-<sub><b>Battle Emotes</b> — <code>!wp</code></sub>
+<sub><b>Battle Emotes</b> - <code>!wp</code></sub>
 </td>
 <td align="center">
 <img src="https://wwwweb.github.io/CRMod/images/mods/botcamp.jpg" width="100%"/><br/>
