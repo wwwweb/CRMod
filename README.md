@@ -523,11 +523,11 @@ Images (`BepInEx/config/maps/`): [CC BY-SA 4.0](https://creativecommons.org/lice
 <tr>
 <td align="center">
 <img src="https://wwwweb.github.io/CRMod/images/mods/wizardskin-labels.jpg" width="50%"/><br/>
-<sub><b>Wizard Skin</b> — Wizard Aura & Class Labels</sub>
+<sub><b>Wizard Skin</b> - Wizard Aura & Class Labels</sub>
 </td>
 <td align="center">
 <img src="https://wwwweb.github.io/CRMod/images/mods/moon-CRMod.gif" width="40%"/><br/>
-<sub><b>Battle Emotes</b> — <code>!moon</code></sub>
+<sub><b>Battle Emotes</b> - <code>!moon</code></sub>
 </td>
 </tr>
 </table>
