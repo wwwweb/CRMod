@@ -364,6 +364,10 @@ Linux and macOS are supported by BepInEx and CRMod, but step 1 of the installati
 
 Untested on Linux/Mac - feedback welcome.
 
+### 🗑️ Uninstall
+
+To enable or disable individual mods without uninstalling, use the Chaos Manager on the login screen. To remove all mods entirely, remove the `BepInEx` folder and `winhttp.dll` from your Chaos Reborn folder.
+
 ---
 
 ## 📡 Setting up own report formats and Discord connection (optional)
@@ -379,12 +383,6 @@ The chat command mod supports multiple configurable report formats. Reports can 
    ```
 5. Save the file and restart the game (or type `/reloadconfig` in battle chat).
 6. Test the connection by sending a report. Type `/reportdiscord` (with optional template name from the config file where you set the Webhook URL) in battle chat. The report should appear in the Discord channel you used in step 3.
-
----
-
-## 🗑️ Uninstall
-
-To enable or disable individual mods without uninstalling, use the Chaos Manager on the login screen. To remove all mods entirely, remove the `BepInEx` folder and `winhttp.dll` from your Chaos Reborn folder.
 
 ---
 
