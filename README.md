@@ -298,8 +298,8 @@ Thanks to avolebva's careful work, meaningful taboo combinations are available a
 
 ## 📋 Requirements
 
-- **Chaos Reborn** (both 32/64 bit versions are supported)
-- **BepInEx 5.4.x** — download link below
+- **Chaos Reborn** - the game; both 32/64 bit versions are supported
+- **BepInEx 5.4.x** - a modding framework needed as a link between the game and CRMod; download link below
 
 > ⚠️ BepInEx **5.4.x only** — version 6 is not compatible.
 
@@ -369,7 +369,7 @@ ChaosReborn\
 
 ### Linux / Mac
 
-Linux and macOS are supported by BepInEx, but step 1 of the installation above needs some extra steps. Chaos Reborn is usually run as a Windows game through a compatibility layer (Proton/Crossover/...), so the Windows version of BepInEx is used, and the game has to be launched with an additional command line parameter or compatibility layer setting, especially regarding `winhttp.dll`. The exact steps depend on your setup and are easy to find via a web search. I have not tested this myself, so please look up the exact parameter for your platform.
+Linux and macOS are supported by BepInEx and CRMod, but step 1 of the installation above needs some extra steps. Chaos Reborn is usually run as a Windows game through a compatibility layer (Proton/Crossover/...), so the Windows version of BepInEx is used, and the game has to be launched with an additional command line parameter or compatibility layer setting, especially regarding `winhttp.dll`. The exact steps depend on your setup and are easy to find via a web search. I have not tested this myself, so please look up the exact parameter for your platform.
 
 Untested on Linux/Mac - feedback welcome.
 
