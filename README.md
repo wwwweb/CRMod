@@ -245,7 +245,7 @@ If a wizard's taboo combination matches one of the known wizard classes, the cla
 
 Point your allies where the magic happens.
 
-Right-click any tile during battle to place a ping marker visible to your team. Cycle through modes with **Ctrl+P**: in team games **Off → Team → All**, in FFA **Off → All → Private**. One marker per player, automatically expires after one round. Right-click an existing marker in Off mode to dismiss it locally.
+Press **Ctrl+P** and right-click any tile during battle to place a ping marker visible to your team. Cycle through modes with **Ctrl+P**: in team games **Off → Team → All**, in FFA **Off → All → Private**. One marker per player, automatically expires after one round. Right-click an existing marker in Off mode to dismiss it locally.
 
 > ⚠️ Only players that have the Team Ping mod installed can see the pings. The ping is transmitted via in-game chat. For other mod users, this is invisible. For players without the mod, a short `CRMod.Ping` message appears in chat.
 
