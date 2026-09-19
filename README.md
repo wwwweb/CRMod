@@ -8,7 +8,7 @@ Snapshot Games may have laid down their staffs, but the arcane fires have not go
 
 ---
 
-## ✨ Mods v1.12.0
+## ✨ Mods v1.12.1
 
 > Note: The last official game version is 1.13. This community patch virtually increases the game version to 1.14 by adding various modifications, bundled in CRMod. As CRMod itself is subject to continuous development, it has its own independent version.
 
@@ -305,7 +305,7 @@ For the **first installation**, apply the following steps:
    - **Linux/Mac:** see [below](#linux--mac)
 
    > ⚠️ Make sure you download the BepInEx version that matches your Chaos Reborn installation (32/64 bit). In your Chaos Reborn folder you will find either `ChaosRebornWin64.exe` or `ChaosRebornWin32.exe`. Use BepInEx 5.4.x only - version 6 is not compatible.
-2. Download **`CRMod-v1.12.0.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
+2. Download **`CRMod-v1.12.1.zip`** from the [Releases page](https://github.com/wwwweb/CRMod/releases) and extract it into the same folder. The files will drop into the right places automatically
    > 🧙 Advanced wizardry: Those who know what they are doing may alternatively download individual mod files or clone the repository directly into their Chaos Reborn folder.
 3. Launch the game once, then close it. BepInEx will finalize its setup.
 4. Launch the game again. Now the mods are active.
